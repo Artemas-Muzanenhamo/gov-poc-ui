@@ -13,7 +13,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('GOV-POC');
+    expect(compiled.querySelector('h1#headline').textContent).toContain('GOV-POC');
   }));
   it('should render New License button', async( () => {
     const fixture = TestBed.createComponent(AppComponent);
