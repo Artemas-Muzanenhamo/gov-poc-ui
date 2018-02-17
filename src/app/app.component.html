@@ -1,7 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 id="headline" class="uk-heading-divider"><span>{{ title }}</span></h1>
-  <button id="new-license" class="uk-button uk-button-primary uk-button-large">{{newLicense}}</button>
-  <button id="new-identity" class="uk-button uk-button-secondary uk-button-large">{{newIdentity}}</button>
+</div>
+
+<div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
+  <div id="new-license-grid">
+    <div class="uk-card uk-card-default uk-card-body">
+      <button id="new-license" class="uk-button uk-button-primary uk-button-large">{{newLicense}}</button>
+    </div>
+  </div>
+  <div id="new-identity-grid">
+    <div class="uk-card uk-card-default uk-card-body">
+      <button id="new-identity" class="uk-button uk-button-secondary uk-button-large">{{newIdentity}}</button>
+    </div>
+  </div>
 </div>
 

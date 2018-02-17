@@ -15,12 +15,24 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1#headline').textContent).toContain('GOV-POC');
   }));
+  it('should render New License grid', async( () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div#new-license-grid').textContent).toContain('New License');
+  }));
   it('should render New License button', async( () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button#new-license').textContent).toContain('New License');
   }));
+  it('should render New Identity grid', async( () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div#new-identity-grid').textContent).toContain('New Identity');
+  } ));
   it('should render New Identity button', async( () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
