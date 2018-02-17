@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { LicenseComponent } from './license/license.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LicenseComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, LicenseComponent]
 })
 export class AppModule { }
