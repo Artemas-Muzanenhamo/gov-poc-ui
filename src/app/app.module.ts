@@ -18,9 +18,7 @@ import {IdentityComponent} from './identity/identity.component';
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    LicenseComponent,
-    IdentityComponent
+    AppComponent
   ]
 })
 export class AppModule { }

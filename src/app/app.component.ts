@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'GOV-POC';
   newLicense = 'New License';
   newIdentity = 'New Identity';
+  services = 'Services';
 }
