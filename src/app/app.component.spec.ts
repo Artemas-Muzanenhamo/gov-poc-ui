@@ -21,5 +21,16 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button#services').textContent).toContain('Services');
   }));
-  it('should render a modal with an id Services-Modal');
+  it('should render a button License Service', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button#license-service-button').textContent).toContain('License Service');
+  }));
+  it('should render a button Identity Service', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button#identity-service-button').textContent).toContain('Identity Service');
+  }));
 });
