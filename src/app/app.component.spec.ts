@@ -22,5 +22,3 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('button#services').textContent).toContain('Services');
   }));
 });
-
-
