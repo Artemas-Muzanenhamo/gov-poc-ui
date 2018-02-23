@@ -21,4 +21,5 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button#services').textContent).toContain('Services');
   }));
+  it('should render a modal with an id Services-Modal');
 });
