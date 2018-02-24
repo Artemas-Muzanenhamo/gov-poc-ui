@@ -5,6 +5,9 @@
       <!-- This is a button toggling the modal with the default close button -->
       <button id="services" class="uk-button uk-button-primary uk-button-large" type="button" uk-toggle="target: #modal-close-default">{{services}}</button>
 
+      <!-- Place appropriately /licenses or /identities -->
+      <router-outlet></router-outlet>
+
       <!-- This is the modal with the default close button -->
       <div id="modal-close-default" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
