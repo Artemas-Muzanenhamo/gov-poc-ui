@@ -1,5 +1,8 @@
 # Gov-Poc-Ng App
 
+[![CircleCI](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ng.svg?style=svg)](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ng)
+
+
 This application is a view for the [GOV-POC](https://github.com/Artemas-Muzanenhamo/gov-poc) application. 
 
 <p align="center">
