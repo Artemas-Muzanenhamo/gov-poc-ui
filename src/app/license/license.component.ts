@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {License} from './license';
 
 @Component({
-  selector: 'app-license',
   templateUrl: './license.component.html',
   styleUrls: ['./license.component.css']
 })
