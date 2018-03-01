@@ -3,7 +3,7 @@
     <div class="uk-width-auto@m uk-height-large">
       <div class="uk-card uk-card-default uk-card-body">
         <p class="uk-margin">
-          <button id="add-license-details" class="uk-button uk-button-secondary uk-button-large">Add License</button>
+          <button id="add-license-details" class="uk-button uk-button-secondary uk-button-large" [routerLink]="['/licenses/add-license']">Add License</button>
         </p>
         <p class="uk-margin">
           <button id="edit-license-details" class="uk-button uk-button-secondary uk-button-large">Edit License</button>
@@ -16,7 +16,7 @@
 
     <div class="uk-width-expand@m">
       <div class="uk-card uk-card-default uk-card-body">
-
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
