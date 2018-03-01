@@ -1,55 +1,23 @@
-<div>
-  <h1>Add License Details</h1>
-  <form>
-    <fieldset class="uk-fieldset">
+<div class="uk-container">
+  <div class="uk-text-center" uk-grid>
+    <div class="uk-width-auto@m uk-height-large">
+      <div class="uk-card uk-card-body">
+        <p class="uk-margin">
+          <button id="add-license-details" class="uk-button uk-button-secondary uk-button-large" [routerLink]="['/licenses/add-license']">Add License</button>
+        </p>
+        <p class="uk-margin">
+          <button id="edit-license-details" class="uk-button uk-button-secondary uk-button-large">Edit License</button>
+        </p>
+        <p class="uk-margin">
+          <button id="delete-license-details" class="uk-button uk-button-secondary uk-button-large">Delete License</button>
+        </p>
+      </div>
+    </div>
 
-      <!--<legend class="uk-legend">Legend</legend>-->
-
-      <div class="uk-margin">
-        <label>License ID</label>
-        <input class="uk-input" type="text" placeholder="License ID">
+    <div class="uk-width-expand@m">
+      <div class="uk-card uk-card-secondary uk-card-body">
+        <router-outlet></router-outlet>
       </div>
-      <div class="uk-margin">
-        <label>Identity Reference Number</label>
-        <input class="uk-input" type="text" placeholder="ID Reference">
-      </div>
-      <div class="uk-margin">
-        <label>Surname</label>
-        <input class="uk-input" type="text" placeholder="Surname">
-      </div>
-      <div class="uk-margin">
-        <label>First Names</label>
-        <input class="uk-input" type="text" placeholder="First Names">
-      </div>
-      <div class="uk-margin">
-        <label>Date of Birth</label>
-        <input class="uk-input" type="date" placeholder="Date of Birth">
-      </div>
-      <div class="uk-margin">
-        <label>Country</label>
-        <input class="uk-input" type="text" placeholder="Country">
-      </div>
-      <div class="uk-margin">
-        <label>Date of Issue</label>
-        <input class="uk-input" type="text" placeholder="Date of Issue">
-      </div>
-      <div class="uk-margin">
-        <label>Expiry Date</label>
-        <input class="uk-input" type="date" placeholder="Expiry Date">
-      </div>
-      <div class="uk-margin">
-        <label>Agency</label>
-        <input class="uk-input" type="text" placeholder="Agency">
-      </div>
-      <div class="uk-margin">
-        <label>Address</label>
-        <input class="uk-input" type="text" placeholder="Address">
-      </div>
-      <div class="js-upload" uk-form-custom>
-        <label>Upload Image</label>
-        <input type="file" multiple>
-        <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
-      </div>
-    </fieldset>
-  </form>
+    </div>
+  </div>
 </div>
