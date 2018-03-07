@@ -1,15 +1,23 @@
-<div class="uk-container uk-container-center">
-  <h1 id="headline"><span id="title-font">{{ title }}</span></h1>
-  <!-- This is a button toggling the modal -->
-  <button class="uk-button" data-uk-modal="{target:'#my-id'}">{{services}}</button>
+<div class="uk-grid uk-width-1-1 uk-text-center uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+  <div class="uk-container-center">
+    <div class="uk-width-1-1">
+      <h1 id="headline"><span id="title-font">{{ title }}</span></h1>
+    </div>
+
+    <div class="uk-width-1-1">
+      <!-- This is a button toggling the modal -->
+      <button id="services-button" class="uk-button" data-uk-modal="{target:'#services-modal'}">{{services}}</button>
+    </div>
+  </div>
 
   <!-- This is the modal -->
-  <div id="my-id" class="uk-modal">
+  <div id="services-modal" class="uk-modal">
     <div class="uk-modal-dialog">
       <a class="uk-modal-close uk-close"></a>
+      <h1 id="modal-services-button">{{services}}</h1>
       <p class="uk-text-center">
-        <button id="license-service-button" class="uk-button uk-button-default uk-modal-close" type="button" [routerLink]="['/licenses']">License Service</button>
-        <button id="identity-service-button" class="uk-button uk-button-default uk-modal-close" type="button" [routerLink]="['/identities']">Identity Service</button>
+        <button id="license-service-button" class="uk-button uk-button-default uk-modal-close" type="button" [routerLink]="['/licenses']">{{licenseService}}</button>
+        <button id="identity-service-button" class="uk-button uk-button-default uk-modal-close" type="button" [routerLink]="['/identities']">{{identityService}}</button>
       </p>
     </div>
   </div>

@@ -6,5 +6,7 @@ import {Component} from '@angular/core';
 })
 export class WelcomeComponent {
   title = 'GOV-POC';
-  services = 'Services';
+  services = 'SERVICES';
+  licenseService = 'LICENSE SERVICE';
+  identityService = 'IDENTITY SERVICE';
 }

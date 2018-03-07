@@ -30,22 +30,28 @@ describe('WelcomeComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1#headline').textContent).toContain('GOV-POC');
   }));
-  it('should render Services button', async( () => {
+  it('should render a button SERVICES', async( () => {
     const fixture = TestBed.createComponent(WelcomeComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button#services').textContent).toContain('Services');
+    expect(compiled.querySelector('button#services-button').textContent).toContain('SERVICES');
   }));
-  it('should render a button License Service', async(() => {
+  it('should render a button LICENSE SERVICE', async(() => {
     const fixture = TestBed.createComponent(WelcomeComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button#license-service-button').textContent).toContain('License Service');
+    expect(compiled.querySelector('button#license-service-button').textContent).toContain('LICENSE SERVICE');
   }));
-  it('should render a button Identity Service', async(() => {
+  it('should render a button IDENTITY SERVICE', async(() => {
     const fixture = TestBed.createComponent(WelcomeComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button#identity-service-button').textContent).toContain('Identity Service');
+    expect(compiled.querySelector('button#identity-service-button').textContent).toContain('IDENTITY SERVICE');
+  }));
+  it('should render modal with title SERVICES in an h1 tag', async( () => {
+    const fixture = TestBed.createComponent(WelcomeComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1#modal-services-button').textContent).toContain('SERVICES');
   }));
 });
