@@ -6,7 +6,7 @@
 This application is a front-end Angular view for the [GOV-POC](https://github.com/Artemas-Muzanenhamo/gov-poc) application. 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/29547780/36538562-e432c132-17cb-11e8-9ba7-57a2b2cc5dd5.png">
+  <img src="https://user-images.githubusercontent.com/29547780/37141137-00e0f69c-22ac-11e8-8fdc-999cddde3b6c.png">
 </p>
 
 ## Development server
