@@ -23,22 +23,22 @@ describe('LicenseComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should render an Add License button', async( () => {
+  it('should render a navigation bar brand', async( () => {
     const fixture = TestBed.createComponent(LicenseComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button#add-license-details').textContent).toContain('Add License');
+    expect(compiled.querySelector('nav#brand-navbar').textContent).toContain('BRAND');
   }));
-  it('should render an Edit License button', async( () => {
+  it('should render a navigation bar link Add License', async( () => {
     const fixture = TestBed.createComponent(LicenseComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button#edit-license-details').textContent).toContain('Edit License');
+    expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Add License');
   }));
-  it('should render a Delete License button', async( () => {
+  it('should render a navigation bar link Edit License', async( () => {
     const fixture = TestBed.createComponent(LicenseComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button#delete-license-details').textContent).toContain('Delete License');
+    expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Edit License');
   }));
 });
