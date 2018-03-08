@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+
+.welcome-title-font {
+  color: black;
+  font-size: 250%;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
 .button-font {
   color: black;
   font-size: 100%;
