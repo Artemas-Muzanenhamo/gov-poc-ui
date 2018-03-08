@@ -4,8 +4,8 @@ body, html {
   height: 100%;
 }
 
-#title-font {
-  color: white;
+.title-font {
+  color: black;
   font-size: 250%;
   font-family: 'Julius Sans One', sans-serif;
 }
