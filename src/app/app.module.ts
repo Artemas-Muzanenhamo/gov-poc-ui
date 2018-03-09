@@ -8,6 +8,7 @@ import {IdentityComponent} from './identity/identity.component';
 import { AppRoutingModule } from './/app-routing.module';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {AddLicenseComponent} from './license/add-license/add-license-component';
+import {LicensesComponent} from './license/licenses/licenses.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {AddLicenseComponent} from './license/add-license/add-license-component';
     LicenseComponent,
     IdentityComponent,
     WelcomeComponent,
-    AddLicenseComponent
+    AddLicenseComponent,
+    LicensesComponent
   ],
   imports: [
     BrowserModule,
