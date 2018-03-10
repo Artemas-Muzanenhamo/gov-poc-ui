@@ -26,4 +26,5 @@ describe('EditLicenseComponent', () => {
     }).compileComponents();
   }));
   it('should render an Edit License Form');
+  it('should render an ID field in the Edit License Form');
 });
