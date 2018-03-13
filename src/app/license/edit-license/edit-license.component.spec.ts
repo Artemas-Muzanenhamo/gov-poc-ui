@@ -6,6 +6,7 @@ import {IdentityComponent} from '../../identity/identity.component';
 import {LicensesComponent} from '../licenses/licenses.component';
 import {AppRoutingModule} from '../../app-routing.module';
 import {APP_BASE_HREF} from '@angular/common';
+import {EditLicenseComponent} from './edit-license.component';
 
 describe('EditLicenseComponent', () => {
   beforeEach(async(() => {
@@ -15,7 +16,8 @@ describe('EditLicenseComponent', () => {
         AddLicenseComponent,
         WelcomeComponent,
         IdentityComponent,
-        LicensesComponent
+        LicensesComponent,
+        EditLicenseComponent
       ],
       imports: [
         AppRoutingModule
@@ -30,7 +32,7 @@ describe('EditLicenseComponent', () => {
   it('should render an ID field in the Edit License Form');
   it('should render an ID REFERENCE field in the Edit License Form');
   it('should render a SURNAME field in the Edit License Form');
-  it('should render a FIRSTNAME field in the Edit License Form');
+  it('should render a FIRST NAME field in the Edit License Form');
   it('should render a DATE OF BIRTH field in the Edit License Form');
   it('should render a COUNTRY field in the Edit License Form');
   it('should render a DATE OF ISSUE field in the Edit License Form');
