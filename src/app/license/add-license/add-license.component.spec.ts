@@ -16,7 +16,8 @@ describe('AddLicenseComponent', () => {
         WelcomeComponent,
         IdentityComponent,
         LicensesComponent,
-        EditLicenseComponent
+        EditLicenseComponent,
+        AddLicenseComponent
       ],
       imports: [
         AppRoutingModule
@@ -26,9 +27,24 @@ describe('AddLicenseComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should render an Add License Form');
-  it('should render an ID field in the Add License Form');
-  it('should render an ID field in the Add License Form');
+  it('should render an Add License Form', async( () => {
+    const fixture = TestBed.createComponent(AddLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#add-license-form').nodeName).toBe('FORM');
+  }));
+  it('should render an ID field in the Add License Form', async( () => {
+    const fixture = TestBed.createComponent(AddLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#license-id-input').nodeName).toBe('INPUT');
+  }));
+  it('should render an ID field in the Add License Form', async( () => {
+    const fixture = TestBed.createComponent(AddLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#id-ref-input').nodeName).toBe('INPUT');
+  }));
   it('should render an ID REFERENCE field in the Add License Form');
   it('should render a SURNAME field in the Add License Form');
   it('should render a FIRST NAME field in the Add License Form');
@@ -39,4 +55,16 @@ describe('AddLicenseComponent', () => {
   it('should render an AGENCY field in the Add License Form');
   it('should render a LICENSE NUMBER field in the Add License Form');
   it('should render an ADDRESS field in the Add License Form');
+  it('should render a SUBMIT button', async( () => {
+    const fixture = TestBed.createComponent(AddLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button#submit-license').textContent).toContain('Submit');
+  }));
+  it('should render a VIEW LICENSES button', async( () => {
+    const fixture = TestBed.createComponent(AddLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button#view-licenses').textContent).toContain('View Licenses');
+  }));
 });
