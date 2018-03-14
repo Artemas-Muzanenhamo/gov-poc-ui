@@ -1,6 +1,6 @@
 # Gov-Poc-Ng App
 
-[![CircleCI](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ng.svg?style=svg)](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ng)
+[![CircleCI](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ng.svg?style=svg)](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ng)_[![codecov](https://codecov.io/gh/Artemas-Muzanenhamo/gov-poc-ng/branch/develop/graph/badge.svg)](https://codecov.io/gh/Artemas-Muzanenhamo/gov-poc-ng)
 
 
 This application is a front-end Angular view for the [GOV-POC](https://github.com/Artemas-Muzanenhamo/gov-poc) application. 
