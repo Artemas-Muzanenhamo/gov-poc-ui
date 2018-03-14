@@ -87,8 +87,12 @@ describe('AddLicenseComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#agency-input').nodeName).toBe('INPUT');
   }));
-  it('should render a LICENSE NUMBER field in the Add License Form');
-  it('should render an ADDRESS field in the Add License Form');
+  it('should render an ADDRESS field in the Add License Form', async( () => {
+    const fixture = TestBed.createComponent(AddLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#address-input').nodeName).toBe('INPUT');
+  }));
   it('should render a SUBMIT button', async( () => {
     const fixture = TestBed.createComponent(AddLicenseComponent);
     fixture.detectChanges();
