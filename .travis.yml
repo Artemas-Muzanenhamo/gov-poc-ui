@@ -1,5 +1,9 @@
 language: node_js
-scripts
+sudo: false
+node_js:
+  - 6
+  - 5
+script:
   - npm install codecov -g
 after_success:
   - codecov
