@@ -63,7 +63,12 @@ describe('AddLicenseComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#dob-input').nodeName).toBe('INPUT');
   }));
-  it('should render a COUNTRY field in the Add License Form');
+  it('should render a COUNTRY field in the Add License Form', async( () => {
+    const fixture = TestBed.createComponent(AddLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#country-input').nodeName).toBe('INPUT');
+  }));
   it('should render a DATE OF ISSUE field in the Add License Form');
   it('should render an EXPIRY DATE field in the Add License Form');
   it('should render an AGENCY field in the Add License Form');
