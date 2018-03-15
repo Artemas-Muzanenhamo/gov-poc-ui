@@ -100,6 +100,9 @@ describe('EditLicenseComponent', () => {
     expect(compiled.querySelector('#submit-edit-license').nodeName).toBe('BUTTON');
   }));
   it('should render a VIEW LICENSES button', async( () => {
-
+    const fixture = TestBed.createComponent(EditLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#view-licenses').nodeName).toBe('BUTTON');
   }));
 });
