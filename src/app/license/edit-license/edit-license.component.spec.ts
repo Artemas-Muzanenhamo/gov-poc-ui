@@ -27,7 +27,12 @@ describe('EditLicenseComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should render an Edit License Form');
+  it('should render an Edit License Form', async( () => {
+    const fixture = TestBed.createComponent(EditLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#edit-license-form').nodeName).toBe('FORM');
+  }));
   it('should render an ID field in the Edit License Form');
   it('should render an ID field in the Edit License Form');
   it('should render an ID REFERENCE field in the Edit License Form');
