@@ -75,7 +75,12 @@ describe('EditLicenseComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#date-of-issue').nodeName).toBe('INPUT');
   }));
-  it('should render an EXPIRY DATE field in the Edit License Form');
+  it('should render an EXPIRY DATE field in the Edit License Form', async( () => {
+    const fixture = TestBed.createComponent(EditLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#expiry-date').nodeName).toBe('INPUT');
+  }));
   it('should render an AGENCY field in the Edit License Form');
   it('should render a LICENSE NUMBER field in the Edit License Form');
   it('should render an ADDRESS field in the Edit License Form');
