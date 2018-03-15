@@ -87,6 +87,19 @@ describe('EditLicenseComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#agency').nodeName).toBe('INPUT');
   }));
-  it('should render a LICENSE NUMBER field in the Edit License Form');
-  it('should render an ADDRESS field in the Edit License Form');
+  it('should render an ADDRESS field in the Edit License Form', async( () => {
+    const fixture = TestBed.createComponent(EditLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#address').nodeName).toBe('INPUT');
+  }));
+  it('should render a SUBMIT button', async( () => {
+    const fixture = TestBed.createComponent(EditLicenseComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#submit-edit-license').nodeName).toBe('BUTTON');
+  }));
+  it('should render a VIEW LICENSES button', async( () => {
+
+  }));
 });
