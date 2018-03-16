@@ -99,4 +99,15 @@ describe('LicensesComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#address').nodeName).toBe('TH');
   }));
+  it('should render LICENSE ID in table row');
+  it('should render ID REFERENCE in table row');
+  it('should render SURNAME in table row');
+  it('should render FIRST NAMES in table row');
+  it('should render DATE OF BIRTH in table row');
+  it('should render COUNTRY in table row');
+  it('should render DATE OF ISSUE in table row');
+  it('should render EXPIRY DATE in table row');
+  it('should render AGENCY in table row');
+  it('should render LICENSE NUMBER in table row');
+  it('should render ADDRESS in table row');
 });
