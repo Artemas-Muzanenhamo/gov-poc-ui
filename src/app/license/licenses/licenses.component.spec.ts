@@ -111,7 +111,12 @@ describe('LicensesComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#id-ref-td').nodeName).toBe('TD');
   }));
-  it('should render SURNAME in Table Data');
+  it('should render SURNAME in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#surname-td').nodeName).toBe('TD');
+  }));
   it('should render FIRST NAMES in Table Data');
   it('should render DATE OF BIRTH in Table Data');
   it('should render COUNTRY in Table Data');
