@@ -123,10 +123,30 @@ describe('LicensesComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#first-names-td').nodeName).toBe('TD');
   }));
-  it('should render DATE OF BIRTH in Table Data');
-  it('should render COUNTRY in Table Data');
-  it('should render DATE OF ISSUE in Table Data');
-  it('should render EXPIRY DATE in Table Data');
+  it('should render DATE OF BIRTH in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#date-of-birth-td').nodeName).toBe('TD');
+  }));
+  it('should render COUNTRY in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#country-td').nodeName).toBe('TD');
+  }));
+  it('should render DATE OF ISSUE in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#date-of-issue-td').nodeName).toBe('TD');
+  }));
+  it('should render EXPIRY DATE in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#expiry-date-td').nodeName).toBe('TD');
+  }));
   it('should render AGENCY in Table Data');
   it('should render LICENSE NUMBER in Table Data');
   it('should render ADDRESS in Table Data');
