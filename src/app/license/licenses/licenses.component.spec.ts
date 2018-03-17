@@ -147,7 +147,22 @@ describe('LicensesComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#expiry-date-td').nodeName).toBe('TD');
   }));
-  it('should render AGENCY in Table Data');
-  it('should render LICENSE NUMBER in Table Data');
-  it('should render ADDRESS in Table Data');
+  it('should render AGENCY in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#agency-td').nodeName).toBe('TD');
+  }));
+  it('should render LICENSE NUMBER in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#license-number-td').nodeName).toBe('TD');
+  }));
+  it('should render ADDRESS in Table Data', async(() => {
+    const fixture = TestBed.createComponent(LicensesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#address-td').nodeName).toBe('TD');
+  }));
 });
