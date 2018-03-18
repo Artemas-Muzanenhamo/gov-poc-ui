@@ -9,8 +9,7 @@ import {EditLicenseComponent} from './license/edit-license/edit-license.componen
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
-  { path: 'licenses',
-    component: LicenseComponent,
+  { path: 'licenses', component: LicenseComponent,
     children: [
       { path: '', component: LicensesComponent},
       { path: 'add-license', component: AddLicenseComponent},
