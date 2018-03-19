@@ -6,6 +6,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {AddLicenseComponent} from './license/add-license/add-license.component';
 import {LicensesComponent} from './license/licenses/licenses.component';
 import {EditLicenseComponent} from './license/edit-license/edit-license.component';
+import {IdentitiesComponent} from './identity/identities/identities.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
@@ -16,7 +17,10 @@ const routes: Routes = [
       { path: 'edit-license', component: EditLicenseComponent}
       ]
   },
-  { path: 'identities', component: IdentityComponent}
+  { path: 'identities', component: IdentityComponent,
+    children: [
+      {path: '', component: IdentitiesComponent}
+    ]}
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes, {useHash: true})],

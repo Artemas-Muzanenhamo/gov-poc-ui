@@ -7,6 +7,7 @@ import {WelcomeComponent} from '../welcome/welcome.component';
 import {IdentityComponent} from '../identity/identity.component';
 import {LicensesComponent} from './licenses/licenses.component';
 import {EditLicenseComponent} from './edit-license/edit-license.component';
+import {IdentitiesComponent} from '../identity/identities/identities.component';
 
 describe('LicenseComponent', () => {
   beforeEach(async(() => {
@@ -17,7 +18,8 @@ describe('LicenseComponent', () => {
         WelcomeComponent,
         IdentityComponent,
         LicensesComponent,
-        EditLicenseComponent
+        EditLicenseComponent,
+        IdentitiesComponent
       ],
       imports: [
         AppRoutingModule

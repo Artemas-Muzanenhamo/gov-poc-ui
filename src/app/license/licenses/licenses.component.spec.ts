@@ -7,6 +7,7 @@ import {LicensesComponent} from './licenses.component';
 import {AppRoutingModule} from '../../app-routing.module';
 import {APP_BASE_HREF} from '@angular/common';
 import {EditLicenseComponent} from '../edit-license/edit-license.component';
+import {IdentitiesComponent} from '../../identity/identities/identities.component';
 
 describe('LicensesComponent', () => {
   beforeEach(async(() => {
@@ -17,7 +18,8 @@ describe('LicensesComponent', () => {
         WelcomeComponent,
         IdentityComponent,
         LicensesComponent,
-        EditLicenseComponent
+        EditLicenseComponent,
+        IdentitiesComponent
       ],
       imports: [
         AppRoutingModule

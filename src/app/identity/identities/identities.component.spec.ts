@@ -20,4 +20,5 @@ describe('IdentitiesComponent', () => {
     }).compileComponents();
   }));
   it('should render a table of Identites');
+  it('should render a nav bar');
 });
