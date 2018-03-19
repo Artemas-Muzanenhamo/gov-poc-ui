@@ -3,13 +3,23 @@ import {APP_BASE_HREF} from '@angular/common';
 import {AppRoutingModule} from '../../app-routing.module';
 import {WelcomeComponent} from '../../welcome/welcome.component';
 import {IdentityComponent} from '../identity.component';
+import {IdentitiesComponent} from './identities.component';
+import {LicenseComponent} from '../../license/license.component';
+import {LicensesComponent} from '../../license/licenses/licenses.component';
+import {AddLicenseComponent} from '../../license/add-license/add-license.component';
+import {EditLicenseComponent} from '../../license/edit-license/edit-license.component';
 
-describe('IdentitiesComponent', () => {
+fdescribe('IdentitiesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         WelcomeComponent,
         IdentityComponent,
+        LicenseComponent,
+        LicensesComponent,
+        AddLicenseComponent,
+        EditLicenseComponent,
+        IdentitiesComponent
       ],
       imports: [
         AppRoutingModule
@@ -20,5 +30,10 @@ describe('IdentitiesComponent', () => {
     }).compileComponents();
   }));
   it('should render a table of Identites');
-  it('should render a nav bar');
+  fit('should render a nav bar', async( () => {
+    const fixture = TestBed.createComponent(IdentitiesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#identities-nav').nodeName).toContain('NAV');
+  }));
 });
