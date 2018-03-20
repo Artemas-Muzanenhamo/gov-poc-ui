@@ -42,4 +42,10 @@ fdescribe('IdentitiesComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#add-identity').nodeName).toContain('LI');
   }));
+  fit('should render a list Edit Identity on the nav bar', async( () => {
+    const fixture = TestBed.createComponent(IdentitiesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#edit-identity').nodeName).toContain('LI');
+  }));
 });
