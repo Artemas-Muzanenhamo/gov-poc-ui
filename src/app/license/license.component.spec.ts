@@ -1,4 +1,4 @@
-import {async, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {LicenseComponent} from './license.component';
 import {AddLicenseComponent} from './add-license/add-license.component';
 import {APP_BASE_HREF} from '@angular/common';
@@ -11,6 +11,10 @@ import {IdentitiesComponent} from '../identity/identities/identities.component';
 import {AddIdentityComponent} from '../identity/add-identity/add-identity.component';
 
 describe('LicenseComponent', () => {
+
+  let component: LicenseComponent;
+  let fixture: ComponentFixture<LicenseComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -31,21 +35,21 @@ describe('LicenseComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should render a navigation bar brand', async( () => {
-    const fixture = TestBed.createComponent(LicenseComponent);
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(LicenseComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+  it('should render a navigation bar brand', async( () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('nav#brand-navbar').textContent).toContain('BRAND');
   }));
   it('should render a navigation bar link Add License', async( () => {
-    const fixture = TestBed.createComponent(LicenseComponent);
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Add License');
   }));
   it('should render a navigation bar link Edit License', async( () => {
-    const fixture = TestBed.createComponent(LicenseComponent);
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Edit License');
   }));
