@@ -9,7 +9,7 @@ import {LicensesComponent} from '../../license/licenses/licenses.component';
 import {AddLicenseComponent} from '../../license/add-license/add-license.component';
 import {EditLicenseComponent} from '../../license/edit-license/edit-license.component';
 
-fdescribe('IdentitiesComponent', () => {
+describe('IdentitiesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -29,6 +29,12 @@ fdescribe('IdentitiesComponent', () => {
       ]
     }).compileComponents();
   }));
+  it('should render the brand logo on the nav bar', async( () => {
+    const fixture = TestBed.createComponent(IdentitiesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#brand').nodeName).toContain('LI');
+  }));
   it('should render a table of Identites');
   it('should render a nav bar', async( () => {
     const fixture = TestBed.createComponent(IdentitiesComponent);
@@ -42,7 +48,7 @@ fdescribe('IdentitiesComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#add-identity').nodeName).toContain('LI');
   }));
-  fit('should render a list Edit Identity on the nav bar', async( () => {
+  it('should render a list Edit Identity on the nav bar', async( () => {
     const fixture = TestBed.createComponent(IdentitiesComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
