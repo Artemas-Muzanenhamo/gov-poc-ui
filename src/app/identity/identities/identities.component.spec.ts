@@ -30,10 +30,16 @@ fdescribe('IdentitiesComponent', () => {
     }).compileComponents();
   }));
   it('should render a table of Identites');
-  fit('should render a nav bar', async( () => {
+  it('should render a nav bar', async( () => {
     const fixture = TestBed.createComponent(IdentitiesComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#identities-nav').nodeName).toContain('NAV');
+  }));
+  it('should render a list Add Identity on the nav bar', async( () => {
+    const fixture = TestBed.createComponent(IdentitiesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#add-identity').nodeName).toContain('LI');
   }));
 });
