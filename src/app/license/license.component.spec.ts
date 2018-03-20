@@ -14,6 +14,7 @@ describe('LicenseComponent', () => {
 
   let component: LicenseComponent;
   let fixture: ComponentFixture<LicenseComponent>;
+  let compiled;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -40,17 +41,15 @@ describe('LicenseComponent', () => {
     fixture = TestBed.createComponent(LicenseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
   });
   it('should render a navigation bar brand', async( () => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('nav#brand-navbar').textContent).toContain('BRAND');
   }));
   it('should render a navigation bar link Add License', async( () => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Add License');
   }));
   it('should render a navigation bar link Edit License', async( () => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Edit License');
   }));
 });

@@ -14,6 +14,7 @@ describe('WelcomeComponent', () => {
 
   let component: WelcomeComponent;
   let fixture: ComponentFixture<WelcomeComponent>;
+  let compiled;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -35,31 +36,25 @@ describe('WelcomeComponent', () => {
       ]
     }).compileComponents();
   }));
-
   beforeEach(() => {
     fixture = TestBed.createComponent(WelcomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
   });
-
   it('should render title GOV-POC in a h1 tag', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1#headline').textContent).toContain('GOV-POC');
   }));
   it('should render a button SERVICES', async( () => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button#services-button').textContent).toContain('SERVICES');
   }));
   it('should render a button LICENSE SERVICE', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button#license-service-button').textContent).toContain('LICENSE SERVICE');
   }));
   it('should render a button IDENTITY SERVICE', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button#identity-service-button').textContent).toContain('IDENTITY SERVICE');
   }));
   it('should render modal with title SERVICES in an h1 tag', async( () => {
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1#modal-services-button').textContent).toContain('SERVICES');
   }));
 });
