@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddIdentityComponent } from './add-identity.component';
 
-describe('AddIdentityComponent', () => {
+fdescribe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
