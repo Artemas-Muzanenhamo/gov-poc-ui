@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<div class="uk-container-center gov-font">
+  <div class="uk-width-1-1">
+    <nav id="brand-navbar" class="uk-navbar uk-navbar-brand">
+      <ul class="uk-navbar-nav">
+        <li id="brand" class="uk-active"><a [routerLink]="['/']">BRAND</a></li>
+      </ul>
+    </nav>
+
+    <nav id="identities-nav" class="uk-navbar">
+      <ul class="uk-navbar-nav">
+        <li id="add-identity" class="uk-active"><a [routerLink]="['/identities/add-identity']">Add Identity</a></li>
+        <li id="edit-identity"><a>Edit Identity</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="uk-width-1-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>

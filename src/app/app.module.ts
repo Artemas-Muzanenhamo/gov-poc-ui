@@ -11,6 +11,7 @@ import {AddLicenseComponent} from './license/add-license/add-license.component';
 import {LicensesComponent} from './license/licenses/licenses.component';
 import {EditLicenseComponent} from './license/edit-license/edit-license.component';
 import {IdentitiesComponent} from './identity/identities/identities.component';
+import { AddIdentityComponent } from './identity/add-identity/add-identity.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {IdentitiesComponent} from './identity/identities/identities.component';
     AddLicenseComponent,
     LicensesComponent,
     EditLicenseComponent,
-    IdentitiesComponent
+    IdentitiesComponent,
+    AddIdentityComponent
   ],
   imports: [
     BrowserModule,
