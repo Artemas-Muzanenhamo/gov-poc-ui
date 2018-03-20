@@ -1,4 +1,4 @@
-import {async, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {LicenseComponent} from '../license.component';
 import {AddLicenseComponent} from '../add-license/add-license.component';
 import {WelcomeComponent} from '../../welcome/welcome.component';
@@ -11,6 +11,11 @@ import {IdentitiesComponent} from '../../identity/identities/identities.componen
 import {AddIdentityComponent} from '../../identity/add-identity/add-identity.component';
 
 describe('EditLicenseComponent', () => {
+
+  let component: EditLicenseComponent;
+  let fixture: ComponentFixture<EditLicenseComponent>;
+  let compiled;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -31,82 +36,49 @@ describe('EditLicenseComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should render an Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EditLicenseComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
+    compiled = fixture.debugElement.nativeElement;
+  });
+  it('should render an Edit License Form', async( () => {
     expect(compiled.querySelector('#edit-license-form').nodeName).toBe('FORM');
   }));
   it('should render an ID field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#edit-license-id').nodeName).toBe('INPUT');
   }));
   it('should render an ID REFERENCE field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#edit-id-reference').nodeName).toBe('INPUT');
   }));
   it('should render a SURNAME field in the Edit License Form', () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#edit-surname').nodeName).toBe('INPUT');
   });
   it('should render a FIRST NAME field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#edit-first-name').nodeName).toBe('INPUT');
   }));
   it('should render a DATE OF BIRTH field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#date-of-birth').nodeName).toBe('INPUT');
   }));
   it('should render a COUNTRY field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#country').nodeName).toBe('INPUT');
   }));
   it('should render a DATE OF ISSUE field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#date-of-issue').nodeName).toBe('INPUT');
   }));
   it('should render an EXPIRY DATE field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#expiry-date').nodeName).toBe('INPUT');
   }));
   it('should render an AGENCY field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#agency').nodeName).toBe('INPUT');
   }));
   it('should render an ADDRESS field in the Edit License Form', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#address').nodeName).toBe('INPUT');
   }));
   it('should render a SUBMIT button', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#submit-edit-license').nodeName).toBe('BUTTON');
   }));
   it('should render a VIEW LICENSES button', async( () => {
-    const fixture = TestBed.createComponent(EditLicenseComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#view-licenses').nodeName).toBe('BUTTON');
   }));
 });

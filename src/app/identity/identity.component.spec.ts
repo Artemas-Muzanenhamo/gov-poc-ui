@@ -1,4 +1,4 @@
-import {async, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {APP_BASE_HREF} from '@angular/common';
 import {WelcomeComponent} from '../welcome/welcome.component';
 import {LicenseComponent} from '../license/license.component';
@@ -12,6 +12,11 @@ import {IdentitiesComponent} from './identities/identities.component';
 
 
 describe('IdentityComponent', () => {
+
+  let component: IdentityComponent;
+  let fixture: ComponentFixture<IdentityComponent>;
+  let compiled;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -32,29 +37,23 @@ describe('IdentityComponent', () => {
       ]
     }).compileComponents();
   }));
-  it('should render the brand logo on the nav bar', async( () => {
-    const fixture = TestBed.createComponent(IdentityComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(IdentityComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
+    compiled = fixture.debugElement.nativeElement;
+  });
+  it('should render the brand logo on the nav bar', async( () => {
     expect(compiled.querySelector('#brand').nodeName).toContain('LI');
   }));
   it('should render a table of Identites');
   it('should render a nav bar', async( () => {
-    const fixture = TestBed.createComponent(IdentityComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#identities-nav').nodeName).toContain('NAV');
   }));
   it('should render a list Add Identity on the nav bar', async( () => {
-    const fixture = TestBed.createComponent(IdentityComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#add-identity').nodeName).toContain('LI');
   }));
   it('should render a list Edit Identity on the nav bar', async( () => {
-    const fixture = TestBed.createComponent(IdentityComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#edit-identity').nodeName).toContain('LI');
   }));
 });
