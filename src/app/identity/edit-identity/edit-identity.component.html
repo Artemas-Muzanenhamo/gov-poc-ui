@@ -1,3 +1,45 @@
-<p>
-  edit-identity works!
-</p>
+<div class="uk-container uk-container-center" >
+  <h1 class="title-font">Edit Identity Details</h1>
+  <form id="identity-form" class="uk-form-horizontal add-identity-font">
+    <fieldset class="uk-fieldset">
+
+      <!--<legend class="uk-legend">Legend</legend>-->
+
+      <div class="uk-margin">
+        <label class="uk-form-label">ID Number</label>
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label">Identity Reference</label>
+        <input id="identity-ref" class="uk-input uk-input uk-width-1-3" type="text" placeholder="ID Reference">
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label">First Name</label>
+        <input id="first-names" class="uk-input uk-input uk-width-1-3" type="text" placeholder="First Names">
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label">Surname</label>
+        <input id="surname" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Surname">
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label">Date of Birth</label>
+        <input id="date-of-birth" class="uk-input uk-input uk-width-1-3" type="date" placeholder="Date of Birth">
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label">Village of Origin</label>
+        <input id="village-of-origin" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Village of Origin">
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label">Place of Birth</label>
+        <input id="place-of-birth" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Place of Birth">
+      </div>
+      <div class="uk-margin">
+        <label class="uk-form-label">Date of Issue</label>
+        <input id="date-of-issue" class="uk-input uk-input uk-width-1-3" type="date" placeholder="Date of Issue">
+      </div>
+      <div class="uk-margin">
+        <button type="button" id="submit-identity" value="submit" class="uk-button uk-button-default">Submit</button>
+        <button type="button" id="view-identities" class="uk-button uk-button-default" [routerLink]="'/identities'">View Identities</button>
+      </div>
+    </fieldset>
+  </form>
+</div>

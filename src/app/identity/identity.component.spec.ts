@@ -9,6 +9,7 @@ import {IdentityComponent} from './identity.component';
 import {AddIdentityComponent} from './add-identity/add-identity.component';
 import {AppRoutingModule} from '../app-routing.module';
 import {IdentitiesComponent} from './identities/identities.component';
+import {EditIdentityComponent} from './edit-identity/edit-identity.component';
 
 
 describe('IdentityComponent', () => {
@@ -27,7 +28,8 @@ describe('IdentityComponent', () => {
         EditLicenseComponent,
         AddIdentityComponent,
         IdentityComponent,
-        IdentitiesComponent
+        IdentitiesComponent,
+        EditIdentityComponent
       ],
       imports: [
         AppRoutingModule

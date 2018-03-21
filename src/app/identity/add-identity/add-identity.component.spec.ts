@@ -10,6 +10,7 @@ import {AddLicenseComponent} from '../../license/add-license/add-license.compone
 import {EditLicenseComponent} from '../../license/edit-license/edit-license.component';
 import {IdentitiesComponent} from '../identities/identities.component';
 import {IdentityComponent} from '../identity.component';
+import {EditIdentityComponent} from '../edit-identity/edit-identity.component';
 
 describe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
@@ -27,7 +28,8 @@ describe('AddIdentityComponent', () => {
         AddLicenseComponent,
         EditLicenseComponent,
         IdentitiesComponent,
-        IdentityComponent
+        IdentityComponent,
+        EditIdentityComponent
 
       ],
       imports: [

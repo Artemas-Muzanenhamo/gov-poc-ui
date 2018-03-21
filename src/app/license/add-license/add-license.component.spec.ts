@@ -9,6 +9,7 @@ import {AppRoutingModule} from '../../app-routing.module';
 import {APP_BASE_HREF} from '@angular/common';
 import {IdentitiesComponent} from '../../identity/identities/identities.component';
 import {AddIdentityComponent} from '../../identity/add-identity/add-identity.component';
+import {EditIdentityComponent} from '../../identity/edit-identity/edit-identity.component';
 
 describe('AddLicenseComponent', () => {
 
@@ -26,7 +27,8 @@ describe('AddLicenseComponent', () => {
         EditLicenseComponent,
         AddLicenseComponent,
         IdentitiesComponent,
-        AddIdentityComponent
+        AddIdentityComponent,
+        EditIdentityComponent
       ],
       imports: [
         AppRoutingModule
