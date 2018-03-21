@@ -48,7 +48,6 @@ describe('IdentityComponent', () => {
   it('should render the brand logo on the nav bar', async( () => {
     expect(compiled.querySelector('#brand').nodeName).toContain('LI');
   }));
-  it('should render a table of Identites');
   it('should render a nav bar', async( () => {
     expect(compiled.querySelector('#identities-nav').nodeName).toContain('NAV');
   }));
