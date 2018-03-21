@@ -8,6 +8,7 @@ import {LicensesComponent} from './license/licenses/licenses.component';
 import {EditLicenseComponent} from './license/edit-license/edit-license.component';
 import {IdentitiesComponent} from './identity/identities/identities.component';
 import {AddIdentityComponent} from './identity/add-identity/add-identity.component';
+import {EditIdentityComponent} from './identity/edit-identity/edit-identity.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'identities', component: IdentityComponent,
     children: [
       { path: '', component: IdentitiesComponent},
-      { path: 'add-identity', component: AddIdentityComponent}
+      { path: 'add-identity', component: AddIdentityComponent},
+      { path: 'edit-identity', component: EditIdentityComponent}
     ]}
 ];
 @NgModule({

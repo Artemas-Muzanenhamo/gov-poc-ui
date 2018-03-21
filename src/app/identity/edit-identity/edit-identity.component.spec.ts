@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddIdentityComponent } from './add-identity.component';
-import {APP_BASE_HREF} from '@angular/common';
-import {AppRoutingModule} from '../../app-routing.module';
+import { EditIdentityComponent } from './edit-identity.component';
+import {AddIdentityComponent} from '../add-identity/add-identity.component';
 import {WelcomeComponent} from '../../welcome/welcome.component';
 import {LicenseComponent} from '../../license/license.component';
 import {LicensesComponent} from '../../license/licenses/licenses.component';
@@ -10,16 +9,18 @@ import {AddLicenseComponent} from '../../license/add-license/add-license.compone
 import {EditLicenseComponent} from '../../license/edit-license/edit-license.component';
 import {IdentitiesComponent} from '../identities/identities.component';
 import {IdentityComponent} from '../identity.component';
-import {EditIdentityComponent} from '../edit-identity/edit-identity.component';
+import {AppRoutingModule} from '../../app-routing.module';
+import {APP_BASE_HREF} from '@angular/common';
 
-describe('AddIdentityComponent', () => {
-  let component: AddIdentityComponent;
-  let fixture: ComponentFixture<AddIdentityComponent>;
+describe('EditIdentityComponent', () => {
+  let component: EditIdentityComponent;
+  let fixture: ComponentFixture<EditIdentityComponent>;
   let compiled;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
+        EditIdentityComponent,
         AddIdentityComponent,
         WelcomeComponent,
         AddIdentityComponent,
@@ -28,8 +29,7 @@ describe('AddIdentityComponent', () => {
         AddLicenseComponent,
         EditLicenseComponent,
         IdentitiesComponent,
-        IdentityComponent,
-        EditIdentityComponent
+        IdentityComponent
 
       ],
       imports: [
@@ -43,7 +43,7 @@ describe('AddIdentityComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddIdentityComponent);
+    fixture = TestBed.createComponent(EditIdentityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
@@ -52,12 +52,15 @@ describe('AddIdentityComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
   it('should render Add Identity form', async( () => {
     expect(compiled.querySelector('#identity-form').nodeName).toContain('FORM');
   }));
-  it('should render ID Number as input', async( () => {
-    expect(compiled.querySelector('#identity-number').nodeName).toContain('INPUT');
-  }));
+  // it('should render ID Number as input', async( () => {
+  //   expect(compiled.querySelector('#identity-number').nodeName).toContain('INPUT');SHOULD DISPLAY THE IDENTITY NUMBER
+  // }));
   it('should render ID Reference as input', async( () => {
     expect(compiled.querySelector('#identity-ref').nodeName).toContain('INPUT');
   }));
