@@ -11,7 +11,7 @@ import {EditIdentityComponent} from '../edit-identity/edit-identity.component';
 import {AppRoutingModule} from '../../app-routing.module';
 import {APP_BASE_HREF} from '@angular/common';
 
-fdescribe('IdentitiesComponent', () => {
+describe('IdentitiesComponent', () => {
 
   let component: IdentitiesComponent;
   let fixture: ComponentFixture<IdentitiesComponent>;
@@ -46,5 +46,53 @@ fdescribe('IdentitiesComponent', () => {
   });
   it('should render a table of Identities', async( () => {
     expect(compiled.querySelector('#identities-table').nodeName).toContain('TABLE');
+  }));
+  it('should render IDENTITY in the table header', async( () => {
+    expect(compiled.querySelector('#identity-id').nodeName).toBe('TH');
+  }));
+  it('should render IDENTITY REF in the table header', async( () => {
+    expect(compiled.querySelector('#identity-ref').nodeName).toBe('TH');
+  }));
+  it('should render NAME in the table header', async( () => {
+    expect(compiled.querySelector('#first-name').nodeName).toBe('TH');
+  }));
+  it('should render SURNAME in the table header', async( () => {
+    expect(compiled.querySelector('#surname').nodeName).toBe('TH');
+  }));
+  it('should render DATE OF BIRTH in the table header', async( () => {
+    expect(compiled.querySelector('#date-of-birth').nodeName).toBe('TH');
+  }));
+  it('should render VILLAGE OF ORIGIN in the table header', async( () => {
+    expect(compiled.querySelector('#village-of-origin').nodeName).toBe('TH');
+  }));
+  it('should render PLACE OF BIRTH in the table header', async( () => {
+    expect(compiled.querySelector('#place-of-birth').nodeName).toBe('TH');
+  }));
+  it('should render DATE OF ISSUE in the table header', async( () => {
+    expect(compiled.querySelector('#date-of-issue').nodeName).toBe('TH');
+  }));
+  it('should render IDENTITY in the table data', async( () => {
+    expect(compiled.querySelector('#identity-id-td').nodeName).toBe('TD');
+  }));
+  it('should render IDENTITY REF in the table data', async( () => {
+    expect(compiled.querySelector('#identity-ref-td').nodeName).toBe('TD');
+  }));
+  it('should render NAME in the table data', async( () => {
+    expect(compiled.querySelector('#first-name-td').nodeName).toBe('TD');
+  }));
+  it('should render SURNAME in the table data', async( () => {
+    expect(compiled.querySelector('#surname-td').nodeName).toBe('TD');
+  }));
+  it('should render DATE OF BIRTH in the table data', async( () => {
+    expect(compiled.querySelector('#date-of-birth-td').nodeName).toBe('TD');
+  }));
+  it('should render VILLAGE OF ORIGIN in the table data', async( () => {
+    expect(compiled.querySelector('#village-of-origin-td').nodeName).toBe('TD');
+  }));
+  it('should render PLACE OF BIRTH in the table data', async( () => {
+    expect(compiled.querySelector('#place-of-birth-td').nodeName).toBe('TD');
+  }));
+  it('should render DATE OF ISSUE in the table data', async( () => {
+    expect(compiled.querySelector('#date-of-issue-td').nodeName).toBe('TD');
   }));
 });

@@ -2,17 +2,31 @@
   <table id="identities-table" class="uk-table uk-table-striped uk-table-condensed uk-table-middle">
     <thead class="uk-contrast">
     <tr>
-      <th></th>
+      <th id="identity-id">IDENTITY</th>
+      <th id="identity-ref">IDENTITY REF</th>
+      <th id="first-name">FIRST NAME</th>
+      <th id="surname">SURNAME</th>
+      <th id="date-of-birth">DATE OF BIRTH</th>
+      <th id="village-of-origin">VILLAGE OF ORIGIN</th>
+      <th id="place-of-birth">PLACE OF BIRTH</th>
+      <th id="date-of-issue">DATE OF ISSUE</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td></td>
+      <td id="identity-id-td">{{identity.id}}</td>
+      <td id="identity-ref-td">{{identity.identityRef}}</td>
+      <td id="first-name-td">{{identity.name}}</td>
+      <td id="surname-td">{{identity.surname}}</td>
+      <td id="date-of-birth-td">{{identity.birthDate}}</td>
+      <td id="village-of-origin-td">{{identity.villageOfOrigin}}</td>
+      <td id="place-of-birth-td">{{identity.placeOfBirth}}</td>
+      <td id="date-of-issue-td">{{identity.dateOfIssue}}</td>
     </tr>
     </tbody>
     <tfoot>
     <tr>
-      <td></td>
+      <td>Pictopage (c)</td>
     </tr>
     </tfoot>
   </table>
