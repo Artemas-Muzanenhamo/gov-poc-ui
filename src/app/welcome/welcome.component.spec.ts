@@ -1,15 +1,7 @@
 import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 import { WelcomeComponent } from './welcome.component';
-import {AppRoutingModule} from '../app-routing.module';
-import {LicenseComponent} from '../license/license.component';
-import {IdentityComponent} from '../identity/identity.component';
-import {APP_BASE_HREF} from '@angular/common';
-import {AddLicenseComponent} from '../license/add-license/add-license.component';
-import {LicensesComponent} from '../license/licenses/licenses.component';
-import {EditLicenseComponent} from '../license/edit-license/edit-license.component';
-import {IdentitiesComponent} from '../identity/identities/identities.component';
-import {AddIdentityComponent} from '../identity/add-identity/add-identity.component';
-import {EditIdentityComponent} from '../identity/edit-identity/edit-identity.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import {AppModule} from '../app.module';
 
 describe('WelcomeComponent', () => {
 
@@ -19,23 +11,7 @@ describe('WelcomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        WelcomeComponent,
-        LicenseComponent,
-        IdentityComponent,
-        AddLicenseComponent,
-        LicensesComponent,
-        EditLicenseComponent,
-        IdentitiesComponent,
-        AddIdentityComponent,
-        EditIdentityComponent
-      ],
-      imports: [
-        AppRoutingModule
-      ],
-      providers: [
-        { provide: APP_BASE_HREF, useValue : '/'}
-      ]
+      imports: [ AppModule, RouterTestingModule ]
     }).compileComponents();
   }));
   beforeEach(() => {
