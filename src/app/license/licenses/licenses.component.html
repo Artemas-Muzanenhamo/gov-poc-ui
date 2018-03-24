@@ -13,6 +13,7 @@
       <th id="agency">AGENCY</th>
       <th id="license-number">LICENSE NUMBER</th>
       <th id="address">ADDRESS</th>
+      <th id="edit-license"></th>
     </tr>
     </thead>
     <tbody>
@@ -28,6 +29,11 @@
       <td id="agency-td">{{license.agency}}</td>
       <td id="license-number-td">{{license.licenseNumber}}</td>
       <td id="address-td">{{license.address}}</td>
+      <td>
+        <a [routerLink]="['/licenses/edit-license']">
+          <button id="edit-license-button" class="uk-button uk-button-primary">Edit</button>
+        </a>
+      </td>
     </tr>
     </tbody>
     <tfoot>

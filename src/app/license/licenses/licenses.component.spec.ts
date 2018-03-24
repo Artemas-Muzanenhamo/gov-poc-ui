@@ -89,4 +89,7 @@ describe('LicensesComponent', () => {
   it('should render ADDRESS in Table Data', async(() => {
     expect(compiled.querySelector('#address-td').nodeName).toBe('TD');
   }));
+  it('should render EDIT button', async( () => {
+    expect(compiled.querySelector('#edit-license-button').nodeName).toBe('BUTTON');
+  }));
 });
