@@ -27,7 +27,4 @@ describe('LicenseComponent', () => {
   it('should render a navigation bar link Add License', async( () => {
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Add License');
   }));
-  it('should render a navigation bar link Edit License', async( () => {
-    expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Edit License');
-  }));
 });
