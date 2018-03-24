@@ -30,7 +30,4 @@ describe('IdentityComponent', () => {
   it('should render a list Add Identity on the nav bar', async( () => {
     expect(compiled.querySelector('#add-identity').nodeName).toContain('LI');
   }));
-  it('should render a list Edit Identity on the nav bar', async( () => {
-    expect(compiled.querySelector('#edit-identity').nodeName).toContain('LI');
-  }));
 });

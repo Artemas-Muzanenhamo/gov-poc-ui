@@ -71,4 +71,7 @@ describe('IdentitiesComponent', () => {
   it('should render DATE OF ISSUE in the table data', async( () => {
     expect(compiled.querySelector('#date-of-issue-td').nodeName).toBe('TD');
   }));
+  it('should render EDIT button', async( () => {
+    expect(compiled.querySelector('#edit-identity-button').nodeName).toBe('BUTTON');
+  }));
 });

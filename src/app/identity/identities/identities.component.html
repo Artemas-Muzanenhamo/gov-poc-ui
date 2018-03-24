@@ -10,6 +10,7 @@
       <th id="village-of-origin">VILLAGE OF ORIGIN</th>
       <th id="place-of-birth">PLACE OF BIRTH</th>
       <th id="date-of-issue">DATE OF ISSUE</th>
+      <th id="edit-identity"></th>
     </tr>
     </thead>
     <tbody>
@@ -22,6 +23,11 @@
       <td id="village-of-origin-td">{{identity.villageOfOrigin}}</td>
       <td id="place-of-birth-td">{{identity.placeOfBirth}}</td>
       <td id="date-of-issue-td">{{identity.dateOfIssue}}</td>
+      <td>
+        <a [routerLink]="['/identities/edit-identity']">
+          <button id="edit-identity-button" class="uk-button uk-button-primary">EDIT</button>
+        </a>
+      </td>
     </tr>
     </tbody>
     <tfoot>
