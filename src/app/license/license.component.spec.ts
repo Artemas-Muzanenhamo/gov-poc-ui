@@ -22,7 +22,7 @@ describe('LicenseComponent', () => {
     compiled = fixture.debugElement.nativeElement;
   });
   it('should render a navigation bar brand', async( () => {
-    expect(compiled.querySelector('nav#brand-navbar').textContent).toContain('BRAND');
+    expect(compiled.querySelector('nav#brand-navbar').nodeName).toContain('NAV');
   }));
   it('should render a navigation bar link Add License', async( () => {
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Add License');
