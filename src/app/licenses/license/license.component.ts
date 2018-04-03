@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {License} from '../license';
+import {License} from './license';
 
 @Component({
-  templateUrl: './licenses.component.html',
-  styleUrls: ['./licenses.component.css']
+  templateUrl: './license.component.html',
+  styleUrls: ['./license.component.css']
 })
 export class LicensesComponent {
   license: License = {

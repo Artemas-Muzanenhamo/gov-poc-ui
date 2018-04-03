@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LicenseComponent} from './license/license.component';
+import {LicenseComponent} from './licenses/licenses.component';
 import {IdentityComponent} from './identity/identity.component';
 import {WelcomeComponent} from './welcome/welcome.component';
-import {AddLicenseComponent} from './license/add-license/add-license.component';
-import {LicensesComponent} from './license/licenses/licenses.component';
-import {EditLicenseComponent} from './license/edit-license/edit-license.component';
+import {AddLicenseComponent} from './licenses/add-license/add-license.component';
+import {LicensesComponent} from './licenses/license/license.component';
+import {EditLicenseComponent} from './licenses/edit-license/edit-license.component';
 import {IdentitiesComponent} from './identity/identities/identities.component';
 import {AddIdentityComponent} from './identity/add-identity/add-identity.component';
 import {EditIdentityComponent} from './identity/edit-identity/edit-identity.component';

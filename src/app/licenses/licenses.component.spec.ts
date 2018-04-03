@@ -1,5 +1,5 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {LicenseComponent} from './license.component';
+import {LicenseComponent} from './licenses.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../app.module';
 

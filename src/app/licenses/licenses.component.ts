@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  templateUrl: './license.component.html',
-  styleUrls: ['./license.component.css']
+  templateUrl: './licenses.component.html',
+  styleUrls: ['./licenses.component.css']
 })
 export class LicenseComponent { }
