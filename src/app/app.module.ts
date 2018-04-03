@@ -16,9 +16,9 @@ import {IdentityModule} from './identities/identities.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     LicenseModule,
-    IdentityModule
+    IdentityModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [
