@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {Identity} from '../identity';
+import {Identity} from './identity';
 
 @Component({
   selector: 'app-identities',
-  templateUrl: './identities.component.html'
+  templateUrl: './identity.component.html'
 })
 export class IdentitiesComponent {
   identity: Identity = {

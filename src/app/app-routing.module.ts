@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LicenseComponent} from './licenses/licenses.component';
-import {IdentityComponent} from './identity/identity.component';
+import {IdentityComponent} from './identities/identities.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {AddLicenseComponent} from './licenses/add-license/add-license.component';
 import {LicensesComponent} from './licenses/license/license.component';
 import {EditLicenseComponent} from './licenses/edit-license/edit-license.component';
-import {IdentitiesComponent} from './identity/identities/identities.component';
-import {AddIdentityComponent} from './identity/add-identity/add-identity.component';
-import {EditIdentityComponent} from './identity/edit-identity/edit-identity.component';
+import {IdentitiesComponent} from './identities/identity/identity.component';
+import {AddIdentityComponent} from './identities/add-identity/add-identity.component';
+import {EditIdentityComponent} from './identities/edit-identity/edit-identity.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},

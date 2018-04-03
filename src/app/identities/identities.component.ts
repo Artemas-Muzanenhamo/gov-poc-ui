@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  templateUrl: './identity.component.html',
-  styleUrls: ['./identity.component.css']
+  templateUrl: './identities.component.html',
+  styleUrls: ['./identities.component.css']
 })
 export class IdentityComponent {}
