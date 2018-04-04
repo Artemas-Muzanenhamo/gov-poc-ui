@@ -17,7 +17,6 @@ describe('LicensesComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LicensesComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
   });
   it('should render a table to display license details', async( () => {

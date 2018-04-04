@@ -1,23 +1,24 @@
-import {Component} from '@angular/core';
-import {License} from './license';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {LicenseService} from './license.service';
 
 @Component({
   templateUrl: './license.component.html',
   styleUrls: ['./license.component.css']
 })
-export class LicensesComponent {
-  license: License = {
-    id: '1234',
-    identityRef: 'MUZAN1234',
-    surname: 'Muzanenhamo',
-    firstNames: 'Artemas',
-    dateOfBirth: '28/03/1990',
-    country: 'Zimbabwe',
-    dateOfIssue: '01/01/2018',
-    expiryDate: '01/01/2050',
-    agency: 'DVLA',
-    licenseNumber: 'MUZAN2803901234',
-    signatureImage: '01.PNG',
-    address: '5 radstone court'
-  };
+export class LicensesComponent implements OnInit {
+
+  pageTitle = 'License Detail';
+
+  constructor(private licenseService: LicenseService,
+              private route: ActivatedRoute) {}
+
+  getLicense(id: number) {
+    this.licenseService.getLicense(id);
+  }
+
+  ngOnInit(): void {
+    const id = +this.route.snapshot.params['id'];
+    this.getLicense(id);
+  }
 }

@@ -4,6 +4,7 @@ import {LicensesComponent} from './license/license.component';
 import {AddLicenseComponent} from './add-license/add-license.component';
 import {LicenseComponent} from './licenses.component';
 import {RouterModule} from '@angular/router';
+import {LicenseService} from './license/license.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import {RouterModule} from '@angular/router';
       { path: 'license', component: LicenseComponent}
     ])
   ],
-  providers: []
+  providers: [LicenseService]
 })
 export class LicenseModule {}
