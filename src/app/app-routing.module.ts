@@ -14,11 +14,12 @@ const routes: Routes = [
   { path: '', component: WelcomeComponent},
   { path: 'licenses', component: LicenseComponent,
     children: [
-      { path: '', component: LicensesComponent},
-      { path: 'add-license', component: AddLicenseComponent},
-      { path: 'edit-license', component: EditLicenseComponent}
+      { path: '', component: LicensesComponent}
       ]
   },
+  { path: 'licenses/0/edit', component: AddLicenseComponent},
+  { path: 'licenses/:id', component: LicenseComponent },
+  { path: 'licenses/:id/edit', component: EditLicenseComponent },
   { path: 'identities', component: IdentityComponent,
     children: [
       { path: '', component: IdentitiesComponent},

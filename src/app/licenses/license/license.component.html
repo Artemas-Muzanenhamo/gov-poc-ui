@@ -30,7 +30,7 @@
       <td id="license-number-td">{{license.licenseNumber}}</td>
       <td id="address-td">{{license.address}}</td>
       <td>
-        <a [routerLink]="['/licenses/edit-license']">
+        <a [routerLink]="['/licenses', license.id, 'edit']">
           <button id="edit-license-button" class="uk-button uk-button-primary">Edit</button>
         </a>
       </td>
