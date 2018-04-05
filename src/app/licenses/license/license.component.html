@@ -3,34 +3,22 @@
     <thead class="uk-contrast">
     <tr>
       <th id="license-id">ID</th>
-      <th id="id-reference">ID REF</th>
-      <th id="surname">SURNAME</th>
       <th id="first-name">FIRST NAMES</th>
+      <th id="surname">SURNAME</th>
       <th id="date-of-birth">D.O.B</th>
       <th id="country">COUNTRY</th>
-      <th id="date-of-issue">DATE OF ISSUE</th>
-      <th id="expiry-date">EXPIRY DATE</th>
-      <th id="agency">AGENCY</th>
-      <th id="license-number">LICENSE NUMBER</th>
-      <th id="address">ADDRESS</th>
       <th id="edit-license"></th>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td id="license-id-td">{{license.id}}</td>
-      <td id="id-ref-td">{{license.identityRef}}</td>
+      <td id="first-names-td"><a [routerLink]="['/licenses', license.id]">{{license.firstNames}}</a></td>
       <td id="surname-td">{{license.surname}}</td>
-      <td id="first-names-td">{{license.firstNames}}</td>
       <td id="date-of-birth-td">{{license.dateOfBirth}}</td>
       <td id="country-td">{{license.country}}</td>
-      <td id="date-of-issue-td">{{license.dateOfIssue}}</td>
-      <td id="expiry-date-td">{{license.expiryDate}}</td>
-      <td id="agency-td">{{license.agency}}</td>
-      <td id="license-number-td">{{license.licenseNumber}}</td>
-      <td id="address-td">{{license.address}}</td>
       <td>
-        <a [routerLink]="['/licenses/edit-license']">
+        <a [routerLink]="['/licenses', license.id, 'edit']">
           <button id="edit-license-button" class="uk-button uk-button-primary">Edit</button>
         </a>
       </td>
