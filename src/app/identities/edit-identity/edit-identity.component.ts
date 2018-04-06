@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditIdentityComponent implements OnInit {
 
+  pageTitle = 'Edit Identity Details';
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
