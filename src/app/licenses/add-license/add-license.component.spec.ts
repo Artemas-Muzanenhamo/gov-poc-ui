@@ -56,7 +56,7 @@ describe('AddLicenseComponent', () => {
   it('should render a SUBMIT button', async( () => {
     expect(compiled.querySelector('button#submit-license').textContent).toContain('Submit');
   }));
-  it('should render a VIEW LICENSES button', async( () => {
-    expect(compiled.querySelector('button#view-licenses').textContent).toContain('View Licenses');
+  it('should render a BACK button', async( () => {
+    expect(compiled.querySelector('button#view-licenses').textContent).toContain('Back');
   }));
 });

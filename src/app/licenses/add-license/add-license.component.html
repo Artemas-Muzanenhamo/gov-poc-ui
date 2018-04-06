@@ -1,5 +1,5 @@
 <div class="uk-container uk-container-center" xmlns="http://www.w3.org/1999/html">
-  <h1 class="title-font">Add License Details</h1>
+  <h1 class="title-font">{{pageTitle}}</h1>
   <form id="add-license-form" class="uk-form-horizontal add-license-font">
     <fieldset class="uk-fieldset">
 
@@ -51,8 +51,8 @@
         <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
       </div>
       <div class="uk-margin">
-        <button type="button" id="submit-license" value="submit" class="uk-button uk-button-default">Submit</button>
-        <button type="button" id="view-licenses" class="uk-button uk-button-default" [routerLink]="'/licenses'">View Licenses</button>
+        <button type="button" id="submit-license" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
+        <button type="button" id="view-licenses" class="uk-button uk-button-default" [routerLink]="'/licenses'">{{backButton}}</button>
       </div>
     </fieldset>
   </form>
