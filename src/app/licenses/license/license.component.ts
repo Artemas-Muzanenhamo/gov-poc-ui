@@ -15,7 +15,7 @@ export class LicensesComponent implements OnInit {
   constructor(private licenseService: LicenseService,
               private route: ActivatedRoute) {}
 
-   getLicense (id: number) {
+  getLicense (id: number) {
     return this.licenseService.getLicense(id);
   }
 

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LicenseDetailComponent } from './license-detail.component';
+import {AppModule} from '../../app.module';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('LicenseDetailComponent', () => {
   let component: LicenseDetailComponent;
@@ -8,7 +10,7 @@ describe('LicenseDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LicenseDetailComponent ]
+      imports: [ AppModule, RouterTestingModule ]
     })
     .compileComponents();
   }));
@@ -16,7 +18,6 @@ describe('LicenseDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LicenseDetailComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
