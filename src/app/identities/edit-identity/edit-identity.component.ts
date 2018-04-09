@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditIdentityComponent implements OnInit {
 
+  pageTitle = 'Edit Identity Details';
+  submitButton = 'Submit';
+  viewIdentities = 'View Identities';
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

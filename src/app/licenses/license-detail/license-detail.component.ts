@@ -1,15 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {LicenseService} from '../license/license.service';
 import {ActivatedRoute} from '@angular/router';
-import {LicenseService} from './license.service';
-import {License} from './license';
+import {License} from '../license/license';
 
 @Component({
-  templateUrl: './license.component.html',
-  styleUrls: ['./license.component.css']
+  templateUrl: './license-detail.component.html',
+  styleUrls: ['./license-detail.component.css']
 })
-export class LicensesComponent implements OnInit {
+export class LicenseDetailComponent implements OnInit {
 
-  pageTitle = 'License Detail';
   license: License;
 
   constructor(private licenseService: LicenseService,
@@ -19,8 +18,9 @@ export class LicensesComponent implements OnInit {
     return this.licenseService.getLicense(id);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     const id = +this.route.snapshot.params['id'];
     this.license = this.getLicense(id);
   }
+
 }

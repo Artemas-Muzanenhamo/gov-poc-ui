@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddIdentityComponent implements OnInit {
 
+  pageTitle = 'Add Identity Details';
+  submitButton = 'submit';
+  viewIdentities = 'View Identities';
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -9,17 +9,18 @@ import {EditLicenseComponent} from './licenses/edit-license/edit-license.compone
 import {IdentitiesComponent} from './identities/identity/identity.component';
 import {AddIdentityComponent} from './identities/add-identity/add-identity.component';
 import {EditIdentityComponent} from './identities/edit-identity/edit-identity.component';
+import {LicenseDetailComponent} from './licenses/license-detail/license-detail.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
   { path: 'licenses', component: LicenseComponent,
     children: [
-      { path: '', component: LicensesComponent}
+      { path: '', component: LicensesComponent},
+      { path: '0/edit', component: AddLicenseComponent},
+      { path: ':id', component: LicenseDetailComponent },
+      { path: ':id/edit', component: EditLicenseComponent }
       ]
   },
-  { path: 'licenses/0/edit', component: AddLicenseComponent},
-  { path: 'licenses/:id', component: LicenseComponent },
-  { path: 'licenses/:id/edit', component: EditLicenseComponent },
   { path: 'identities', component: IdentityComponent,
     children: [
       { path: '', component: IdentitiesComponent},

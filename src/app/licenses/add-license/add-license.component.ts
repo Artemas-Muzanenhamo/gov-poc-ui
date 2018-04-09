@@ -4,4 +4,8 @@ import {Component} from '@angular/core';
   templateUrl: './add-license.component.html',
   styleUrls: ['./add-license.component.css']
 })
-export class AddLicenseComponent { }
+export class AddLicenseComponent {
+  pageTitle = 'Add License Details';
+  submitButton = 'Submit';
+  backButton = 'Back';
+}
