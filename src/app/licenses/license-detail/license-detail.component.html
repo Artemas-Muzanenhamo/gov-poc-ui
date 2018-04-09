@@ -3,15 +3,21 @@
     <div class="uk-panel-teaser uk-panel-box-secondary uk-text-center">
 
       <div class="uk-panel-header">
-        <h1>xxxx's License Details</h1>
+        <h1>{{license.firstNames}} {{license.surname}}'s License Details</h1>
       </div>
 
       <div class="uk-panel-body">
         <div class="card">
-          <img src="img.jpg" alt="John" style="width:100%">
-          <h1>{{license.firstNames}}</h1>
-          <p class="title">CEO & Founder, Example</p>
-          <p>Harvard University</p>
+          <img src="img.jpg" alt="Image here" style="width:100%">
+          <div>
+            <label class="uk-form-label">Identity Reference</label> <p>{{license.identityRef}}</p>
+            <label class="uk-form-label">Date of Birth</label> <p>{{license.dateOfBirth}}</p>
+            <label class="uk-form-label">Country</label> <p>{{license.country}}</p>
+            <label class="uk-form-label">Date of Issue</label> <p>{{license.dateOfIssue}}</p>
+            <label class="uk-form-label">Date of Expiry</label> <p>{{license.expiryDate}}</p>
+            <label class="uk-form-label">Agency</label> <p>{{license.agency}}</p>
+            <label class="uk-form-label">License Number</label> <p>{{license.licenseNumber}}</p>
+          </div>
         </div>
       </div>
 
