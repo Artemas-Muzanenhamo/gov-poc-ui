@@ -7,6 +7,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {LicenseModule} from './licenses/licenses.module';
 import {IdentityModule} from './identities/identities.module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {IdentityModule} from './identities/identities.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     LicenseModule,
     IdentityModule,
     AppRoutingModule

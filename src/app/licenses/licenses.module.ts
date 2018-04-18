@@ -4,8 +4,9 @@ import {LicensesComponent} from './license/license.component';
 import {AddLicenseComponent} from './add-license/add-license.component';
 import {LicenseComponent} from './licenses.component';
 import {RouterModule} from '@angular/router';
-import {LicenseService} from './license/license.service';
+import {LicenseService} from './licenses.service';
 import { LicenseDetailComponent } from './license-detail/license-detail.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LicenseDetailComponent } from './license-detail/license-detail.componen
   imports: [
     RouterModule.forChild([
       { path: 'license', component: LicenseComponent}
-    ])
+    ]),
+    CommonModule
   ],
   providers: [LicenseService]
 })
