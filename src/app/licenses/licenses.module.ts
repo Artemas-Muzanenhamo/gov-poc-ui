@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {LicenseService} from './licenses.service';
 import { LicenseDetailComponent } from './license-detail/license-detail.component';
 import {CommonModule} from '@angular/common';
+import {LicenseResolver} from './license-detail/license-resolver.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,9 @@ import {CommonModule} from '@angular/common';
     ]),
     CommonModule
   ],
-  providers: [LicenseService]
+  providers: [
+    LicenseService,
+    LicenseResolver
+  ]
 })
 export class LicenseModule {}

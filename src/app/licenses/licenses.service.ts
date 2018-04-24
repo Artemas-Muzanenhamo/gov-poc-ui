@@ -67,5 +67,11 @@ export class LicenseService {
     return this.licenses;
   }
 
+  getLicense(id: Number) {
+    if (id) {
+      return this.licenses.find(license => parseInt(license.id, 10) === id);
+    }
+  }
+
   constructor() { }
 }
