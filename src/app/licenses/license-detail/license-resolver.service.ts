@@ -10,7 +10,7 @@ export class LicenseResolver implements Resolve<License> {
   constructor(private licenseService: LicenseService, router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): License | Observable<License> {
-    let id = +route.params['id'];
+    const id = +route.params['id'];
     return this.licenseService.getLicense(id);
   }
 }
