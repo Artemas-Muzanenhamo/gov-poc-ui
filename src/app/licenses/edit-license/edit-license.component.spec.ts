@@ -17,7 +17,6 @@ describe('EditLicenseComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EditLicenseComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
   });
   it('should render an Edit License Form', async( () => {

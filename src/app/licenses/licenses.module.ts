@@ -8,6 +8,8 @@ import {LicenseService} from './licenses.service';
 import { LicenseDetailComponent } from './license-detail/license-detail.component';
 import {CommonModule} from '@angular/common';
 import {LicenseResolver} from './license-detail/license-resolver.service';
+import {License} from './license/license';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,11 @@ import {LicenseResolver} from './license-detail/license-resolver.service';
     RouterModule.forChild([
       { path: 'license', component: LicenseComponent}
     ]),
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [
+    License,
     LicenseService,
     LicenseResolver
   ]
