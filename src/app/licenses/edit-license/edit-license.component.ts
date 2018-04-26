@@ -11,9 +11,9 @@ export class EditLicenseComponent implements OnInit {
   pageTitle = 'Edit License Details';
   submitButton = 'Submit';
   backButton = 'Back';
+  license: License;
 
-  constructor(private license: License,
-              private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit(): void {
