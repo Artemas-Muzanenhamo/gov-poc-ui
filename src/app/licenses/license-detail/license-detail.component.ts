@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {LicenseService} from '../license/license.service';
 import {ActivatedRoute} from '@angular/router';
 import {License} from '../license/license';
 
@@ -9,18 +8,13 @@ import {License} from '../license/license';
 })
 export class LicenseDetailComponent implements OnInit {
 
+  licenses: License[];
   license: License;
 
-  constructor(private licenseService: LicenseService,
-              private route: ActivatedRoute) {}
-
-  getLicense (id: number) {
-    return this.licenseService.getLicense(id);
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    const id = +this.route.snapshot.params['id'];
-    this.license = this.getLicense(id);
+    this.license = this.route.snapshot.data['license'];
   }
 
 }

@@ -10,15 +10,20 @@
         <div class="card">
           <img src="img.jpg" alt="Image here" style="width:100%">
           <div>
-            <label class="uk-form-label">Identity Reference</label> <p>{{license.identityRef}}</p>
-            <label class="uk-form-label">Date of Birth</label> <p>{{license.dateOfBirth}}</p>
-            <label class="uk-form-label">Country</label> <p>{{license.country}}</p>
-            <label class="uk-form-label">Date of Issue</label> <p>{{license.dateOfIssue}}</p>
-            <label class="uk-form-label">Date of Expiry</label> <p>{{license.expiryDate}}</p>
-            <label class="uk-form-label">Agency</label> <p>{{license.agency}}</p>
-            <label class="uk-form-label">License Number</label> <p>{{license.licenseNumber}}</p>
+            <label class="uk-form-label uk-form-success">Identity Reference</label> <p>{{license.identityRef}}</p>
+            <label class="uk-form-label uk-form-success">Date of Birth</label> <p>{{license.dateOfBirth}}</p>
+            <label class="uk-form-label uk-form-success">Country</label> <p>{{license.country}}</p>
+            <label class="uk-form-label uk-form-success">Date of Issue</label> <p>{{license.dateOfIssue}}</p>
+            <label class="uk-form-label uk-form-success">Date of Expiry</label> <p>{{license.expiryDate}}</p>
+            <label class="uk-form-label uk-form-success">Agency</label> <p>{{license.agency}}</p>
+            <label class="uk-form-label uk-form-success">License Number</label> <p>{{license.licenseNumber}}</p>
           </div>
         </div>
+      </div>
+
+      <div class="uk-form-controls">
+        <button class="uk-button uk-button-primary" [routerLink]="'/licenses'">Back</button>
+        <button class="uk-button uk-button-primary" [routerLink]="['/licenses', license.id, 'edit']">Edit</button>
       </div>
 
     </div>

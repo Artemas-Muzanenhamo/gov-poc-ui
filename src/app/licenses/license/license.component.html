@@ -1,28 +1,28 @@
 <div>
   <table id="licenses-table" class="uk-table uk-table-striped uk-table-condensed uk-table-middle">
     <thead class="uk-contrast">
-    <tr>
-      <th id="license-id">ID</th>
-      <th id="first-name">FIRST NAMES</th>
-      <th id="surname">SURNAME</th>
-      <th id="date-of-birth">D.O.B</th>
-      <th id="country">COUNTRY</th>
-      <th id="edit-license"></th>
-    </tr>
+      <tr>
+        <th id="license-id">ID</th>
+        <th id="first-name">FIRST NAMES</th>
+        <th id="surname">SURNAME</th>
+        <th id="date-of-birth">D.O.B</th>
+        <th id="country">COUNTRY</th>
+        <th id="edit-license"></th>
+      </tr>
     </thead>
     <tbody>
-    <tr>
-      <td id="license-id-td">{{license.id}}</td>
-      <td id="first-names-td"><a [routerLink]="['/licenses', license.id]">{{license.firstNames}}</a></td>
-      <td id="surname-td">{{license.surname}}</td>
-      <td id="date-of-birth-td">{{license.dateOfBirth}}</td>
-      <td id="country-td">{{license.country}}</td>
-      <td>
-        <a [routerLink]="['/licenses', license.id, 'edit']">
-          <button id="edit-license-button" class="uk-button uk-button-primary">Edit</button>
-        </a>
-      </td>
-    </tr>
+      <tr *ngFor="let license of licenses">
+        <td id="license-id-td"><a [routerLink]="['/licenses', license.id]">{{license.id}}</a></td>
+        <td id="first-names-td">{{license.firstNames}}</td>
+        <td id="surname-td">{{license.surname}}</td>
+        <td id="date-of-birth-td">{{license.dateOfBirth}}</td>
+        <td id="country-td">{{license.country}}</td>
+        <td>
+          <a [routerLink]="['/licenses', license.id, 'edit']">
+            <button id="edit-license-button" class="uk-button uk-button-primary">Edit</button>
+          </a>
+        </td>
+      </tr>
     </tbody>
     <tfoot>
       <tr>
