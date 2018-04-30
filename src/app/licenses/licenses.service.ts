@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {License} from './license/license';
+import moment = require('moment');
 
 @Injectable()
 export class LicenseService {
@@ -10,7 +11,7 @@ export class LicenseService {
     identityRef: 'MUZAN1234',
     surname: 'Muzanenhamo',
     firstNames: 'Artemas',
-    dateOfBirth: '28/03/1990',
+    dateOfBirth: moment('28/03/1990', 'DD/MM/YYYY', true).toDate(),
     country: 'Zimbabwe',
     dateOfIssue: '01/01/2018',
     expiryDate: '01/01/2050',
@@ -24,7 +25,7 @@ export class LicenseService {
       identityRef: 'SMITH7744',
       surname: 'Smith',
       firstNames: 'John',
-      dateOfBirth: '17/04/1989',
+      dateOfBirth: moment('17/04/1989', 'DD/MM/YYYY', true).toDate(),
       country: 'United Kingdom',
       dateOfIssue: '01/01/2018',
       expiryDate: '01/01/2050',
@@ -38,7 +39,7 @@ export class LicenseService {
       identityRef: 'TERREL2334',
       surname: 'Terrel',
       firstNames: 'Michael',
-      dateOfBirth: '01/02/1958',
+      dateOfBirth: moment('01/02/1958', 'DD/MM/YYYY', true).toDate(),
       country: 'Ghana',
       dateOfIssue: '01/01/2018',
       expiryDate: '01/01/2050',
@@ -52,7 +53,7 @@ export class LicenseService {
       identityRef: 'WOODS9054',
       surname: 'Woods',
       firstNames: 'Tiger',
-      dateOfBirth: '14/10/1980',
+      dateOfBirth: moment('14/10/1980', 'DD/MM/YYYY', true).toDate(),
       country: 'U.S.A',
       dateOfIssue: '01/01/2018',
       expiryDate: '01/01/2050',
