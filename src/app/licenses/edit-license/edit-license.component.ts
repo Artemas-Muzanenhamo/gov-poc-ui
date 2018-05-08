@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {License} from '../license/license';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   templateUrl: './edit-license.component.html',
@@ -13,8 +13,7 @@ export class EditLicenseComponent implements OnInit {
   backButton = 'Back';
   license: License;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.onLicenseRetrieved(this.route.snapshot.data['license']);
@@ -24,10 +23,9 @@ export class EditLicenseComponent implements OnInit {
     this.license = license;
 
     if (Number(this.license.id) === 0) {
-      this.pageTitle = 'Add License';
+      this.pageTitle = 'Add License Details';
     } else {
       this.pageTitle = 'Edit License Details';
     }
   }
-
 }

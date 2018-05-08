@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {License} from './license/license';
-import moment = require('moment');
+import * as moment from 'moment';
 
 @Injectable()
 export class LicenseService {
