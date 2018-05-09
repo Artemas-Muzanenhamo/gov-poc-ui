@@ -2,22 +2,33 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {EditLicenseComponent} from './edit-license.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
+import {ActivatedRoute} from '@angular/router';
 
 describe('EditLicenseComponent', () => {
 
   let component: EditLicenseComponent;
   let fixture: ComponentFixture<EditLicenseComponent>;
   let compiled;
+  let editLicense;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+          AppModule, RouterTestingModule
+      ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {snapshot: {children: [{url: ['your/path/here']}]}}
+        }
+      ]
     }).compileComponents();
   }));
   beforeEach(() => {
     fixture = TestBed.createComponent(EditLicenseComponent);
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
+    editLicense = new EditLicenseComponent(new ActivatedRoute);
   });
   it('should render an Edit License Form', async( () => {
     expect(compiled.querySelector('#edit-license-form').nodeName).toBe('FORM');
@@ -57,5 +68,14 @@ describe('EditLicenseComponent', () => {
   }));
   it('should render a VIEW LICENSES button', async( () => {
     expect(compiled.querySelector('#view-licenses').nodeName).toBe('BUTTON');
+  }));
+  it('should return a pageTitle value of Edit License Details', async( () => {
+    expect(editLicense.pageTitle).toBe('Edit License Details');
+  }));
+  it('should return a submitButton value of Submit', async( () => {
+    expect(editLicense.submitButton).toBe('Submit');
+  }));
+  it('should return a backButton value of Back', async( () => {
+    expect(editLicense.backButton).toBe('Back');
   }));
 });

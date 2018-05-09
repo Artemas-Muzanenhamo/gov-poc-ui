@@ -1,5 +1,5 @@
 <div>
-  <table id="licenses-table" class="uk-table uk-table-striped uk-table-condensed uk-table-middle">
+  <table id="licenses-table" class="uk-table uk-table-condensed uk-table-hover uk-table-middle">
     <thead class="uk-contrast">
       <tr>
         <th id="license-id">ID</th>
@@ -10,7 +10,7 @@
         <th id="edit-license"></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="uk-contrast">
       <tr *ngFor="let license of licenses">
         <td id="license-id-td"><a [routerLink]="['/licenses', license.id]">{{license.id}}</a></td>
         <td id="first-names-td">{{license.firstNames}}</td>
