@@ -3,7 +3,7 @@ export class License {
   identityRef: string;
   surname: string;
   firstNames: string;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   country: string;
   dateOfIssue: string;
   expiryDate: string;
