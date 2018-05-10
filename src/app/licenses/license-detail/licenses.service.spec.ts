@@ -1,17 +1,8 @@
 import {LicenseService} from '../licenses.service';
 import {async, TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
-import {AppModule} from '../../app.module';
 
-fdescribe('LicenseServiceComponent', () => {
+describe('LicenseServiceComponent', () => {
   let licenses: LicenseService;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule]
-    })
-      .compileComponents();
-  }));
   beforeEach(() => {
     TestBed.configureTestingModule({ providers: [LicenseService] });
     licenses = TestBed.get(LicenseService);
