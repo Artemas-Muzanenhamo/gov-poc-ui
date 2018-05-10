@@ -12,15 +12,14 @@ export class LicensesComponent implements OnInit {
   pageTitle = 'License Detail';
   licenses: License[];
 
-  constructor(private licenseService: LicenseService,
-              private route: ActivatedRoute) {}
+  constructor(private licenseService: LicenseService) {}
 
   getLicenses () {
     return this.licenseService.getLicenses();
   }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.params['id'];
+    // const id = +this.route.snapshot.params['id'];
     this.licenses = this.getLicenses();
   }
 }

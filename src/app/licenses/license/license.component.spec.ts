@@ -40,22 +40,37 @@ describe('LicensesComponent', () => {
   it('should render a COUNTRY field in the License Table Header', async( () => {
     expect(compiled.querySelector('#country').nodeName).toBe('TH');
   }));
-  // it('should render LICENSE ID in Table Data', async(() => {
-  //   expect(compiled.querySelector('#license-id-td').nodeName).toBe('TD');
-  // }));
-  // it('should render SURNAME in Table Data', async(() => {
-  //   expect(compiled.querySelector('#surname-td').nodeName).toBe('TD');
-  // }));
-  // it('should render FIRST NAMES in Table Data', async( () => {
-  //   expect(compiled.querySelector('#first-names-td').nodeName).toBe('TD');
-  // }));
-  // it('should render DATE OF BIRTH in Table Data', async(() => {
-  //   expect(compiled.querySelector('#date-of-birth-td').nodeName).toBe('TD');
-  // }));
-  // it('should render COUNTRY in Table Data', async(() => {
-  //   expect(compiled.querySelector('#country-td').nodeName).toBe('TD');
-  // }));
-  // it('should render EDIT button', async( () => {
-  //   expect(compiled.querySelector('#edit-license-button').nodeName).toBe('BUTTON');
-  // }));
+  it('should render LICENSE ID in Table Data', async(() => {
+    compiled = fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#license-id-td').nodeName).toBe('TD');
+  }));
+  it('should render SURNAME in Table Data', async(() => {
+    compiled = fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#surname-td').nodeName).toBe('TD');
+  }));
+  it('should render FIRST NAMES in Table Data', async( () => {
+    compiled = fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#first-names-td').nodeName).toBe('TD');
+  }));
+  it('should render DATE OF BIRTH in Table Data', async(() => {
+    compiled = fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#date-of-birth-td').nodeName).toBe('TD');
+  }));
+  it('should render COUNTRY in Table Data', async(() => {
+    compiled = fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#country-td').nodeName).toBe('TD');
+  }));
+  it('should render EDIT button', async( () => {
+    compiled = fixture.detectChanges();
+    compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#edit-license-button').nodeName).toBe('BUTTON');
+  }));
+  it('should return the total number of Licenses', async( () => {
+    expect(component.getLicenses().length).toBe(4);
+  }));
 });
