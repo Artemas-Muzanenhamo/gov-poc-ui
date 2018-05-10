@@ -21,11 +21,5 @@ export class EditLicenseComponent implements OnInit {
 
   onLicenseRetrieved(license: License): void {
     this.license = license;
-
-    if (Number(this.license.id) === 0) {
-      this.pageTitle = 'Add License Details';
-    } else {
-      this.pageTitle = 'Edit License Details';
-    }
   }
 }
