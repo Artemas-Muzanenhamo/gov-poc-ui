@@ -1,4 +1,4 @@
-import {LicenseService} from '../licenses.service';
+import {LicenseService} from './licenses.service';
 import {async, TestBed} from '@angular/core/testing';
 
 describe('LicenseServiceComponent', () => {
