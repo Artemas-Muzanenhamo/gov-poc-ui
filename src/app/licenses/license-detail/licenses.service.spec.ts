@@ -13,7 +13,7 @@ describe('LicenseServiceComponent', () => {
   it('should return a license given an ID', async( () => {
     expect(licenseService.getLicense(1234).firstNames).toBe('Artemas');
   }));
-  fit('should not return a license given a non existent ID', async( () => {
+  it('should not return a license given a non existent ID', async( () => {
     expect(licenseService.getLicense(1)).toBeFalsy();
   }));
 });
