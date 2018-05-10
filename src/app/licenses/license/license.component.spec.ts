@@ -41,6 +41,7 @@ describe('LicensesComponent', () => {
     expect(compiled.querySelector('#country').nodeName).toBe('TH');
   }));
   it('should render LICENSE ID in Table Data', async(() => {
+    // Need this to wait for all changes to be loaded and then assert.
     compiled = fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#license-id-td').nodeName).toBe('TD');
