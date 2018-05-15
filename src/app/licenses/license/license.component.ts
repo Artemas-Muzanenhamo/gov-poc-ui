@@ -11,6 +11,7 @@ export class LicensesComponent implements OnInit {
 
   pageTitle = 'License Detail';
   licenses: License[];
+  editButton = 'Edit';
 
   constructor(private licenseService: LicenseService) {}
 

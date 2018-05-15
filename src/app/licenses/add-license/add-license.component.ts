@@ -8,4 +8,5 @@ export class AddLicenseComponent {
   pageTitle = 'Add License Details';
   submitButton = 'Submit';
   backButton = 'Back';
+  uploadButton = 'Upload';
 }

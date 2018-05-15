@@ -10,6 +10,8 @@ export class LicenseDetailComponent implements OnInit {
 
   licenses: License[];
   license: License;
+  backButton = 'Back';
+  editButton = 'Edit';
 
   constructor(private route: ActivatedRoute) {}
 

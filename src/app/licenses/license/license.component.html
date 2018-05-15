@@ -19,7 +19,7 @@
         <td id="country-td">{{license.country}}</td>
         <td>
           <a [routerLink]="['/licenses', license.id, 'edit']">
-            <button id="edit-license-button" class="uk-button uk-button-primary">Edit</button>
+            <button id="edit-license-button" class="uk-button uk-button-primary">{{editButton}}</button>
           </a>
         </td>
       </tr>

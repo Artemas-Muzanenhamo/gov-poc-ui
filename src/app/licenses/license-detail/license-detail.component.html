@@ -22,8 +22,8 @@
       </div>
 
       <div class="uk-form-controls">
-        <button class="uk-button uk-button-primary" [routerLink]="'/licenses'">Back</button>
-        <button class="uk-button uk-button-primary" [routerLink]="['/licenses', license.id, 'edit']">Edit</button>
+        <button class="uk-button uk-button-primary" [routerLink]="'/licenses'">{{backButton}}</button>
+        <button class="uk-button uk-button-primary" [routerLink]="['/licenses', license.id, 'edit']">{{editButton}}</button>
       </div>
 
     </div>

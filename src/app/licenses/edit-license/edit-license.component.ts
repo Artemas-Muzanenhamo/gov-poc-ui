@@ -12,6 +12,7 @@ export class EditLicenseComponent implements OnInit {
   submitButton = 'Submit';
   backButton = 'Back';
   license: License;
+  uploadButton = 'Upload';
 
   constructor(private route: ActivatedRoute) { }
 
