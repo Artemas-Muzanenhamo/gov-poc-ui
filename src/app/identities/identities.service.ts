@@ -50,9 +50,9 @@ export class IdentityService {
     return this.identities;
   }
 
-  getIdentity(id: Number) {
-    if (id) {
-      return this.identities.find(identity => parseInt(identity.id, 10) === id);
+  getIdentity(idRef: Number) {
+    if (idRef) {
+      return this.identities.find(identity => parseInt(identity.identityRef, 10) === idRef);
     }
   }
 }
