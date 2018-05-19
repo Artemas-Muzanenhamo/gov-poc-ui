@@ -29,8 +29,8 @@ const routes: Routes = [
   { path: 'identities', component: IdentityComponent,
     children: [
       { path: '', component: IdentitiesComponent},
-      { path: 'add-identity', component: AddIdentityComponent},
-      { path: 'edit-identity', component: EditIdentityComponent}
+      { path: 'add', component: AddIdentityComponent},
+      { path: 'edit', component: EditIdentityComponent}
     ]}
 ];
 @NgModule({
