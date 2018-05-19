@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'identities', component: IdentityComponent,
     children: [
       { path: '', component: IdentitiesComponent},
-      { path: 'add', component: AddIdentityComponent},
+      { path: '0/edit', component: AddIdentityComponent},
       { path: 'edit', component: EditIdentityComponent}
     ]}
 ];
