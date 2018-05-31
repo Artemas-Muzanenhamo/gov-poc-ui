@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Identity} from './identity';
-import {IdentityService} from "../identities.service";
+import {IdentityService} from '../identities.service';
 
 @Component({
   selector: 'app-identities',
