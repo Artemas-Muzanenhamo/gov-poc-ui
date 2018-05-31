@@ -1,11 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Identity} from './identity';
+import {IdentityService} from "../identities.service";
 
 @Component({
   selector: 'app-identities',
   templateUrl: './identity.component.html'
 })
-export class IdentitiesComponent {
+export class IdentitiesComponent implements OnInit {
+
+  identities: Identity[];
+
   identity: Identity = {
     id: 'MUZAn09876',
     identityRef: '6678944',
@@ -16,4 +20,14 @@ export class IdentitiesComponent {
     placeOfBirth: 'Zimbabwe',
     dateOfIssue: '01/01/2018'
   };
+
+  constructor(private identityService: IdentityService) {}
+
+  getIdentities() {
+    return this.identityService.getIdentities();
+  }
+
+  ngOnInit(): void {
+    this.identities = this.getIdentities();
+  }
 }

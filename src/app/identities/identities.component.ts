@@ -4,4 +4,6 @@ import {Component} from '@angular/core';
   templateUrl: './identities.component.html',
   styleUrls: ['./identities.component.css']
 })
-export class IdentityComponent {}
+export class IdentityComponent {
+  addIdentity = 'Add Identity';
+}
