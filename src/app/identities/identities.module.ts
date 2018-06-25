@@ -5,6 +5,8 @@ import {IdentitiesComponent} from './identity/identity.component';
 import {IdentityComponent} from './identities.component';
 import {RouterModule} from '@angular/router';
 import {IdentityService} from './identities.service';
+import {Identity} from './identity/identity';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,11 @@ import {IdentityService} from './identities.service';
   imports: [
     RouterModule.forChild([
       {path: 'identity', component: IdentityComponent}
-    ])
+    ]),
+    CommonModule
   ],
   providers: [
+    Identity,
     IdentityService
   ]
 })
