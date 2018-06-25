@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
 import {LicenseService} from '../licenses.service';
 import {License} from './license';
 

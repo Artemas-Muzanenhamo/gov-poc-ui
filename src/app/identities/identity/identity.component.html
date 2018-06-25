@@ -1,28 +1,28 @@
 <div>
-  <table id="identities-table" class="uk-table uk-table-striped uk-table-condensed uk-table-middle">
+  <table id="identities-table" class="uk-table uk-table-condensed uk-table-hover uk-table-middle">
     <thead class="uk-contrast">
-    <tr>
-      <th id="identity-id">IDENTITY</th>
-      <th id="identity-ref">IDENTITY REF</th>
-      <th id="first-name">FIRST NAME</th>
-      <th id="surname">SURNAME</th>
-      <th id="date-of-birth">DATE OF BIRTH</th>
-      <th id="edit-identity"></th>
-    </tr>
+      <tr>
+        <th id="identity-id">IDENTITY</th>
+        <th id="identity-ref">IDENTITY REF</th>
+        <th id="first-name">FIRST NAME</th>
+        <th id="surname">SURNAME</th>
+        <th id="date-of-birth">DATE OF BIRTH</th>
+        <th id="edit-identity"></th>
+      </tr>
     </thead>
-    <tbody>
-    <tr>
-      <td id="identity-id-td">{{identity.id}}</td>
-      <td id="identity-ref-td">{{identity.identityRef}}</td>
-      <td id="first-name-td">{{identity.name}}</td>
-      <td id="surname-td">{{identity.surname}}</td>
-      <td id="date-of-birth-td">{{identity.birthDate}}</td>
-      <td>
-        <a [routerLink]="['/identities/edit']">
-          <button id="edit-identity-button" class="uk-button uk-button-primary">EDIT</button>
-        </a>
-      </td>
-    </tr>
+    <tbody class="uk-contrast">
+      <tr *ngFor="let identity of identities">
+        <td id="identity-id-td">{{identity.id}}</td>
+        <td id="identity-ref-td">{{identity.identityRef}}</td>
+        <td id="first-name-td">{{identity.name}}</td>
+        <td id="surname-td">{{identity.surname}}</td>
+        <td id="date-of-birth-td">{{identity.birthDate}}</td>
+        <td>
+          <a [routerLink]="['/identities/edit']">
+            <button id="edit-identity-button" class="uk-button uk-button-primary">EDIT</button>
+          </a>
+        </td>
+      </tr>
     </tbody>
     <tfoot>
     <tr>
