@@ -18,8 +18,8 @@ export class IdentityService {
     {
       id: 'MUZAn09876',
       identityRef: '6678944',
-      name: 'Artemas',
-      surname: 'Muzanenhamo',
+      name: 'Takudzwa',
+      surname: 'Matse',
       birthDate: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
       villageOfOrigin: 'Mashayamombe',
       placeOfBirth: 'Zimbabwe',
@@ -28,8 +28,8 @@ export class IdentityService {
     {
       id: 'MUZAn09876',
       identityRef: '6678944',
-      name: 'Artemas',
-      surname: 'Muzanenhamo',
+      name: 'Thomas',
+      surname: 'Smith',
       birthDate: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
       villageOfOrigin: 'Mashayamombe',
       placeOfBirth: 'Zimbabwe',
@@ -38,8 +38,8 @@ export class IdentityService {
     {
       id: 'MUZAn09876',
       identityRef: '6678944',
-      name: 'Artemas',
-      surname: 'Muzanenhamo',
+      name: 'Giannis',
+      surname: 'Marks',
       birthDate: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
       villageOfOrigin: 'Mashayamombe',
       placeOfBirth: 'Zimbabwe',
