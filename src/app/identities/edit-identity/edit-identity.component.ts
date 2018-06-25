@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Identity} from '../identity/identity';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-edit-identity',
@@ -9,10 +11,17 @@ export class EditIdentityComponent implements OnInit {
 
   pageTitle = 'Edit Identity Details';
   submitButton = 'Submit';
-  viewIdentities = 'View Identities';
+  viewIdentities = 'Back';
+  identity: Identity;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.onIdentityRetrieved(this.route.snapshot.data['identity']);
+  }
+
+  onIdentityRetrieved(identity: Identity): void {
+    this.identity = identity;
+  }
 
 }

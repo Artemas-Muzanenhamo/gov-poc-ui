@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {IdentityService} from './identities.service';
 import {Identity} from './identity/identity';
 import {CommonModule} from '@angular/common';
+import {IdentityResolver} from './identity-resolver.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {CommonModule} from '@angular/common';
   ],
   providers: [
     Identity,
-    IdentityService
+    IdentityService,
+    IdentityResolver
   ]
 })
 export class IdentityModule { }

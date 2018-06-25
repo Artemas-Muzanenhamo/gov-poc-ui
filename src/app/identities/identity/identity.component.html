@@ -18,7 +18,7 @@
         <td id="surname-td">{{identity.surname}}</td>
         <td id="date-of-birth-td">{{identity.birthDate}}</td>
         <td>
-          <a [routerLink]="['/identities/edit']">
+          <a [routerLink]="['/identities', identity.id, 'edit']">
             <button id="edit-identity-button" class="uk-button uk-button-primary">EDIT</button>
           </a>
         </td>
