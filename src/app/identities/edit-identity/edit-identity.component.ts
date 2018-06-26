@@ -11,12 +11,12 @@ export class EditIdentityComponent implements OnInit {
 
   pageTitle = 'Edit Identity Details';
   submitButton = 'Submit';
-  viewIdentities = 'Back';
+  backButton = 'Back';
   identity: Identity;
 
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.onIdentityRetrieved(this.route.snapshot.data['identity']);
   }
 
