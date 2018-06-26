@@ -7,6 +7,8 @@ import {RouterModule} from '@angular/router';
 import {IdentityService} from './identities.service';
 import {Identity} from './identity/identity';
 import {CommonModule} from '@angular/common';
+import {IdentityResolver} from './identity-resolver.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import {CommonModule} from '@angular/common';
     RouterModule.forChild([
       {path: 'identity', component: IdentityComponent}
     ]),
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [
     Identity,
-    IdentityService
+    IdentityService,
+    IdentityResolver
   ]
 })
 export class IdentityModule { }
