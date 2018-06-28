@@ -10,17 +10,6 @@ export class IdentitiesComponent implements OnInit {
 
   identities: Identity[];
 
-  // identity: Identity = {
-  //   id: 'MUZAn09876',
-  //   identityRef: '6678944',
-  //   name: 'Artemas',
-  //   surname: 'Muzanenhamo',
-  //   birthDate: '28/03/1990',
-  //   villageOfOrigin: 'Mashayamombe',
-  //   placeOfBirth: 'Zimbabwe',
-  //   dateOfIssue: '01/01/2018'
-  // };
-
   constructor(private identityService: IdentityService) {}
 
   getIdentities() {
