@@ -8,7 +8,7 @@ export class AddIdentityComponent implements OnInit {
 
   pageTitle = 'Add Identity Details';
   submitButton = 'submit';
-  viewIdentities = 'View Identities';
+  backButton = 'Back';
 
   constructor() { }
 
