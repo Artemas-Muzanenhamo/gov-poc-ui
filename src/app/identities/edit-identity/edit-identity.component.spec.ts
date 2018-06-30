@@ -23,9 +23,9 @@ describe('EditIdentityComponent', () => {
   it('should render Add Identity form', async( () => {
     expect(compiled.querySelector('#identity-form').nodeName).toContain('FORM');
   }));
-  // it('should render ID Number as input', async( () => {
-  //   expect(compiled.querySelector('#identity-number').nodeName).toContain('INPUT');SHOULD DISPLAY THE IDENTITY NUMBER
-  // }));
+  it('should render ID Number as input', async( () => {
+    expect(compiled.querySelector('#identity-number').nodeName).toContain('INPUT');
+  }));
   it('should render ID Reference as input', async( () => {
     expect(compiled.querySelector('#identity-ref').nodeName).toContain('INPUT');
   }));
