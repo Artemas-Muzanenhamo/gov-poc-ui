@@ -5,9 +5,9 @@ import {AddLicenseComponent} from './add-license/add-license.component';
 import {LicenseComponent} from './licenses.component';
 import {RouterModule} from '@angular/router';
 import {LicenseService} from './licenses.service';
-import { LicenseDetailComponent } from './license-detail/license-detail.component';
+import {LicenseDetailComponent} from './license-detail/license-detail.component';
 import {CommonModule} from '@angular/common';
-import {LicenseResolver} from './license-detail/license-resolver.service';
+import {LicenseResolver} from './license-resolver.service';
 import {License} from './license/license';
 import {FormsModule} from '@angular/forms';
 
@@ -21,7 +21,7 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     RouterModule.forChild([
-      { path: 'license', component: LicenseComponent}
+      {path: 'license', component: LicenseComponent}
     ]),
     CommonModule,
     FormsModule
@@ -32,4 +32,5 @@ import {FormsModule} from '@angular/forms';
     LicenseResolver
   ]
 })
-export class LicenseModule {}
+export class LicenseModule {
+}

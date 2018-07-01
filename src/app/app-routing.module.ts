@@ -10,7 +10,7 @@ import {IdentitiesComponent} from './identities/identity/identity.component';
 import {AddIdentityComponent} from './identities/add-identity/add-identity.component';
 import {EditIdentityComponent} from './identities/edit-identity/edit-identity.component';
 import {LicenseDetailComponent} from './licenses/license-detail/license-detail.component';
-import {LicenseResolver} from './licenses/license-detail/license-resolver.service';
+import {LicenseResolver} from './licenses/license-resolver.service';
 import {IdentityResolver} from './identities/identity-resolver.service';
 
 const routes: Routes = [
