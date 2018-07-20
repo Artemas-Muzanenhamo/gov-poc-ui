@@ -1,7 +1,7 @@
 import {IdentityService} from './identities.service';
 import {async, TestBed} from '@angular/core/testing';
 
-describe('IdentityServiceComponent', () => {
+fdescribe('IdentityServiceComponent', () => {
   let identityService: IdentityService;
   beforeEach(() => {
     TestBed.configureTestingModule({ providers: [IdentityService] });
@@ -15,5 +15,8 @@ describe('IdentityServiceComponent', () => {
   }));
   it('should not return an identity given a non existent ID number', async( () => {
     expect(identityService.getIdentity(1)).toBeFalsy();
+  }));
+  fit('should not return anything if nothing is passed', async( () => {
+    expect(identityService.getIdentity(null)).toBeFalsy();
   }));
 });
