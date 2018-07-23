@@ -3,7 +3,7 @@ import { WelcomeComponent } from './welcome.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../app.module';
 
-fdescribe('WelcomeComponent', () => {
+describe('WelcomeComponent', () => {
 
   let component: WelcomeComponent;
   let fixture: ComponentFixture<WelcomeComponent>;
@@ -38,10 +38,13 @@ fdescribe('WelcomeComponent', () => {
   it('should return GOV-POC as value for TITLE placeholder', async() => {
     expect(component.title).toBe('GOV-POC');
   });
+  it('should return SERVICES as value for SERVICES placeholder', async() => {
+    expect(component.services).toBe('SERVICES');
+  });
   it('should return LICENSE SERVICE as value for LICENSESERVICE placeholder', async() => {
     expect(component.licenseService).toBe('LICENSE SERVICE');
   });
-  it('should return SERVICES as value for SERVICES placeholder', async() => {
-    expect(component.services).toBe('SERVICES');
+  it('should return IDENTITY SERVICE as value for IDENTITYSERVICE placeholder', async() => {
+    expect(component.identityService).toBe('IDENTITY SERVICE');
   });
 });
