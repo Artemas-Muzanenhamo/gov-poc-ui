@@ -22,7 +22,7 @@ describe('WelcomeComponent', () => {
   });
   it('should render title GOV-POC in a h1 tag', async(() => {
     expect(compiled.querySelector('h1#headline').textContent).toContain('GOV-POC');
-  }))
+  }));
   it('should render a button SERVICES', async( () => {
     expect(compiled.querySelector('button#services-button').textContent).toContain('SERVICES');
   }));
