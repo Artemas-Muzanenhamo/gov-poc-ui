@@ -3,7 +3,7 @@ import { WelcomeComponent } from './welcome.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../app.module';
 
-describe('WelcomeComponent', () => {
+fdescribe('WelcomeComponent', () => {
 
   let component: WelcomeComponent;
   let fixture: ComponentFixture<WelcomeComponent>;
@@ -22,7 +22,7 @@ describe('WelcomeComponent', () => {
   });
   it('should render title GOV-POC in a h1 tag', async(() => {
     expect(compiled.querySelector('h1#headline').textContent).toContain('GOV-POC');
-  }));
+  }))
   it('should render a button SERVICES', async( () => {
     expect(compiled.querySelector('button#services-button').textContent).toContain('SERVICES');
   }));
@@ -35,4 +35,13 @@ describe('WelcomeComponent', () => {
   it('should render modal with title SERVICES in an h1 tag', async( () => {
     expect(compiled.querySelector('h1#modal-services-button').textContent).toContain('SERVICES');
   }));
+  it('should return GOV-POC as value for TITLE placeholder', async() => {
+    expect(component.title).toBe('GOV-POC');
+  });
+  it('should return LICENSE SERVICE as value for LICENSESERVICE placeholder', async() => {
+    expect(component.licenseService).toBe('LICENSE SERVICE');
+  });
+  it('should return SERVICES as value for SERVICES placeholder', async() => {
+    expect(component.services).toBe('SERVICES');
+  });
 });
