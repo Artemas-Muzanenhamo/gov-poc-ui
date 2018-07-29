@@ -3,7 +3,7 @@ import {LicenseComponent} from './licenses.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../app.module';
 
-describe('LicenseComponent', () => {
+fdescribe('LicenseComponent', () => {
 
   let component: LicenseComponent;
   let fixture: ComponentFixture<LicenseComponent>;
@@ -26,5 +26,8 @@ describe('LicenseComponent', () => {
   }));
   it('should render a navigation bar link Add License', async( () => {
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Add License');
+  }));
+  fit('should return Add License from variable addLicense', async( () => {
+    expect(component.addLicense).toBe('Add License');
   }));
 });
