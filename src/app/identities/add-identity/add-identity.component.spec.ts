@@ -21,10 +21,6 @@ describe('AddIdentityComponent', () => {
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
   });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
   it('should render Add Identity form', async( () => {
     expect(compiled.querySelector('#identity-form').nodeName).toContain('FORM');
   }));

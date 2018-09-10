@@ -35,4 +35,16 @@ describe('WelcomeComponent', () => {
   it('should render modal with title SERVICES in an h1 tag', async( () => {
     expect(compiled.querySelector('h1#modal-services-button').textContent).toContain('SERVICES');
   }));
+  it('should return GOV-POC as value for TITLE placeholder', async() => {
+    expect(component.title).toBe('GOV-POC');
+  });
+  it('should return SERVICES as value for SERVICES placeholder', async() => {
+    expect(component.services).toBe('SERVICES');
+  });
+  it('should return LICENSE SERVICE as value for LICENSESERVICE placeholder', async() => {
+    expect(component.licenseService).toBe('LICENSE SERVICE');
+  });
+  it('should return IDENTITY SERVICE as value for IDENTITYSERVICE placeholder', async() => {
+    expect(component.identityService).toBe('IDENTITY SERVICE');
+  });
 });

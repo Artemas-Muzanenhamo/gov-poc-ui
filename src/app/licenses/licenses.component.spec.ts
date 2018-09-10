@@ -27,4 +27,7 @@ describe('LicenseComponent', () => {
   it('should render a navigation bar link Add License', async( () => {
     expect(compiled.querySelector('nav#license-navbar').textContent).toContain('Add License');
   }));
+  it('should return Add License from variable addLicense', async( () => {
+    expect(component.addLicense).toBe('Add License');
+  }));
 });

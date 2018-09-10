@@ -20,7 +20,10 @@ describe('LicenseDetailComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should return BACK from variable backButton', async() => {
+    expect(component.backButton).toBe('Back');
+  });
+  it('should return EDIT from variable editButton', async() => {
+    expect(component.editButton).toBe('Edit');
   });
 });
