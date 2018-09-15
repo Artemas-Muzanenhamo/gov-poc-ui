@@ -15,6 +15,9 @@ jobs:
 #            - ~/.cache/yarn
 #            - ./node_modules
       - run:
+          name: angular install
+          command: npm install @angular/cli
+      - run:
           name: angular-build
           command: ng build --prod --aot --no-progress
       - run:
