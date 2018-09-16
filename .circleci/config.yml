@@ -34,4 +34,4 @@ jobs:
     # Test the source code
     - run:
         name: Testing
-        command: ng test --watch=false --no-progress
+        command: npm run -- ng test --watch false
