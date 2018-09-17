@@ -75,5 +75,7 @@ export class LicenseService {
     }
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    // private http: HttpClient
+  ) { }
 }
