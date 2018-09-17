@@ -10,6 +10,7 @@ import {CommonModule} from '@angular/common';
 import {LicenseResolver} from './license-resolver.service';
 import {License} from './license/license';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FormsModule} from '@angular/forms';
       {path: 'license', component: LicenseComponent}
     ]),
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     License,

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {License} from './license/license';
 import * as moment from 'moment';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class LicenseService {
@@ -74,5 +75,5 @@ export class LicenseService {
     }
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }
