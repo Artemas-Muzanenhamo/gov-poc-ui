@@ -1,9 +1,13 @@
 import {Injectable} from '@angular/core';
 import {License} from './license/license';
 import * as moment from 'moment';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class LicenseService {
+
+  getLicensesURL = 'http://localhost:8081/licenses';
 
   licenses: License[] = [
     {
@@ -64,15 +68,23 @@ export class LicenseService {
     }
   ];
 
+  constructor(
+    private http: HttpClient
+  ) { }
+
   getLicenses() {
-    return this.licenses;
+    // return this.licenses;
+    return this.http.get<License[]>(this.getLicensesURL)
+      .subscribe({
+        next(num) {console.log(num); },
+        error(err) {console.log(err); }
+      });
   }
 
-  getLicense(id: Number) {
+  getLicense(id: Number): Observable<License> {
     if (id) {
-      return this.licenses.find(license => parseInt(license.id, 10) === id);
+      return this.http.get<License>(this.getLicensesURL);
     }
   }
 
-  constructor() { }
 }
