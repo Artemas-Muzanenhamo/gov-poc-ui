@@ -80,8 +80,8 @@ export class LicenseService {
       .subscribe({
         next(num) {
           // console.log(num);
-          num.forEach(function (element) {
-            console.log('DEMO ' + element);
+          num.map(function (element) {
+            console.log(element);
           });
         },
         error(err) {console.log(err); }
