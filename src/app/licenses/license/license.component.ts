@@ -20,7 +20,7 @@ export class LicensesComponent implements OnInit {
 
   ngOnInit(): void {
     // const id = +this.route.snapshot.params['id'];
-    // this.licenses = this.getLicenses();
-    this.getLicenses();
+    this.licenses = this.getLicenses();
+    // this.getLicenses();
   }
 }

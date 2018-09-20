@@ -8,6 +8,8 @@ import {Observable} from 'rxjs';
 export class LicenseService {
 
   getLicensesURL = 'http://localhost:8081/licenses';
+  licensesArr: License[];
+  // getLicensesURL = 'https://jsonplaceholder.typicode.com/posts';
 
   licenses: License[] = [
     {
@@ -76,7 +78,12 @@ export class LicenseService {
     // return this.licenses;
     return this.http.get<License[]>(this.getLicensesURL)
       .subscribe({
-        next(num) {console.log(num); },
+        next(num) {
+          // console.log(num);
+          num.forEach(function (element) {
+            console.log('DEMO ' + element);
+          });
+        },
         error(err) {console.log(err); }
       });
   }
