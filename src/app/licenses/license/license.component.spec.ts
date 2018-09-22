@@ -3,7 +3,7 @@ import {LicensesComponent} from './license.component';
 import {AppModule} from '../../app.module';
 import {RouterTestingModule} from '@angular/router/testing';
 import {LicenseService} from '../licenses.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 xdescribe('LicensesComponent', () => {
 
@@ -11,6 +11,7 @@ xdescribe('LicensesComponent', () => {
   let fixture: ComponentFixture<LicensesComponent>;
   let compiled;
   let licenseService;
+  let http;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -21,7 +22,8 @@ xdescribe('LicensesComponent', () => {
     fixture = TestBed.createComponent(LicensesComponent);
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
-    licenseService = new LicenseService();
+    http = new HttpClient();
+    licenseService = new LicenseService(http);
   });
   it('should render a table to display license details', async( () => {
     expect(compiled.querySelector('#licenses-table').nodeName).toBe('TABLE');

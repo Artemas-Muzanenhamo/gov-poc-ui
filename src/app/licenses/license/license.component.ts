@@ -15,12 +15,17 @@ export class LicensesComponent implements OnInit {
   constructor(private licenseService: LicenseService) {}
 
   getLicenses () {
-    return this.licenseService.getLicenses();
+    return this.licenseService.getLicenses()
+      .subscribe(
+        licenses => {
+          this.licenses = licenses;
+        },
+        error => console.log(error)
+      );
   }
 
   ngOnInit(): void {
     // const id = +this.route.snapshot.params['id'];
-    this.licenses = this.getLicenses();
-    // this.getLicenses();
+    this.getLicenses();
   }
 }
