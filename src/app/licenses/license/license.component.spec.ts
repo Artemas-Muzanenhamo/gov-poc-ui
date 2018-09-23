@@ -74,7 +74,7 @@ xdescribe('LicensesComponent', () => {
     compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#edit-license-button').nodeName).toBe('BUTTON');
   }));
-  it('should return the total number of Licenses', async( () => {
-    expect(component.getLicenses().length).toBe(4);
-  }));
+  // it('should return the total number of Licenses', async( () => {
+  //   expect(component.getLicenses().length).toBe(4);
+  // }));
 });

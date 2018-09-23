@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {License} from '../license/license';
+import {LicenseService} from '../licenses.service';
 
 @Component({
   templateUrl: './license-detail.component.html',
@@ -13,10 +14,19 @@ export class LicenseDetailComponent implements OnInit {
   backButton = 'Back';
   editButton = 'Edit';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    this.license = this.route.snapshot.data['license'];
+    // this.license = this.route.snapshot.data['license'];
+    this.route.data
+      .subscribe(
+        license => {
+          console.log(license);
+          this.license = license['license'];
+        }
+      );
   }
 
 }

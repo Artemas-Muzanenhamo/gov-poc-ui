@@ -12,18 +12,17 @@
     </thead>
     <tbody class="uk-contrast">
       <tr *ngFor="let license of licenses">
-        <td id="license-id-td"><a [routerLink]="['/licenses', license.id]">{{license.id}}</a></td>
+        <td id="license-id-td"><a [routerLink]="['/licenses', license.identityRef]">{{license.id}}</a></td>
         <td id="first-names-td">{{license.firstNames}}</td>
         <td id="surname-td">{{license.surname}}</td>
         <td id="date-of-birth-td">{{license.dateOfBirth}}</td>
         <td id="country-td">{{license.country}}</td>
         <td>
-          <a [routerLink]="['/licenses', license.id, 'edit']">
+          <a [routerLink]="['/licenses', license.identityRef, 'edit']">
             <button id="edit-license-button" class="uk-button uk-button-primary">{{editButton}}</button>
           </a>
         </td>
       </tr>
-    <!--<p>{{licenses}}</p>-->
     </tbody>
     <tfoot>
       <tr>
