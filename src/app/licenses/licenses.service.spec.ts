@@ -3,16 +3,17 @@ import {async, TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {License} from './license/license';
 import moment = require('moment');
+import {Observable} from 'rxjs';
 
 describe('LicenseServiceComponent', () => {
   let licenseService: LicenseService;
   let getLicenseSpy;
   let getLicensesSpy;
-  let license;
+  let licenses;
 
   beforeEach(() => {
 
-    license = [
+    licenses = [
       {
         id: '1234',
         identityRef: 'MUZAN1234',
@@ -76,21 +77,21 @@ describe('LicenseServiceComponent', () => {
       providers: [LicenseService]
     });
     licenseService = TestBed.get(LicenseService);
-    getLicenseSpy = spyOn(licenseService, 'getLicense').and.returnValue(license[0]);
-    getLicensesSpy = spyOn(licenseService, 'getLicenses').and.returnValue(license);
+    getLicenseSpy = spyOn(licenseService, 'getLicense').and.returnValue(Observable.of(licenses[0]));
+    getLicensesSpy = spyOn(licenseService, 'getLicenses').and.returnValue(Observable.of(licenses));
   });
   it('should return a spy on the service method getLicense(id)',  async( () => {
     licenseService.getLicense(1);
     expect(getLicenseSpy).toHaveBeenCalledTimes(1);
   }));
   it('should return the first license when getLicense(1) method is called', async( () => {
-    expect(licenseService.getLicense(1).firstNames).toBe('Artemas');
+    licenseService.getLicense(1).subscribe(result => expect(result.firstNames).toBe('Artemas'));
   }));
   it('should return a spy on the service method getLicenses()', async( () => {
     licenseService.getLicenses();
     expect(getLicensesSpy).toHaveBeenCalledTimes(1);
   }));
   it('should return 4 licenses when the getLicenses() method is called', async( () => {
-    expect(licenseService.getLicenses().length).toBe(4);
+    licenseService.getLicenses().subscribe(result => expect(result.length).toBe(4));
   }));
 });

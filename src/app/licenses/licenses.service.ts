@@ -14,7 +14,7 @@ export class LicenseService {
     private http: HttpClient
   ) { }
 
-  getLicenses() {
+  getLicenses(): Observable<License[]> {
     return this.http.get<License[]>(this.getLicensesURL);
   }
 
