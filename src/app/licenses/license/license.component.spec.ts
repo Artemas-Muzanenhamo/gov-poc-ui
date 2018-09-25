@@ -11,6 +11,7 @@ describe('LicensesComponent', () => {
   let fixture: ComponentFixture<LicensesComponent>;
   let compiled;
   let licenseService;
+  let licenseServiceSpy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,6 +19,7 @@ describe('LicensesComponent', () => {
     }).compileComponents();
 
     licenseService = TestBed.get(LicenseService);
+    licenseServiceSpy = spyOn(licenseService, 'getLicenses').and.callThrough();
   }));
   beforeEach(() => {
     fixture = TestBed.createComponent(LicensesComponent);
@@ -73,5 +75,6 @@ describe('LicensesComponent', () => {
   // }));
   it('should return the total number of Licenses', async( () => {
     expect(component.getLicenses()).toBeTruthy();
+    expect(licenseServiceSpy).toHaveBeenCalledTimes(1);
   }));
 });
