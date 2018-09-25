@@ -1,9 +1,9 @@
 import {LicenseService} from './licenses.service';
 import {async, TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {License} from './license/license';
 import moment = require('moment');
-import {Observable} from 'rxjs';
+import {of} from 'rxjs/observable/of';
+// import {of} from 'rxjs';
 
 describe('LicenseServiceComponent', () => {
   let licenseService: LicenseService;
@@ -77,8 +77,8 @@ describe('LicenseServiceComponent', () => {
       providers: [LicenseService]
     });
     licenseService = TestBed.get(LicenseService);
-    getLicenseSpy = spyOn(licenseService, 'getLicense').and.returnValue(Observable.of(licenses[0]));
-    getLicensesSpy = spyOn(licenseService, 'getLicenses').and.returnValue(Observable.of(licenses));
+    getLicenseSpy = spyOn(licenseService, 'getLicense').and.returnValue(of(licenses[0]));
+    getLicensesSpy = spyOn(licenseService, 'getLicenses').and.returnValue(of(licenses));
   });
   it('should return a spy on the service method getLicense(id)',  async( () => {
     licenseService.getLicense(1);
