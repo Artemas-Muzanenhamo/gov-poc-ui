@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Identity} from './identity/identity';
-import * as moment from 'moment';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {element} from 'protractor';
 
 @Injectable()
 export class IdentityService {
