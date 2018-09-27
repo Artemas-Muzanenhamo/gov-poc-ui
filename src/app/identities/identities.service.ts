@@ -4,6 +4,9 @@ import * as moment from 'moment';
 
 @Injectable()
 export class IdentityService {
+
+  getIdentitiesURL = 'http://localhost:8080/identities';
+
   identities: Identity[] = [
     {
       id: 'MUZAn09876',
