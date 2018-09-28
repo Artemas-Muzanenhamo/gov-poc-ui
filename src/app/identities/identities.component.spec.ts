@@ -2,6 +2,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {IdentityComponent} from './identities.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../app.module';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {IdentityService} from './identities.service';
 
 
 describe('IdentityComponent', () => {
@@ -9,16 +11,26 @@ describe('IdentityComponent', () => {
   let component: IdentityComponent;
   let fixture: ComponentFixture<IdentityComponent>;
   let compiled;
+  let identityService;
+  let getIdentitiesSpy;
+  let getIdentitySpy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+        AppModule,
+        RouterTestingModule,
+        HttpClientTestingModule
+      ]
     }).compileComponents();
+
+    identityService = TestBed.get(IdentityService);
+    getIdentitiesSpy = spyOn(identityService, 'getIdentities').and.callThrough();
+    getIdentitySpy = spyOn(identityService, 'getIdentity').and.callThrough();
   }));
   beforeEach(() => {
     fixture = TestBed.createComponent(IdentityComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
   });
   it('should render the brand logo on the nav bar', async( () => {

@@ -3,7 +3,7 @@ import {IdentitiesComponent} from './identity.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 
-describe('IdentitiesComponent', () => {
+fdescribe('IdentitiesComponent', () => {
 
   let component: IdentitiesComponent;
   let fixture: ComponentFixture<IdentitiesComponent>;
