@@ -9,6 +9,7 @@ import {Identity} from './identity/identity';
 import {CommonModule} from '@angular/common';
 import {IdentityResolver} from './identity-resolver.service';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from '@angular/forms';
       {path: 'identity', component: IdentityComponent}
     ]),
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     Identity,

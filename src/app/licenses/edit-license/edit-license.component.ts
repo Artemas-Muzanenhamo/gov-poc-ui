@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {License} from '../license/license';
 import {ActivatedRoute} from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   templateUrl: './edit-license.component.html',
@@ -21,6 +22,18 @@ export class EditLicenseComponent implements OnInit {
   }
 
   onLicenseRetrieved(license: License): void {
+    license.dateOfBirth = moment
+      .utc(license.dateOfBirth, 'DD/MM/YYYY', true)
+      .toDate().toISOString().split('T')[0];
+
+    license.dateOfIssue = moment
+      .utc(license.dateOfIssue, 'DD/MM/YYYY', true)
+      .toDate().toISOString().split('T')[0];
+
+    license.expiryDate = moment
+      .utc(license.expiryDate, 'DD/MM/YYYY', true)
+      .toDate().toISOString().split('T')[0];
+
     this.license = license;
   }
 }

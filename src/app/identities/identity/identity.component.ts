@@ -17,6 +17,9 @@ export class IdentitiesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.identities = this.getIdentities();
+    this.getIdentities()
+      .subscribe(
+        identities => this.identities = identities
+      );
   }
 }
