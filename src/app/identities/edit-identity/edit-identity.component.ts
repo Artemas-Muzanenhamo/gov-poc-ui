@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Identity} from '../identity/identity';
 import {ActivatedRoute} from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-edit-identity',
@@ -21,6 +22,8 @@ export class EditIdentityComponent implements OnInit {
   }
 
   onIdentityRetrieved(identity: Identity): void {
+    identity.birthDate = moment.utc(identity.birthDate, 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0];
+    identity.dateOfIssue = moment.utc(identity.dateOfIssue, 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0];
     this.identity = identity;
   }
 
