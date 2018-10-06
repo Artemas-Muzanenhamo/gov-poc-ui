@@ -10,7 +10,7 @@
         <th id="edit-license"></th>
       </tr>
     </thead>
-    <tbody class="uk-contrast">
+    <tbody class="uk-contrast uk-animation-slide-top">
       <tr *ngFor="let license of licenses">
         <td id="license-id-td"><a [routerLink]="['/licenses', license.identityRef]">{{license.id}}</a></td>
         <td id="first-names-td">{{license.firstNames}}</td>
