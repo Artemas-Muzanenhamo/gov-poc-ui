@@ -1,0 +1,7 @@
+.brand-logo {
+  position: relative;
+  background: url(../../assets/logo.png);
+  width: 50px;
+  left: 15px;
+  background-size: contain;
+}
