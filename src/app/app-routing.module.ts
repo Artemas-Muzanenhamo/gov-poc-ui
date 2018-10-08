@@ -12,6 +12,7 @@ import {EditIdentityComponent} from './identities/edit-identity/edit-identity.co
 import {LicenseDetailComponent} from './licenses/license-detail/license-detail.component';
 import {LicenseResolver} from './licenses/license-resolver.service';
 import {IdentityResolver} from './identities/identity-resolver.service';
+import {IdentityDetailComponent} from './identities/identity-detail/identity-detail.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
@@ -35,6 +36,10 @@ const routes: Routes = [
     children: [
       {path: '', component: IdentitiesComponent},
       {path: '0/edit', component: AddIdentityComponent},
+      {
+        path: ':id', component: IdentityDetailComponent,
+        resolve: {license: IdentityResolver}
+      },
       {
         path: ':id/edit', component: EditIdentityComponent,
         resolve: {identity: IdentityResolver}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Identity} from '../identity/identity';
 
 @Component({
   selector: 'app-identity-detail',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdentityDetailComponent implements OnInit {
 
-  constructor() { }
+  identity: Identity;
+
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.route.data
+      .subscribe(
+        identity => {
+          console.log(identity);
+          this.identity = identity['identity'];
+        }
+      );
   }
 
 }
