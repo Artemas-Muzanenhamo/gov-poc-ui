@@ -1,3 +1,29 @@
-<p>
-  identity-detail works!
-</p>
+<div class="uk-container uk-container-center uk-width-medium-1-2">
+  <div class="uk-panel">
+    <div class="uk-panel-teaser uk-panel-box-secondary uk-text-center uk-animation-slide-top">
+
+      <div class="uk-panel-header">
+        <h1>{{identity.name}} {{identity.surname}}'s identity Details</h1>
+      </div>
+
+      <div class="uk-panel-body">
+        <div class="card">
+          <img src="img.jpg" alt="Image here" style="width:100%">
+          <div>
+            <label class="uk-form-label uk-form-success">Identity Reference</label> <p>{{identity.identityRef}}</p>
+            <label class="uk-form-label uk-form-success">Date of Birth</label> <p>{{identity.birthDate}}</p>
+            <label class="uk-form-label uk-form-success">Country</label> <p>{{identity.placeOfBirth}}</p>
+            <label class="uk-form-label uk-form-success">Date of Issue</label> <p>{{identity.dateOfIssue}}</p>
+            <label class="uk-form-label uk-form-success">Agency</label> <p>{{identity.villageOfOrigin}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-form-controls">
+        <button class="uk-button uk-button-primary" [routerLink]="'/identitys'">{{backButton}}</button>
+        <button class="uk-button uk-button-primary" [routerLink]="['/identitys', identity.identityRef, 'edit']">{{editButton}}</button>
+      </div>
+
+    </div>
+  </div>
+</div>

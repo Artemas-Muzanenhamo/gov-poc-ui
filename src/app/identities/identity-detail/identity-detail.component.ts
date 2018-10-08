@@ -10,6 +10,8 @@ import {Identity} from '../identity/identity';
 export class IdentityDetailComponent implements OnInit {
 
   identity: Identity;
+  backButton: 'Back';
+  editButton: 'Edit';
 
   constructor(
     private route: ActivatedRoute
