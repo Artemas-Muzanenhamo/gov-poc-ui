@@ -10,6 +10,7 @@ import {CommonModule} from '@angular/common';
 import {IdentityResolver} from './identity-resolver.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { IdentityDetailComponent } from './identity-detail/identity-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     AddIdentityComponent,
     EditIdentityComponent,
     IdentityComponent,
+    IdentityDetailComponent,
   ],
   imports: [
     RouterModule.forChild([

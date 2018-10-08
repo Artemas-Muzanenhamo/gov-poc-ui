@@ -12,7 +12,7 @@
     </thead>
     <tbody class="uk-contrast">
       <tr *ngFor="let identity of identities">
-        <td id="identity-id-td">{{identity.id}}</td>
+        <td id="identity-id-td"><a [routerLink]="['/identities', identity.identityRef]">{{identity.id}}</a></td>
         <td id="identity-ref-td">{{identity.identityRef}}</td>
         <td id="first-name-td">{{identity.name}}</td>
         <td id="surname-td">{{identity.surname}}</td>
