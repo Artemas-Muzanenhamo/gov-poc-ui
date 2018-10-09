@@ -38,7 +38,7 @@ const routes: Routes = [
       {path: '0/edit', component: AddIdentityComponent},
       {
         path: ':id', component: IdentityDetailComponent,
-        resolve: {license: IdentityResolver}
+        resolve: {identity: IdentityResolver}
       },
       {
         path: ':id/edit', component: EditIdentityComponent,
