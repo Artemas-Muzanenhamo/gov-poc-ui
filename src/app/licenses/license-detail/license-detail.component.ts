@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {License} from '../license/license';
-import {LicenseService} from '../licenses.service';
 
 @Component({
   templateUrl: './license-detail.component.html',
