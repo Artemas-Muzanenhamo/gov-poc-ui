@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {License} from './license/license';
-import * as moment from 'moment';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 

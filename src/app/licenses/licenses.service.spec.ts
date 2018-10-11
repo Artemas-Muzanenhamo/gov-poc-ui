@@ -1,14 +1,15 @@
 import {LicenseService} from './licenses.service';
 import {async, TestBed} from '@angular/core/testing';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import moment = require('moment');
 import {of} from 'rxjs';
 
-describe('LicenseServiceComponent', () => {
+fdescribe('LicenseServiceComponent', () => {
   let licenseService: LicenseService;
   let getLicenseSpy;
   let getLicensesSpy;
   let licenses;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
 
@@ -76,6 +77,7 @@ describe('LicenseServiceComponent', () => {
       providers: [LicenseService]
     });
     licenseService = TestBed.get(LicenseService);
+    httpMock = TestBed.get(HttpTestingController);
     getLicenseSpy = spyOn(licenseService, 'getLicense').and.returnValue(of(licenses[0]));
     getLicensesSpy = spyOn(licenseService, 'getLicenses').and.returnValue(of(licenses));
   });
@@ -92,5 +94,7 @@ describe('LicenseServiceComponent', () => {
   }));
   it('should return 4 licenses when the getLicenses() method is called', async( () => {
     licenseService.getLicenses().subscribe(result => expect(result.length).toBe(4));
+  }));
+  fit('should throw an error when server is not available for getLicenses()', async ( () => {
   }));
 });
