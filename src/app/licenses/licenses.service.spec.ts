@@ -2,9 +2,9 @@ import {LicenseService} from './licenses.service';
 import {async, TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import moment = require('moment');
-import {of} from 'rxjs';
+import {Observable, of} from 'rxjs';
 
-fdescribe('LicenseServiceComponent', () => {
+describe('LicenseServiceComponent', () => {
   let licenseService: LicenseService;
   let getLicenseSpy;
   let getLicensesSpy;
@@ -95,6 +95,5 @@ fdescribe('LicenseServiceComponent', () => {
   it('should return 4 licenses when the getLicenses() method is called', async( () => {
     licenseService.getLicenses().subscribe(result => expect(result.length).toBe(4));
   }));
-  fit('should throw an error when server is not available for getLicenses()', async ( () => {
-  }));
+  // TO DO add sad path service tests
 });
