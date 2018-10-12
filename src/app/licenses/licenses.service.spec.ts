@@ -2,7 +2,7 @@ import {LicenseService} from './licenses.service';
 import {async, TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import moment = require('moment');
-import {Observable, of} from 'rxjs';
+import {of} from 'rxjs';
 
 describe('LicenseServiceComponent', () => {
   let licenseService: LicenseService;
