@@ -5,7 +5,7 @@ import {Identity} from './identity/identity';
 import {of} from 'rxjs';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-fdescribe('IdentityServiceComponent', () => {
+describe('IdentityServiceComponent', () => {
   let identityService: IdentityService;
   let identities: Identity[];
   let getIdentitiesSpy;
@@ -73,7 +73,7 @@ fdescribe('IdentityServiceComponent', () => {
         identity => expect(identity).toBe(identities)
       ));
   }));
-  fit('should return a single License', async ( () => {
+  it('should return a single License', async ( () => {
     identityService.getIdentity(1)
       .subscribe(id => expect(id.name).toBe('Artemas'));
   }));
