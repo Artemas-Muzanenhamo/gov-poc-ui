@@ -6,7 +6,7 @@ import {Observable, of} from 'rxjs';
 @Injectable()
 export class IdentityService {
 
-  getIdentitiesURL = 'http://localhost:8080/identities';
+  getIdentitiesURL = 'http://localhost:8082/identities';
   identity: Identity;
 
   constructor(private http: HttpClient) {
