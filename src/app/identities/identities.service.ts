@@ -33,4 +33,8 @@ export class IdentityService {
 
     }
   }
+
+  addIdentity(identity: Identity) {
+    alert('success');
+  }
 }

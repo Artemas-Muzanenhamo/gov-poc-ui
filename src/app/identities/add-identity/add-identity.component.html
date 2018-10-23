@@ -1,44 +1,45 @@
 <div class="uk-container uk-container-center" >
   <h1 class="title-font">{{pageTitle}}</h1>
-  <form id="identity-form" class="uk-form-horizontal add-identity-font">
+  <form id="identity-form" class="uk-form-horizontal add-identity-font" (submit)="onSubmit()" #identityForm="ngForm">
     <fieldset class="uk-fieldset">
 
       <!--<legend class="uk-legend">Legend</legend>-->
 
       <div class="uk-margin">
-        <label class="uk-form-label">ID Number</label>
-        <input id="identity-number" class="uk-input uk-input uk-width-1-3" type="text" placeholder="ID Number" required>
+        <label for="identity-number" class="uk-form-label">ID Number</label>
+        <input [(ngModel)]="identity.id" id="identity-number" class="uk-input uk-input uk-width-1-3" type="text" placeholder="ID Number" name="identity-number" required>
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Identity Reference</label>
-        <input id="identity-ref" class="uk-input uk-input uk-width-1-3" type="text" placeholder="ID Reference">
+        <label for="identity-ref" class="uk-form-label">Identity Reference</label>
+        <input [(ngModel)]="identity.identityRef" id="identity-ref" class="uk-input uk-input uk-width-1-3" type="text" placeholder="ID Reference" name="identity-ref">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">First Name</label>
-        <input id="first-names" class="uk-input uk-input uk-width-1-3" type="text" placeholder="First Names">
+        <label for="first-names" class="uk-form-label">First Name</label>
+        <input [(ngModel)]="identity.name" id="first-names" class="uk-input uk-input uk-width-1-3" type="text" placeholder="First Names" name="first-names">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Surname</label>
-        <input id="surname" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Surname">
+        <label for="surname" class="uk-form-label">Surname</label>
+        <input [(ngModel)]="identity.surname" id="surname" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Surname" name="surname">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Date of Birth</label>
-        <input id="date-of-birth" class="uk-input uk-input uk-width-1-3" type="date" placeholder="Date of Birth">
+        <label for="date-of-birth" class="uk-form-label">Date of Birth</label>
+        <input [(ngModel)]="identity.birthDate" id="date-of-birth" class="uk-input uk-input uk-width-1-3" type="date" placeholder="Date of Birth" name="date-of-birth">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Village of Origin</label>
-        <input id="village-of-origin" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Village of Origin">
+        <label for="village-of-origin" class="uk-form-label">Village of Origin</label>
+        <input [(ngModel)]="identity.villageOfOrigin" id="village-of-origin" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Village of Origin" name="village-of-origin">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Place of Birth</label>
-        <input id="place-of-birth" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Place of Birth">
+        <label for="place-of-birth" class="uk-form-label">Place of Birth</label>
+        <input [(ngModel)]="identity.placeOfBirth" id="place-of-birth" class="uk-input uk-input uk-width-1-3" type="text" placeholder="Place of Birth" name="place-of-birth">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Date of Issue</label>
-        <input id="date-of-issue" class="uk-input uk-input uk-width-1-3" type="date" placeholder="Date of Issue">
+        <label for="date-of-issue" class="uk-form-label">Date of Issue</label>
+        <input [(ngModel)]="identity.dateOfIssue" id="date-of-issue" class="uk-input uk-input uk-width-1-3" type="date" placeholder="Date of Issue" name="date-of-issue">
       </div>
+
       <div class="uk-margin">
-        <button type="submit" id="submit-identity" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
+        <button type="submit" (click)="addIdentity(identity)" id="submit-identity" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
         <button type="button" id="view-identities" class="uk-button uk-button-default" [routerLink]="'/identities'">{{backButton}}</button>
       </div>
     </fieldset>
