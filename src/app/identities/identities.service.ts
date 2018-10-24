@@ -35,6 +35,14 @@ export class IdentityService {
   }
 
   addIdentity(identity: Identity) {
-    alert('success');
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    console.log(identity);
+    this.http.post(this.getIdentitiesURL, identity, httpOptions);
   }
 }
