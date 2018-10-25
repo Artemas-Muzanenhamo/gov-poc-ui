@@ -6,7 +6,7 @@ import {Observable, of} from 'rxjs';
 @Injectable()
 export class IdentityService {
 
-  getIdentitiesURL = 'http://localhost:8080/identities';
+  getIdentitiesURL = 'http://localhost:8082/identities';
   identity: Identity;
 
   constructor(private http: HttpClient) {
@@ -32,5 +32,17 @@ export class IdentityService {
       return this.http.post<Identity>(this.getIdentitiesURL + '/reference', ref, httpOptions);
 
     }
+  }
+
+  addIdentity(identity: Identity) {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    console.log(identity);
+    this.http.post(this.getIdentitiesURL, identity, httpOptions); // TO DO
   }
 }
