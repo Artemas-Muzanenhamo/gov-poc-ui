@@ -7,7 +7,6 @@ import {Observable, of} from 'rxjs';
 export class IdentityService {
 
   getIdentitiesURL = 'http://localhost:8082/identities';
-  identity: Identity;
 
   constructor(private http: HttpClient) {
   }
@@ -38,11 +37,18 @@ export class IdentityService {
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json'
+        'Content-Type':  'application/json;charset=UTF-8'
       })
     };
 
-    console.log(identity);
-    this.http.post(this.getIdentitiesURL, identity, httpOptions); // TO DO
+    const id = {
+      'identity': identity
+    };
+
+    console.log(id);
+    this.http.post<Identity>(this.getIdentitiesURL, id, httpOptions)
+      .subscribe(
+        res => console.log(res)
+      );
   }
 }
