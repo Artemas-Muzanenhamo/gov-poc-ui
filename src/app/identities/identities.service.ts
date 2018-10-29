@@ -49,7 +49,7 @@ export class IdentityService {
     console.log(id);
     this.http.post<Identity>(this.getIdentitiesURL, id, httpOptions)
       .pipe(
-        catchError(err => throw a)
+        catchError(err => { throw new Error('error: ' + err);})
       );
   }
 }
