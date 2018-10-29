@@ -2,15 +2,15 @@ import {Injectable} from '@angular/core';
 import {Identity} from './identity/identity';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class IdentityService {
 
   getIdentitiesURL = 'http://localhost:8082/identities';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getIdentities(): Observable<Identity[]> {
     return this.http.get<Identity[]>(this.getIdentitiesURL);
@@ -34,7 +34,7 @@ export class IdentityService {
     }
   }
 
-  addIdentity(identity: Identity) {
+  addIdentity(identity: Identity): Observable<Identity> {
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -42,14 +42,6 @@ export class IdentityService {
       })
     };
 
-    const id = {
-      'identity': identity
-    };
-
-    console.log(id);
-    this.http.post<Identity>(this.getIdentitiesURL, id, httpOptions)
-      .pipe(
-        catchError(err => { throw new Error('error: ' + err);})
-      );
+    return this.http.post<Identity>(this.getIdentitiesURL, identity, httpOptions);
   }
 }
