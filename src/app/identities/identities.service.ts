@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Identity} from './identity/identity';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
+import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class IdentityService {
@@ -37,7 +38,7 @@ export class IdentityService {
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json;charset=UTF-8'
+        'Content-Type': 'application/json;charset=UTF-8'
       })
     };
 
@@ -46,9 +47,9 @@ export class IdentityService {
     };
 
     console.log(id);
-    this.http.post<Identity>(this.getIdentitiesURL, id, httpOptions) // TODO - Make this work bro !!
-      .subscribe(
-        res => console.log(res)
+    this.http.post<Identity>(this.getIdentitiesURL, id, httpOptions)
+      .pipe(
+        catchError(err => throw a)
       );
   }
 }

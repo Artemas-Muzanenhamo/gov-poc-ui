@@ -25,7 +25,8 @@ export class AddIdentityComponent implements OnInit {
   }
 
   addIdentity(identity: Identity): void {
-    this.identityService.addIdentity(identity);
+    this.identityService.addIdentity(identity)
+      .subscribe();
   }
 
   ngOnInit() { }
