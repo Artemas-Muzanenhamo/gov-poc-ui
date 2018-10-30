@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Identity} from './identity/identity';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class IdentityService {
@@ -12,6 +12,12 @@ export class IdentityService {
     private http: HttpClient
   ) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
   getIdentities(): Observable<Identity[]> {
     return this.http.get<Identity[]>(this.getIdentitiesURL);
   }
@@ -19,29 +25,16 @@ export class IdentityService {
   getIdentity(idRef: Number): Observable<Identity> {
     if (idRef) {
 
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type':  'application/json'
-        })
-      };
-
       const ref = {
         idRef: idRef
       };
 
-      return this.http.post<Identity>(this.getIdentitiesURL + '/reference', ref, httpOptions);
+      return this.http.post<Identity>(this.getIdentitiesURL + '/reference', ref, this.httpOptions);
 
     }
   }
 
   addIdentity(identity: Identity): Observable<Identity> {
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json;charset=UTF-8'
-      })
-    };
-
-    return this.http.post<Identity>(this.getIdentitiesURL, identity, httpOptions);
+    return this.http.post<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
   }
 }
