@@ -2,14 +2,14 @@ import {IdentityService} from './identities.service';
 import {async, TestBed} from '@angular/core/testing';
 import * as moment from 'moment';
 import {Identity} from './identity/identity';
-import {of} from 'rxjs';
+import {identity, of} from 'rxjs';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('IdentityServiceComponent', () => {
   let identityService: IdentityService;
   let identities: Identity[];
-  let getIdentitiesSpy;
-  let getIdentitySpy;
+  let getIdentitiesStub;
+  let getIdentityStub;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -18,8 +18,8 @@ describe('IdentityServiceComponent', () => {
         IdentityService
       ] });
     identityService = TestBed.get(IdentityService);
-    getIdentitiesSpy = spyOn(identityService, 'getIdentities').and.returnValue(of(identities));
-    getIdentitySpy = spyOn(identityService, 'getIdentity').and.returnValue(of(identities[0]));
+    getIdentitiesStub = spyOn(identityService, 'getIdentities').and.returnValue(of(identities));
+    getIdentityStub = spyOn(identityService, 'getIdentity').and.returnValue(of(identities[0]));
   });
 
   identities = [
@@ -77,4 +77,23 @@ describe('IdentityServiceComponent', () => {
     identityService.getIdentity(1)
       .subscribe(id => expect(id.name).toBe('Artemas'));
   }));
+  // fit('should return 200 when a valid ID is added', async (() => {
+  //   const id = {
+  //     id: 'MUZAn09876',
+  //     identityRef: '000331',
+  //     name: 'Michael',
+  //     surname: 'Jordan',
+  //     birthDate: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+  //     villageOfOrigin: 'Mashayamombe',
+  //     placeOfBirth: 'Chicago',
+  //     dateOfIssue: moment.utc('01/01/2018', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0]
+  //   };
+  //
+  //   identityService.addIdentity(id)
+  //     .subscribe(
+  //       response => {
+  //         return expect(response.status);
+  //       }
+  //     );
+  // }));
 });
