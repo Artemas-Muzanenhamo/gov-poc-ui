@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IdentityService} from '../identities.service';
 import {Identity} from '../identity/identity';
+import {Router} from '@angular/router';
 
 @Component({
   templateUrl: './add-identity.component.html',
@@ -15,7 +16,10 @@ export class AddIdentityComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private identityService: IdentityService) { }
+  constructor(
+    private identityService: IdentityService,
+    private router: Router
+  ) { }
 
   identity = new Identity();
 
@@ -26,7 +30,11 @@ export class AddIdentityComponent implements OnInit {
 
   addIdentity(identity: Identity): void {
     this.identityService.addIdentity(identity)
-      .subscribe();
+      .subscribe(
+        data => {
+          return this.router.navigate(['/identities']);
+        }
+      );
   }
 
   ngOnInit() { }
