@@ -8,6 +8,7 @@ describe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
+  let identityService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

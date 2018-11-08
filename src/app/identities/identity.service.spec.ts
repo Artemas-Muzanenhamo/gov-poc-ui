@@ -2,7 +2,6 @@ import {IdentityService} from './identities.service';
 import {async, TestBed} from '@angular/core/testing';
 import * as moment from 'moment';
 import {Identity} from './identity/identity';
-import {identity, of} from 'rxjs';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('IdentityServiceComponent', () => {
@@ -77,23 +76,4 @@ describe('IdentityServiceComponent', () => {
     identityService.getIdentity(1)
       .subscribe(id => expect(id.name).toBe('Artemas'));
   }));
-  // fit('should return 200 when a valid ID is added', async (() => {
-  //   const id = {
-  //     id: 'MUZAn09876',
-  //     identityRef: '000331',
-  //     name: 'Michael',
-  //     surname: 'Jordan',
-  //     birthDate: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
-  //     villageOfOrigin: 'Mashayamombe',
-  //     placeOfBirth: 'Chicago',
-  //     dateOfIssue: moment.utc('01/01/2018', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0]
-  //   };
-  //
-  //   identityService.addIdentity(id)
-  //     .subscribe(
-  //       response => {
-  //         return expect(response.status);
-  //       }
-  //     );
-  // }));
 });
