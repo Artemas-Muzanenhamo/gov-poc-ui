@@ -12,8 +12,8 @@ describe('IdentityComponent', () => {
   let fixture: ComponentFixture<IdentityComponent>;
   let compiled;
   let identityService;
-  let getIdentitiesSpy;
-  let getIdentitySpy;
+  let getIdentitiesStub;
+  let getIdentityStub;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -25,8 +25,8 @@ describe('IdentityComponent', () => {
     }).compileComponents();
 
     identityService = TestBed.get(IdentityService);
-    getIdentitiesSpy = spyOn(identityService, 'getIdentities').and.callThrough();
-    getIdentitySpy = spyOn(identityService, 'getIdentity').and.callThrough();
+    getIdentitiesStub = spyOn(identityService, 'getIdentities').and.callThrough();
+    getIdentityStub = spyOn(identityService, 'getIdentity').and.callThrough();
   }));
   beforeEach(() => {
     fixture = TestBed.createComponent(IdentityComponent);
