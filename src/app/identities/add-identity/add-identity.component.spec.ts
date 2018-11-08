@@ -6,26 +6,30 @@ import {AppModule} from '../../app.module';
 import {IdentityService} from '../identities.service';
 import * as moment from 'moment';
 import {Identity} from '../identity/identity';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
-  let identityService: IdentityService;
+  let identityService;
   let getIdentitiesStub;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+        AppModule,
+        RouterTestingModule,
+        HttpClientTestingModule
+      ]
     }).compileComponents();
     identityService = TestBed.get(IdentityService);
-    getIdentitiesStub = spyOn(identityService, 'addIdentity').and.stub();
+    getIdentitiesStub = spyOn(identityService, 'addIdentity').and.returnValue(200);
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddIdentityComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
   });
 
@@ -73,11 +77,14 @@ describe('AddIdentityComponent', () => {
   it('should render a VIEW IDENTITIES button', async( () => {
     expect(compiled.querySelector('#view-identities').nodeName).toContain('BUTTON');
   }));
-  // TODO
+  // TODO - Needs to use RouterTestingModule in order to work
+  // TODO - Set up Router to work first
+  // TODO - Navigate to Add Identity location
+  // TODO - Then perform and assert
   it('should return a response 200 when adding an identity', () => {
     identityService.addIdentity(identity)
       .subscribe(
-        data => console.log(data)
+        response => expect(response).toBe(200)
       );
   });
 });
