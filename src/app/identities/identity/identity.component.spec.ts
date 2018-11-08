@@ -14,7 +14,7 @@ describe('IdentitiesComponent', () => {
   let compiled;
   let identities;
   let identityService;
-  let identitySpy;
+  let identityStub;
 
   beforeEach(async(() => {
 
@@ -70,7 +70,7 @@ describe('IdentitiesComponent', () => {
     }).compileComponents();
 
     identityService = TestBed.get(IdentityService);
-    identitySpy = spyOn(identityService, 'getIdentity').and.returnValue(of(identities[0]));
+    identityStub = spyOn(identityService, 'getIdentity').and.returnValue(of(identities[0]));
   }));
   beforeEach(() => {
     fixture = TestBed.createComponent(IdentitiesComponent);

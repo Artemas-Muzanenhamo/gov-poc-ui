@@ -3,25 +3,47 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddIdentityComponent } from './add-identity.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
+import {IdentityService} from '../identities.service';
+import * as moment from 'moment';
+import {Identity} from '../identity/identity';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
   let identityService;
+  let getIdentitiesStub;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+        AppModule,
+        RouterTestingModule,
+        HttpClientTestingModule
+      ]
     }).compileComponents();
+    identityService = TestBed.get(IdentityService);
+    getIdentitiesStub = spyOn(identityService, 'addIdentity').and.returnValue(200);
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddIdentityComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
   });
+
+  const identity: Identity = {
+    id: 'GIANn09876',
+      identityRef: '1178900',
+    name: 'Giannis',
+    surname: 'Marks',
+    birthDate: moment.utc('12/06/2000', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+    villageOfOrigin: 'Mashayamombe',
+    placeOfBirth: 'Zimbabwe',
+    dateOfIssue: moment.utc('06/04/2018', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0]
+  };
+
   it('should render Add Identity form', async( () => {
     expect(compiled.querySelector('#identity-form').nodeName).toContain('FORM');
   }));
@@ -55,4 +77,14 @@ describe('AddIdentityComponent', () => {
   it('should render a VIEW IDENTITIES button', async( () => {
     expect(compiled.querySelector('#view-identities').nodeName).toContain('BUTTON');
   }));
+  // TODO - Needs to use RouterTestingModule in order to work
+  // TODO - Set up Router to work first
+  // TODO - Navigate to Add Identity location
+  // TODO - Then perform and assert
+  xit('should return a response 200 when adding an identity', () => {
+    identityService.addIdentity(identity)
+      .subscribe(
+        response => expect(response).toBe(200)
+      );
+  });
 });
