@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class AddIdentityComponent implements OnInit {
 
   pageTitle = 'Add Identity Details';
-  submitButton = 'submit';
+  submitButton = 'Submit';
   backButton = 'Back';
 
   submitted = false;

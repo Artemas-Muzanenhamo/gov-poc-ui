@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Identity} from './identity/identity';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import * as moment from 'moment';
 
 @Injectable()
 export class IdentityService {
@@ -35,6 +36,23 @@ export class IdentityService {
   }
 
   addIdentity(identity: Identity): Observable<Identity> {
+    identity = this.formatIdentityDates(identity);
     return this.http.post<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
+  }
+
+  formatIdentityDates(identity: Identity): Identity {
+    identity.birthDate = moment
+      .utc(identity.birthDate, 'DD/MM/YYYY', true)
+      .toDate()
+      .toISOString()
+      .split('T')[0];
+
+    identity.dateOfIssue = moment
+      .utc(identity.dateOfIssue, 'DD/MM/YYYY', true)
+      .toDate()
+      .toISOString()
+      .split('T')[0];
+
+    return identity;
   }
 }
