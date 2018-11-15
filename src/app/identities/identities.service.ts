@@ -36,23 +36,26 @@ export class IdentityService {
   }
 
   addIdentity(identity: Identity): Observable<Identity> {
-    // TODO - Failing to add Identity here. Changed identity to add formatted dates but that's not working as expected
-    identity = this.formatIdentityDates(identity);
-    return this.http.post<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
+    const identityFormatted = this.formatIdentityDates(identity);
+    return this.http.post<Identity>(this.getIdentitiesURL, identityFormatted, this.httpOptions);
   }
 
   formatIdentityDates(identity: Identity): Identity {
-    identity.birthDate = moment
-      .utc(identity.birthDate, 'DD/MM/YYYY', true)
-      .toDate()
-      .toISOString()
-      .split('T')[0];
+    // TODO - Failing to add Identity here. Changed identity to add formatted dates but that's not working as expected
+    // identity.birthDate = moment
+    //   .utc(identity.birthDate, 'DD/MM/YYYY', true)
+    //   .toDate()
+    //   .toISOString()
+    //   .split('T')[0];
+    //
+    // identity.dateOfIssue = moment
+    //   .utc(identity.dateOfIssue, 'DD/MM/YYYY', true)
+    //   .toDate()
+    //   .toISOString()
+    //   .split('T')[0];
 
-    identity.dateOfIssue = moment
-      .utc(identity.dateOfIssue, 'DD/MM/YYYY', true)
-      .toDate()
-      .toISOString()
-      .split('T')[0];
+    identity.birthDate = new Date(identity.birthDate).toLocaleDateString();
+    identity.dateOfIssue = new Date(identity.dateOfIssue).toLocaleDateString();
 
     return identity;
   }
