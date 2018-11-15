@@ -41,19 +41,6 @@ export class IdentityService {
   }
 
   formatIdentityDates(identity: Identity): Identity {
-    // TODO - Failing to add Identity here. Changed identity to add formatted dates but that's not working as expected
-    // identity.birthDate = moment
-    //   .utc(identity.birthDate, 'DD/MM/YYYY', true)
-    //   .toDate()
-    //   .toISOString()
-    //   .split('T')[0];
-    //
-    // identity.dateOfIssue = moment
-    //   .utc(identity.dateOfIssue, 'DD/MM/YYYY', true)
-    //   .toDate()
-    //   .toISOString()
-    //   .split('T')[0];
-
     identity.birthDate = new Date(identity.birthDate).toLocaleDateString();
     identity.dateOfIssue = new Date(identity.dateOfIssue).toLocaleDateString();
 
