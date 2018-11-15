@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Identity} from './identity/identity';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import * as moment from 'moment';
 
 @Injectable()
 export class IdentityService {
