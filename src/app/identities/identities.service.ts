@@ -35,8 +35,9 @@ export class IdentityService {
   }
 
   addIdentity(identity: Identity): Observable<Identity> {
-    const identityFormatted = this.formatIdentityDates(identity);
-    return this.http.post<Identity>(this.getIdentitiesURL, identityFormatted, this.httpOptions);
+    identity.birthDate = new Date(identity.birthDate).toLocaleDateString();
+    identity.dateOfIssue = new Date(identity.dateOfIssue).toLocaleDateString();
+    return this.http.post<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
   }
 
   formatIdentityDates(identity: Identity): Identity {

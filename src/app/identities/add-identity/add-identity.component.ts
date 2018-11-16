@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {IdentityService} from '../identities.service';
 import {Identity} from '../identity/identity';
 import {Router} from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   templateUrl: './add-identity.component.html',
