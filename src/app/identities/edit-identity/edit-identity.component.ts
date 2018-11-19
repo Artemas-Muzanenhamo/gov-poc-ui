@@ -26,13 +26,13 @@ export class EditIdentityComponent implements OnInit {
     identity.birthDate = moment
       .utc(identity.birthDate, 'DD/MM/YYYY', true)
       .toDate()
-      .toISOString()
+      .toLocaleDateString()
       .split('T')[0];
 
     identity.dateOfIssue = moment
-      .utc(identity.dateOfIssue, 'DD/MM/YYYY', true)
+      .utc(identity.birthDate, 'DD/MM/YYYY', true)
       .toDate()
-      .toISOString()
+      .toLocaleDateString()
       .split('T')[0];
 
     this.identity = identity;
