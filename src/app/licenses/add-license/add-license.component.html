@@ -1,6 +1,6 @@
 <div class="uk-container uk-container-center" xmlns="http://www.w3.org/1999/html">
   <h1 class="title-font">{{pageTitle}}</h1>
-  <form id="add-license-form" class="uk-form uk-form-horizontal add-license-font">
+  <form id="add-license-form" class="uk-form uk-form-horizontal add-license-font" (submit)="onSubmit()" #licenseForm="ngForm">
     <fieldset class="uk-fieldset">
 
       <!--<legend class="uk-legend">Legend</legend>-->
