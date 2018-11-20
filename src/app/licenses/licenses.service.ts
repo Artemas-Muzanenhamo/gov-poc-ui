@@ -6,32 +6,35 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class LicenseService {
 
-  getLicensesURL = 'http://localhost:8080/licenses';
+  getLicensesURL = 'http://localhost:8082/licenses';
   licenses: License[];
 
   constructor(
     private http: HttpClient
   ) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
+
   getLicenses(): Observable<License[]> {
     return this.http.get<License[]>(this.getLicensesURL);
   }
 
   getLicense(id: number): Observable<License> {
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
-
     const idRef = {
       ref: id
     };
 
     if (id) {
-      return this.http.post<License>(this.getLicensesURL + '/ref', idRef, httpOptions);
+      return this.http.post<License>(this.getLicensesURL + '/ref', idRef, this.httpOptions);
     }
+  }
+
+  addLicense(license: License): Observable<License> {
+    return this.http.post<License>(this.getLicensesURL, license, this.httpOptions);
   }
 
 }

@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {LicenseService} from '../licenses.service';
+import {License} from '../license/license';
 
 @Component({
   templateUrl: './add-license.component.html',
@@ -9,4 +11,13 @@ export class AddLicenseComponent {
   submitButton = 'Submit';
   backButton = 'Back';
   uploadButton = 'Upload';
+
+
+  constructor(licenseService: LicenseService) { }
+
+  onSubmit() {}
+
+  addLicense(license: License) : void {
+
+  }
 }
