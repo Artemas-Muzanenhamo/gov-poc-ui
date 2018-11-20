@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {IdentityService} from '../identities.service';
 import {Identity} from '../identity/identity';
 import {Router} from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   templateUrl: './add-identity.component.html',
@@ -11,7 +12,7 @@ import {Router} from '@angular/router';
 export class AddIdentityComponent implements OnInit {
 
   pageTitle = 'Add Identity Details';
-  submitButton = 'submit';
+  submitButton = 'Submit';
   backButton = 'Back';
 
   submitted = false;
@@ -25,6 +26,19 @@ export class AddIdentityComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
+    this.identity.birthDate = moment
+      .utc(this.identity.birthDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    this.identity.dateOfIssue = moment
+      .utc(this.identity.dateOfIssue, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
     this.addIdentity(this.identity);
   }
 
