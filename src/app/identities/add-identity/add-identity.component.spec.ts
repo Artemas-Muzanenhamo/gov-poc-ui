@@ -87,4 +87,9 @@ describe('AddIdentityComponent', () => {
         response => expect(response).toBe(200)
       );
   });
+  // TODO : Google how to call a void method in Angular.
+  xit('should format ISO date to LocaleDate', async(() => {
+    identity.birthDate = '2000-06-12';
+    expect(identity.birthDate).toBe('12/06/2000');
+  }));
 });

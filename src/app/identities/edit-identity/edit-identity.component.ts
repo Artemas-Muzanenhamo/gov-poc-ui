@@ -21,18 +21,17 @@ export class EditIdentityComponent implements OnInit {
     this.onIdentityRetrieved(this.route.snapshot.data['identity']);
   }
 
-  // TODO: FIX DATES WHEN TRYING TO ADD AND EDIT IDENTITY
   onIdentityRetrieved(identity: Identity): void {
     identity.birthDate = moment
       .utc(identity.birthDate, 'DD/MM/YYYY', true)
       .toDate()
-      .toLocaleDateString()
+      .toISOString()
       .split('T')[0];
 
     identity.dateOfIssue = moment
-      .utc(identity.birthDate, 'DD/MM/YYYY', true)
+      .utc(identity.dateOfIssue, 'DD/MM/YYYY', true)
       .toDate()
-      .toLocaleDateString()
+      .toISOString()
       .split('T')[0];
 
     this.identity = identity;
