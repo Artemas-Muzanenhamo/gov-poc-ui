@@ -70,7 +70,7 @@ describe('IdentityServiceComponent', () => {
     // expect(identityService.getIdentities()).toBe(4);
     expect(identityService.getIdentities()
       .subscribe(
-        identity => expect(identity).toBe(identities)
+        data => expect(data).toBe(identities)
       ));
   }));
   it('should return a single License', async ( () => {
