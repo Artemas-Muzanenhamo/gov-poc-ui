@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {LicenseService} from '../licenses.service';
 import {License} from '../license/license';
+import {Router} from '@angular/router';
 
 @Component({
   templateUrl: './add-license.component.html',
@@ -14,7 +15,9 @@ export class AddLicenseComponent {
   submitted: Boolean = false;
 
 
-  constructor(private licenseService: LicenseService) { }
+  constructor(
+    private licenseService: LicenseService,
+    private router: Router) { }
 
   protected license: License = new License();
 
@@ -24,6 +27,11 @@ export class AddLicenseComponent {
   }
 
   private addLicense(license: License): void {
-
+    this.licenseService.addLicense(license)
+      .subscribe(
+        data => {
+          return this.router.navigate(['/licenses']);
+        }
+      );
   }
 }
