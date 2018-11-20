@@ -72,7 +72,7 @@ describe('AddIdentityComponent', () => {
     expect(compiled.querySelector('#date-of-issue').nodeName).toContain('INPUT');
   }));
   it('should render a SUBMIT button', async( () => {
-    expect(compiled.querySelector('#submit-identity').nodeName).toContain('BUTTON');
+    expect(compiled.querySelector('#submitted-identity').nodeName).toContain('BUTTON');
   }));
   it('should render a VIEW IDENTITIES button', async( () => {
     expect(compiled.querySelector('#view-identities').nodeName).toContain('BUTTON');

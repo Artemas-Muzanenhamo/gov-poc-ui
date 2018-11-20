@@ -7,17 +7,23 @@ import {License} from '../license/license';
   styleUrls: ['./add-license.component.css']
 })
 export class AddLicenseComponent {
-  pageTitle = 'Add License Details';
-  submitButton = 'Submit';
-  backButton = 'Back';
-  uploadButton = 'Upload';
+  pageTitle: String = 'Add License Details';
+  submitButton: String = 'Submit';
+  backButton: String = 'Back';
+  uploadButton: String = 'Upload';
+  submitted: Boolean = false;
 
 
-  constructor(licenseService: LicenseService) { }
+  constructor(private licenseService: LicenseService) { }
 
-  onSubmit() {}
+  protected license: License = new License();
 
-  addLicense(license: License) : void {
+  protected onSubmit() {
+    this.submitted = true;
+    this.addLicense(this.license);
+  }
+
+  private addLicense(license: License): void {
 
   }
 }

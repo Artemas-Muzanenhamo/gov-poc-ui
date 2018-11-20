@@ -64,7 +64,7 @@ describe('EditLicenseComponent', () => {
     expect(compiled.querySelector('#address').nodeName).toBe('INPUT');
   }));
   it('should render a SUBMIT button', async( () => {
-    expect(compiled.querySelector('#submit-edit-license').nodeName).toBe('BUTTON');
+    expect(compiled.querySelector('#submitted-edit-license').nodeName).toBe('BUTTON');
   }));
   it('should render a VIEW LICENSES button', async( () => {
     expect(compiled.querySelector('#view-licenses').nodeName).toBe('BUTTON');
