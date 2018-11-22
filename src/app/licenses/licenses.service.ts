@@ -6,7 +6,8 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class LicenseService {
 
-  getLicensesURL = 'http://localhost:8082/licenses';
+  // getLicensesURL = 'http://localhost:8082/licenses';
+  getLicensesURL = 'http://localhost:9999/license-service/licenses';
   licenses: License[];
 
   constructor(
