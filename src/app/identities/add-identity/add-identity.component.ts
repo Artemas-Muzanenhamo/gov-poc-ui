@@ -11,20 +11,20 @@ import * as moment from 'moment';
 })
 export class AddIdentityComponent implements OnInit {
 
-  pageTitle = 'Add Identity Details';
-  submitButton = 'Submit';
-  backButton = 'Back';
+  pageTitle: String = 'Add Identity Details';
+  submitButton: String = 'Submit';
+  backButton: String = 'Back';
 
-  submitted = false;
+  submitted: Boolean = false;
 
   constructor(
     private identityService: IdentityService,
     private router: Router
   ) { }
 
-  identity = new Identity();
+  protected identity: Identity = new Identity();
 
-  onSubmit() {
+  protected onSubmit() {
     this.submitted = true;
 
     this.identity.birthDate = moment
@@ -42,7 +42,7 @@ export class AddIdentityComponent implements OnInit {
     this.addIdentity(this.identity);
   }
 
-  addIdentity(identity: Identity): void {
+  private addIdentity(identity: Identity): void {
     this.identityService.addIdentity(identity)
       .subscribe(
         data => {

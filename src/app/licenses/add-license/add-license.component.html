@@ -1,49 +1,49 @@
 <div class="uk-container uk-container-center" xmlns="http://www.w3.org/1999/html">
   <h1 class="title-font">{{pageTitle}}</h1>
-  <form id="add-license-form" class="uk-form-horizontal add-license-font">
+  <form id="add-license-form" class="uk-form uk-form-horizontal add-license-font" (submit)="onSubmit()" #licenseForm="ngForm">
     <fieldset class="uk-fieldset">
 
       <!--<legend class="uk-legend">Legend</legend>-->
 
       <div class="uk-margin">
-        <label class="uk-form-label">License ID</label>
-        <input id="license-id-input" class="uk-input uk-input uk-width-1-3" type="text" placeholder="License ID">
+        <label for="license-id-input" class="uk-form-label">License ID</label>
+        <input [(ngModel)]="license.id" id="license-id-input" class="uk-input uk-input uk-width-1-3" type="text" placeholder="License ID" name="license-id-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Identity Ref Number</label>
-        <input id="id-ref-input" class="uk-input uk-width-1-3" type="text" placeholder="ID Reference">
+        <label for="id-ref-input" class="uk-form-label">Identity Ref Number</label>
+        <input [(ngModel)]="license.identityRef" id="id-ref-input" class="uk-input uk-width-1-3" type="text" placeholder="ID Reference" name="id-ref-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Surname</label>
-        <input id="surname-input" class="uk-input uk-width-1-3" type="text" placeholder="Surname">
+        <label for="surname-input" class="uk-form-label">Surname</label>
+        <input [(ngModel)]="license.surname" id="surname-input" class="uk-input uk-width-1-3" type="text" placeholder="Surname" name="surname-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">First Names</label>
-        <input id="first-name-input" class="uk-input uk-width-1-3" type="text" placeholder="First Names">
+        <label for="first-name-input" class="uk-form-label">First Names</label>
+        <input [(ngModel)]="license.firstNames" id="first-name-input" class="uk-input uk-width-1-3" type="text" placeholder="First Names" name="first-name-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Date of Birth</label>
-        <input id="dob-input" class="uk-input uk-width-1-3" type="date" placeholder="Date of Birth">
+        <label for="dob-input" class="uk-form-label">Date of Birth</label>
+        <input [(ngModel)]="license.dateOfBirth" id="dob-input" class="uk-input uk-width-1-3" type="date" placeholder="Date of Birth" name="dob-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Country</label>
-        <input id="country-input" class="uk-input uk-width-1-3" type="text" placeholder="Country">
+        <label for="country-input" class="uk-form-label">Country</label>
+        <input [(ngModel)]="license.country" id="country-input" class="uk-input uk-width-1-3" type="text" placeholder="Country" name="country-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Date of Issue</label>
-        <input id="date-of-issue-input" class="uk-input uk-width-1-3" type="text" placeholder="Date of Issue">
+        <label for="date-of-issue-input" class="uk-form-label">Date of Issue</label>
+        <input [(ngModel)]="license.dateOfIssue" id="date-of-issue-input" class="uk-input uk-width-1-3" type="date" placeholder="Date of Issue" name="date-of-issue-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Expiry Date</label>
-        <input id="expiry-date-input" class="uk-input uk-width-1-3" type="date" placeholder="Expiry Date">
+        <label for="expiry-date-input" class="uk-form-label">Expiry Date</label>
+        <input [(ngModel)]="license.expiryDate" id="expiry-date-input" class="uk-input uk-width-1-3" type="date" placeholder="Expiry Date" name="expiry-date-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Agency</label>
-        <input id="agency-input" class="uk-input uk-width-1-3" type="text" placeholder="Agency">
+        <label for="agency-input" class="uk-form-label">Agency</label>
+        <input [(ngModel)]="license.agency" id="agency-input" class="uk-input uk-width-1-3" type="text" placeholder="Agency" name="agency-input">
       </div>
       <div class="uk-margin">
-        <label class="uk-form-label">Address</label>
-        <input id="address-input" class="uk-input uk-width-1-3" type="text" placeholder="Address">
+        <label for="address-input" class="uk-form-label">Address</label>
+        <input [(ngModel)]="license.address" id="address-input" class="uk-input uk-width-1-3" type="text" placeholder="Address" name="address-input">
       </div>
       <div class="js-upload" uk-form-custom>
         <label class="uk-form-label">Upload Image</label>
@@ -51,7 +51,7 @@
         <button class="uk-button uk-button-default" type="button" tabindex="-1">{{uploadButton}}</button>
       </div>
       <div class="uk-margin">
-        <button type="button" id="submit-license" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
+        <button type="submit" (click)="addLicense(license)" id="submit-license" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
         <button type="button" id="view-licenses" class="uk-button uk-button-default" [routerLink]="'/licenses'">{{backButton}}</button>
       </div>
     </fieldset>
