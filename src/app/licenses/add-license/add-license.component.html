@@ -31,7 +31,7 @@
       </div>
       <div class="uk-margin">
         <label for="date-of-issue-input" class="uk-form-label">Date of Issue</label>
-        <input [(ngModel)]="license.dateOfIssue" id="date-of-issue-input" class="uk-input uk-width-1-3" type="text" placeholder="Date of Issue" name="date-of-issue-input">
+        <input [(ngModel)]="license.dateOfIssue" id="date-of-issue-input" class="uk-input uk-width-1-3" type="date" placeholder="Date of Issue" name="date-of-issue-input">
       </div>
       <div class="uk-margin">
         <label for="expiry-date-input" class="uk-form-label">Expiry Date</label>
@@ -51,7 +51,7 @@
         <button class="uk-button uk-button-default" type="button" tabindex="-1">{{uploadButton}}</button>
       </div>
       <div class="uk-margin">
-        <button type="submit" (click)="addLicense(license)" [disabled]="!licenseForm.form.valid" id="submit-license" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
+        <button type="submit" (click)="addLicense(license)" id="submit-license" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
         <button type="button" id="view-licenses" class="uk-button uk-button-default" [routerLink]="'/licenses'">{{backButton}}</button>
       </div>
     </fieldset>
