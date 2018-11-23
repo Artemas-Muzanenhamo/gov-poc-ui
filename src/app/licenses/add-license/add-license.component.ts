@@ -25,12 +25,6 @@ export class AddLicenseComponent {
   protected onSubmit() {
     this.submitted = true;
 
-    this.license.expiryDate = moment
-      .utc(this.license.expiryDate, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
-
     this.license.dateOfIssue = moment
       .utc(this.license.dateOfIssue, 'YYYY-MM-DD', true)
       .toDate()
@@ -42,6 +36,13 @@ export class AddLicenseComponent {
       .toDate()
       .toLocaleDateString()
       .split('T')[0];
+
+    this.license.expiryDate = moment
+      .utc(this.license.expiryDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
 
     this.addLicense(this.license);
   }

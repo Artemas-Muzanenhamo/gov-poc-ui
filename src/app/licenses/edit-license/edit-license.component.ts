@@ -9,11 +9,11 @@ import * as moment from 'moment';
 })
 export class EditLicenseComponent implements OnInit {
 
-  pageTitle = 'Edit License Details';
-  submitButton = 'Submit';
-  backButton = 'Back';
+  pageTitle: String = 'Edit License Details';
+  submitButton: String = 'Submit';
+  backButton: String = 'Back';
   license: License;
-  uploadButton = 'Upload';
+  uploadButton: String = 'Upload';
 
   constructor(private route: ActivatedRoute) { }
 
@@ -24,15 +24,21 @@ export class EditLicenseComponent implements OnInit {
   onLicenseRetrieved(license: License): void {
     license.dateOfBirth = moment
       .utc(license.dateOfBirth, 'DD/MM/YYYY', true)
-      .toDate().toISOString().split('T')[0];
+      .toDate()
+      .toISOString()
+      .split('T')[0];
 
     license.dateOfIssue = moment
       .utc(license.dateOfIssue, 'DD/MM/YYYY', true)
-      .toDate().toISOString().split('T')[0];
+      .toDate()
+      .toISOString()
+      .split('T')[0];
 
     license.expiryDate = moment
       .utc(license.expiryDate, 'DD/MM/YYYY', true)
-      .toDate().toISOString().split('T')[0];
+      .toDate()
+      .toISOString()
+      .split('T')[0];
 
     this.license = license;
   }

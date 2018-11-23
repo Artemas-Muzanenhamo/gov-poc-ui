@@ -10,9 +10,9 @@ import * as moment from 'moment';
 })
 export class EditIdentityComponent implements OnInit {
 
-  pageTitle = 'Edit Identity Details';
-  submitButton = 'Submit';
-  backButton = 'Back';
+  pageTitle: String = 'Edit Identity Details';
+  submitButton: String = 'Submit';
+  backButton: String = 'Back';
   identity: Identity;
 
   constructor(private route: ActivatedRoute) { }
