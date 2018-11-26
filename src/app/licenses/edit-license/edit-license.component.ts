@@ -14,7 +14,6 @@ export class EditLicenseComponent implements OnInit {
   backButton: String = 'Back';
   license: License;
   uploadButton: String = 'Upload';
-  submitted: Boolean = false;
 
   constructor(private route: ActivatedRoute) { }
 

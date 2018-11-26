@@ -24,7 +24,7 @@ export class AddIdentityComponent implements OnInit {
 
   protected identity: Identity = new Identity();
 
-  protected onSubmit() {
+  public onSubmit() {
     this.submitted = true;
 
     this.identity.birthDate = moment
