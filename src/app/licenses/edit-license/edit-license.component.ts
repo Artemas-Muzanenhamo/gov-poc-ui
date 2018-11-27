@@ -21,7 +21,7 @@ export class EditLicenseComponent implements OnInit {
     this.onLicenseRetrieved(this.route.snapshot.data['license']);
   }
 
-  onLicenseRetrieved(license: License): void {
+  private onLicenseRetrieved(license: License): void {
     license.dateOfBirth = moment
       .utc(license.dateOfBirth, 'DD/MM/YYYY', true)
       .toDate()
@@ -41,5 +41,9 @@ export class EditLicenseComponent implements OnInit {
       .split('T')[0];
 
     this.license = license;
+  }
+
+  protected updateLicense(license: License): void {
+    console.log(this.license);
   }
 }
