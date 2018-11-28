@@ -25,14 +25,14 @@ export class AddLicenseComponent {
   protected onSubmit() {
     this.submitted = true;
 
-    this.license.dateOfIssue = moment
-      .utc(this.license.dateOfIssue, 'YYYY-MM-DD', true)
+    this.license.dateOfBirth = moment
+      .utc(this.license.dateOfBirth, 'YYYY-MM-DD', true)
       .toDate()
       .toLocaleDateString()
       .split('T')[0];
 
-    this.license.dateOfBirth = moment
-      .utc(this.license.dateOfBirth, 'YYYY-MM-DD', true)
+    this.license.dateOfIssue = moment
+      .utc(this.license.dateOfIssue, 'YYYY-MM-DD', true)
       .toDate()
       .toLocaleDateString()
       .split('T')[0];
