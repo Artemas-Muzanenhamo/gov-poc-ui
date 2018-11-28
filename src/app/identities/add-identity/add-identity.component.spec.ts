@@ -27,7 +27,7 @@ describe('AddIdentityComponent', () => {
       ]
     }).compileComponents();
     identityService = TestBed.get(IdentityService);
-    getIdentitiesStub = spyOn(identityService, 'addIdentity').and.returnValue(200);
+    getIdentitiesStub = spyOn(identityService, 'addIdentity').and.returnValue(identity);
   }));
 
   beforeEach(() => {
@@ -90,9 +90,9 @@ describe('AddIdentityComponent', () => {
         response => expect(response).toBe(200)
       );
   });
-  // TODO : Google how to call a void method in Angular.
-  xit('should format ISO date to LocaleDate', async(() => {
-    identity.birthDate = '2000-06-12';
+  it('should format ISO date to LocaleDate', async(() => {
+    // identity.birthDate = '2000-06-12';
+    component.identity = identity;
     component.onSubmit();
     expect(identity.birthDate).toBe('12/06/2000');
   }));

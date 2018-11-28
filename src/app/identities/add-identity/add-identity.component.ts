@@ -22,9 +22,9 @@ export class AddIdentityComponent implements OnInit {
     private router: Router
   ) { }
 
-  protected identity: Identity = new Identity();
+  identity: Identity = new Identity();
 
-  public onSubmit() {
+  public onSubmit(): void {
     this.submitted = true;
 
     this.identity.birthDate = moment
