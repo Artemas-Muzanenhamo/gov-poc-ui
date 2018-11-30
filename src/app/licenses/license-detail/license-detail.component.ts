@@ -10,15 +10,14 @@ export class LicenseDetailComponent implements OnInit {
 
   licenses: License[];
   license: License;
-  backButton = 'Back';
-  editButton = 'Edit';
+  backButton: String = 'Back';
+  editButton: String = 'Edit';
 
   constructor(
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    // this.license = this.route.snapshot.data['license'];
     this.route.data
       .subscribe(
         license => {

@@ -5,5 +5,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./licenses.component.css']
 })
 export class LicenseComponent {
-  addLicense = 'Add License';
+  addLicense: String = 'Add License';
 }

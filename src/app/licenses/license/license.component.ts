@@ -8,9 +8,9 @@ import {License} from './license';
 })
 export class LicensesComponent implements OnInit {
 
-  pageTitle = 'License Detail';
+  pageTitle: String = 'License Detail';
+  editButton: String = 'Edit';
   licenses: License[];
-  editButton = 'Edit';
 
   constructor(private licenseService: LicenseService) {}
 

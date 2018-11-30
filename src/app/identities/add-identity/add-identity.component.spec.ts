@@ -13,7 +13,6 @@ describe('AddIdentityComponent', () => {
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
   let identityService;
-  let getIdentitiesStub;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,7 +26,6 @@ describe('AddIdentityComponent', () => {
       ]
     }).compileComponents();
     identityService = TestBed.get(IdentityService);
-    getIdentitiesStub = spyOn(identityService, 'addIdentity').and.returnValue(identity);
   }));
 
   beforeEach(() => {
