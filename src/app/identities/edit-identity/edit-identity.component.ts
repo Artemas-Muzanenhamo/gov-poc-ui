@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Identity} from '../identity/identity';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import * as moment from 'moment';
+import {IdentityService} from '../identities.service';
 
 @Component({
   selector: 'app-edit-identity',
@@ -14,8 +15,13 @@ export class EditIdentityComponent implements OnInit {
   submitButton: String = 'Submit';
   backButton: String = 'Back';
   identity: Identity;
+  submitted: Boolean = false;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private identityService: IdentityService
+  ) { }
 
   ngOnInit(): void {
     this.onIdentityRetrieved(this.route.snapshot.data['identity']);
@@ -35,6 +41,21 @@ export class EditIdentityComponent implements OnInit {
       .split('T')[0];
 
     this.identity = identity;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    // TODO: Format dates here otherwise all HELL WILL BREAK LOST when submitting.
+    this.updateIdentity(this.identity);
+  }
+
+  protected updateIdentity(identity: Identity) {
+    this.identityService.updateIdentity(identity)
+      .subscribe(
+        data => {
+          return this.router.navigate(['/identities']);
+        }
+      );
   }
 
 }

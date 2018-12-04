@@ -38,4 +38,8 @@ export class IdentityService {
   addIdentity(identity: Identity): Observable<Identity> {
     return this.http.post<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
   }
+
+  updateIdentity(identity: Identity): Observable<Identity> {
+    return this.http.put<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
+  }
 }
