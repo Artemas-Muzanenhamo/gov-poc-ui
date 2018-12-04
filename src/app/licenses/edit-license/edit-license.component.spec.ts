@@ -13,7 +13,7 @@ describe('EditLicenseComponent', () => {
   let editLicense;
   let activatedRoute: ActivatedRoute;
   let router;
-  let liceseService;
+  let licenseService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -33,7 +33,7 @@ describe('EditLicenseComponent', () => {
   beforeEach(async() => {
     activatedRoute = TestBed.get(ActivatedRoute);
     router = TestBed.get(RouterTestingModule);
-    liceseService = TestBed.get(LicenseService);
+    licenseService = TestBed.get(LicenseService);
   });
 
   beforeEach(() => {
