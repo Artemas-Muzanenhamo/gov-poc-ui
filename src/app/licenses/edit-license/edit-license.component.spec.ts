@@ -3,6 +3,7 @@ import {EditLicenseComponent} from './edit-license.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import {ActivatedRoute} from '@angular/router';
+import {LicenseService} from '../licenses.service';
 
 describe('EditLicenseComponent', () => {
 
@@ -14,13 +15,14 @@ describe('EditLicenseComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-          AppModule, RouterTestingModule
+          AppModule, RouterTestingModule, RouterTestingModule
       ],
       providers: [
         {
           provide: ActivatedRoute,
           useValue: {snapshot: {children: [{url: ['your/path/here']}]}}
-        }
+        },
+        LicenseService
       ]
     }).compileComponents();
   }));

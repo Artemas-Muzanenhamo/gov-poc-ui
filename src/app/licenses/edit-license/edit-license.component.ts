@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {License} from '../license/license';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import * as moment from 'moment';
+import {LicenseService} from '../licenses.service';
 
 @Component({
   templateUrl: './edit-license.component.html',
@@ -14,8 +15,13 @@ export class EditLicenseComponent implements OnInit {
   backButton: String = 'Back';
   license: License;
   uploadButton: String = 'Upload';
+  submitted: Boolean = false;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private licenseService: LicenseService
+  ) { }
 
   ngOnInit(): void {
     this.onLicenseRetrieved(this.route.snapshot.data['license']);
@@ -43,7 +49,37 @@ export class EditLicenseComponent implements OnInit {
     this.license = license;
   }
 
+  onSubmit() {
+    this.submitted = true;
+
+    this.license.dateOfBirth = moment
+      .utc(this.license.dateOfBirth, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    this.license.dateOfIssue = moment
+      .utc(this.license.dateOfIssue, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    this.license.expiryDate = moment
+      .utc(this.license.expiryDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+
+    this.updateLicense(this.license);
+  }
+
   protected updateLicense(license: License): void {
-    console.log(this.license);
+    this.licenseService.updateLicense(license)
+      .subscribe(
+        data => {
+          return this.router.navigate(['/licenses']);
+        }
+      );
   }
 }
