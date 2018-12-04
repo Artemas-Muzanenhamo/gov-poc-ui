@@ -40,7 +40,7 @@ describe('EditLicenseComponent', () => {
     fixture = TestBed.createComponent(EditLicenseComponent);
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
-    editLicense = new EditLicenseComponent(activatedRoute, router, liceseService);
+    editLicense = new EditLicenseComponent(activatedRoute, router, licenseService);
   });
   it('should render an Edit License Form', async( () => {
     expect(compiled.querySelector('#edit-license-form').nodeName).toBe('FORM');
