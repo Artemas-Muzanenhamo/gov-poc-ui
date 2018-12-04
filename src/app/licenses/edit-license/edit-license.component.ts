@@ -70,7 +70,6 @@ export class EditLicenseComponent implements OnInit {
       .toLocaleDateString()
       .split('T')[0];
 
-
     this.updateLicense(this.license);
   }
 

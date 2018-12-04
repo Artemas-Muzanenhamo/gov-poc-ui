@@ -51,7 +51,7 @@
         <button class="uk-button uk-button-default" type="button" tabindex="-1">{{uploadButton}}</button>
       </div>
       <div class="uk-margin">
-        <button type="button" (click)="updateLicense(license)" id="submit-edit-license" value="submit" class="uk-button uk-button-primary">{{submitButton}}</button>
+        <button type="submit" (click)="updateLicense(license)" id="submit-edit-license" value="submit" class="uk-button uk-button-primary">{{submitButton}}</button>
         <button type="button" id="view-licenses" class="uk-button uk-button-primary" [routerLink]="'/licenses'">{{backButton}}</button>
       </div>
     </fieldset>
