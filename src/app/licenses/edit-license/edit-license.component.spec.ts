@@ -3,6 +3,7 @@ import {EditLicenseComponent} from './edit-license.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import {ActivatedRoute} from '@angular/router';
+import {LicenseService} from '../licenses.service';
 
 describe('EditLicenseComponent', () => {
 
@@ -10,6 +11,9 @@ describe('EditLicenseComponent', () => {
   let fixture: ComponentFixture<EditLicenseComponent>;
   let compiled;
   let editLicense;
+  let activatedRoute: ActivatedRoute;
+  let router;
+  let liceseService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,15 +24,23 @@ describe('EditLicenseComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {snapshot: {children: [{url: ['your/path/here']}]}}
-        }
+        },
+        LicenseService
       ]
     }).compileComponents();
   }));
+
+  beforeEach(async() => {
+    activatedRoute = TestBed.get(ActivatedRoute);
+    router = TestBed.get(RouterTestingModule);
+    liceseService = TestBed.get(LicenseService);
+  });
+
   beforeEach(() => {
     fixture = TestBed.createComponent(EditLicenseComponent);
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
-    editLicense = new EditLicenseComponent(new ActivatedRoute);
+    editLicense = new EditLicenseComponent(activatedRoute, router, liceseService);
   });
   it('should render an Edit License Form', async( () => {
     expect(compiled.querySelector('#edit-license-form').nodeName).toBe('FORM');

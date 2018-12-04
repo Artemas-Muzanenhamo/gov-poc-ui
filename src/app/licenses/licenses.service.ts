@@ -38,4 +38,7 @@ export class LicenseService {
     return this.http.post<License>(this.getLicensesURL, license, this.httpOptions);
   }
 
+  updateLicense(license: License): Observable<License> {
+    return this.http.put<License>(this.getLicensesURL, license, this.httpOptions);
+  }
 }
