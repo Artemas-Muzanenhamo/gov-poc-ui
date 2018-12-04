@@ -11,11 +11,14 @@ describe('EditLicenseComponent', () => {
   let fixture: ComponentFixture<EditLicenseComponent>;
   let compiled;
   let editLicense;
+  let activatedRoute: ActivatedRoute;
+  let router;
+  let liceseService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-          AppModule, RouterTestingModule, RouterTestingModule
+          AppModule, RouterTestingModule
       ],
       providers: [
         {
@@ -26,11 +29,18 @@ describe('EditLicenseComponent', () => {
       ]
     }).compileComponents();
   }));
+
+  beforeEach(async() => {
+    activatedRoute = TestBed.get(ActivatedRoute);
+    router = TestBed.get(RouterTestingModule);
+    liceseService = TestBed.get(LicenseService);
+  });
+
   beforeEach(() => {
     fixture = TestBed.createComponent(EditLicenseComponent);
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
-    editLicense = new EditLicenseComponent(new ActivatedRoute);
+    editLicense = new EditLicenseComponent(activatedRoute, router, liceseService);
   });
   it('should render an Edit License Form', async( () => {
     expect(compiled.querySelector('#edit-license-form').nodeName).toBe('FORM');
