@@ -27,7 +27,7 @@ export class EditIdentityComponent implements OnInit {
     this.onIdentityRetrieved(this.route.snapshot.data['identity']);
   }
 
-  onIdentityRetrieved(identity: Identity): void {
+  public onIdentityRetrieved(identity: Identity): void {
     identity.birthDate = moment
       .utc(identity.birthDate, 'DD/MM/YYYY', true)
       .toDate()
@@ -43,7 +43,7 @@ export class EditIdentityComponent implements OnInit {
     this.identity = identity;
   }
 
-  onSubmit() {
+  public onSubmit() {
     this.submitted = true;
 
     this.identity.birthDate = moment

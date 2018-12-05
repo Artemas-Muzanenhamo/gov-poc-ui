@@ -49,7 +49,7 @@ export class EditLicenseComponent implements OnInit {
     this.license = license;
   }
 
-  onSubmit() {
+  public onSubmit() {
     this.submitted = true;
 
     this.license.dateOfBirth = moment
