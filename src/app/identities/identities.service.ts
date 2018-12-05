@@ -6,7 +6,6 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class IdentityService {
 
-  // getIdentitiesURL = 'http://localhost:8082/identities';
   getIdentitiesURL = 'http://localhost:9999/identity-service/identities';
 
   constructor(
@@ -19,11 +18,11 @@ export class IdentityService {
     })
   };
 
-  getIdentities(): Observable<Identity[]> {
+  public getIdentities(): Observable<Identity[]> {
     return this.http.get<Identity[]>(this.getIdentitiesURL);
   }
 
-  getIdentity(idRef: Number): Observable<Identity> {
+  public getIdentity(idRef: Number): Observable<Identity> {
     if (idRef) {
 
       const ref = {
@@ -35,7 +34,11 @@ export class IdentityService {
     }
   }
 
-  addIdentity(identity: Identity): Observable<Identity> {
+  public addIdentity(identity: Identity): Observable<Identity> {
     return this.http.post<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
+  }
+
+  public updateIdentity(identity: Identity): Observable<Identity> {
+    return this.http.put<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
   }
 }

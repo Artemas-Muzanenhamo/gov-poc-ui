@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Identity} from '../identity/identity';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import * as moment from 'moment';
+import {IdentityService} from '../identities.service';
 
 @Component({
   selector: 'app-edit-identity',
@@ -14,14 +15,19 @@ export class EditIdentityComponent implements OnInit {
   submitButton: String = 'Submit';
   backButton: String = 'Back';
   identity: Identity;
+  submitted: Boolean = false;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private identityService: IdentityService
+  ) { }
 
   ngOnInit(): void {
     this.onIdentityRetrieved(this.route.snapshot.data['identity']);
   }
 
-  onIdentityRetrieved(identity: Identity): void {
+  public onIdentityRetrieved(identity: Identity): void {
     identity.birthDate = moment
       .utc(identity.birthDate, 'DD/MM/YYYY', true)
       .toDate()
@@ -35,6 +41,33 @@ export class EditIdentityComponent implements OnInit {
       .split('T')[0];
 
     this.identity = identity;
+  }
+
+  public onSubmit() {
+    this.submitted = true;
+
+    this.identity.birthDate = moment
+      .utc(this.identity.birthDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    this.identity.dateOfIssue = moment
+      .utc(this.identity.dateOfIssue, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    this.updateIdentity(this.identity);
+  }
+
+  protected updateIdentity(identity: Identity) {
+    this.identityService.updateIdentity(identity)
+      .subscribe(
+        data => {
+          return this.router.navigate(['/identities']);
+        }
+      );
   }
 
 }

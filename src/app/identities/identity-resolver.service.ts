@@ -10,7 +10,7 @@ export class IdentityResolver {
   constructor(private identityService: IdentityService, router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Identity | Observable<Identity> {
-    const refNum = +route.params['id'];
-    return this.identityService.getIdentity(refNum);
+    const referenceNumber = +route.params['id'];
+    return this.identityService.getIdentity(referenceNumber);
   }
 }
