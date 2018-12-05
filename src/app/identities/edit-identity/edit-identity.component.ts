@@ -45,7 +45,19 @@ export class EditIdentityComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    // TODO: Format dates here otherwise all HELL WILL BREAK LOST when submitting.
+
+    this.identity.birthDate = moment
+      .utc(this.identity.birthDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    this.identity.dateOfIssue = moment
+      .utc(this.identity.dateOfIssue, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
     this.updateIdentity(this.identity);
   }
 
