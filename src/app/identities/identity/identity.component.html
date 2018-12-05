@@ -10,7 +10,7 @@
         <th id="edit-identity"></th>
       </tr>
     </thead>
-    <tbody class="uk-contrast">
+    <tbody class="uk-contrast uk-animation-slide-top">
       <tr *ngFor="let identity of identities">
         <td id="identity-id-td"><a [routerLink]="['/identities', identity.identityRef]">{{identity.id}}</a></td>
         <td id="identity-ref-td">{{identity.identityRef}}</td>
