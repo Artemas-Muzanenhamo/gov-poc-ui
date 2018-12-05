@@ -10,8 +10,8 @@ import {Identity} from '../identity/identity';
 export class IdentityDetailComponent implements OnInit {
 
   identity: Identity;
-  backButton = 'Back';
-  editButton = 'Edit';
+  backButton: String = 'Back';
+  editButton: String = 'Edit';
 
   constructor(
     private route: ActivatedRoute

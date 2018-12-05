@@ -5,5 +5,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./identities.component.css']
 })
 export class IdentityComponent {
-  addIdentity = 'Add Identity';
+  addIdentity: String = 'Add Identity';
 }

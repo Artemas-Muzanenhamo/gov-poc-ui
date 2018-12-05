@@ -6,7 +6,6 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class LicenseService {
 
-  // getLicensesURL = 'http://localhost:8082/licenses';
   getLicensesURL = 'http://localhost:9999/license-service/licenses';
   licenses: License[];
 
@@ -20,11 +19,11 @@ export class LicenseService {
     })
   };
 
-  getLicenses(): Observable<License[]> {
+  public getLicenses(): Observable<License[]> {
     return this.http.get<License[]>(this.getLicensesURL);
   }
 
-  getLicense(id: number): Observable<License> {
+  public getLicense(id: number): Observable<License> {
     const idRef = {
       ref: id
     };
@@ -34,11 +33,11 @@ export class LicenseService {
     }
   }
 
-  addLicense(license: License): Observable<License> {
+  public addLicense(license: License): Observable<License> {
     return this.http.post<License>(this.getLicensesURL, license, this.httpOptions);
   }
 
-  updateLicense(license: License): Observable<License> {
+  public updateLicense(license: License): Observable<License> {
     return this.http.put<License>(this.getLicensesURL, license, this.httpOptions);
   }
 }

@@ -12,7 +12,7 @@ export class IdentitiesComponent implements OnInit {
 
   constructor(private identityService: IdentityService) {}
 
-  getIdentities() {
+  public getIdentities() {
     return this.identityService.getIdentities();
   }
 

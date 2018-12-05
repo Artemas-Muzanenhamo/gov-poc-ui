@@ -49,7 +49,7 @@ export class EditLicenseComponent implements OnInit {
     this.license = license;
   }
 
-  public onSubmit() {
+  protected onSubmit() {
     this.submitted = true;
 
     this.license.dateOfBirth = moment
@@ -73,7 +73,7 @@ export class EditLicenseComponent implements OnInit {
     this.updateLicense(this.license);
   }
 
-  protected updateLicense(license: License): void {
+  private updateLicense(license: License): void {
     this.licenseService.updateLicense(license)
       .subscribe(
         data => {
