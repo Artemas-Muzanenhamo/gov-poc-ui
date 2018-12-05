@@ -14,7 +14,7 @@ export class LicensesComponent implements OnInit {
 
   constructor(private licenseService: LicenseService) {}
 
-  private getLicenses () {
+  public getLicenses () {
     return this.licenseService.getLicenses()
       .subscribe(
         licenses => this.licenses = licenses,
