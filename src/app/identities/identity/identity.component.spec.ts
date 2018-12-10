@@ -14,7 +14,7 @@ describe('IdentitiesComponent', () => {
   let compiled;
   let identities;
   let identityService;
-  let identityStub;
+  let getIdentitiesStub, identityStub;
 
   beforeEach(async(() => {
 
@@ -70,6 +70,7 @@ describe('IdentitiesComponent', () => {
     }).compileComponents();
 
     identityService = TestBed.get(IdentityService);
+    getIdentitiesStub = spyOn(identityService, 'getIdentities').and.returnValue(of(identities));
     identityStub = spyOn(identityService, 'getIdentity').and.returnValue(of(identities[0]));
   }));
   beforeEach(() => {
@@ -124,5 +125,13 @@ describe('IdentitiesComponent', () => {
           expect(id.birthDate).toBe('1990-03-28');
         }
       );
+  }));
+  it('should return a list of identities', async ( () => {
+    identityService.getIdentities()
+      .subscribe(
+        data => {
+          expect(data).toBe(identities);
+        }
+      )
   }));
 });
