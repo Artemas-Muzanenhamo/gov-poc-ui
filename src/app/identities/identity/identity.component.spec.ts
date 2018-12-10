@@ -132,6 +132,6 @@ describe('IdentitiesComponent', () => {
         data => {
           expect(data).toBe(identities);
         }
-      )
+      );
   }));
 });
