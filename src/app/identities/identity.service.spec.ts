@@ -89,4 +89,44 @@ describe('IdentityServiceComponent', () => {
     req.flush(identities[0]);
     httpMock.verify();
   }));
+  it('should return a 200 when you add a valid identity', async ( () => {
+    const myIdentity: Identity = {
+      id: 'XIT40034',
+      identityRef: '432133',
+      name: 'Taku',
+      surname: 'Mzee',
+      birthDate: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+      villageOfOrigin: 'Mashayamombe',
+      placeOfBirth: 'Zimbabwe',
+      dateOfIssue: moment.utc('01/01/2018', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0]
+    };
+
+    identityService.addIdentity(myIdentity)
+      .subscribe();
+
+    const req = httpMock.expectOne(getIdentitiesURL);
+    expect(req.request.method).toEqual('POST');
+    req.flush(identities);
+    httpMock.verify();
+  }));
+  it('should update an identity', async ( () => {
+    const myIdentity: Identity = {
+      id: 'XIT40034',
+      identityRef: '2222444',
+      name: 'Taku',
+      surname: 'Mzee',
+      birthDate: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+      villageOfOrigin: 'Mashayamombe',
+      placeOfBirth: 'Zimbabwe',
+      dateOfIssue: moment.utc('01/01/2018', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0]
+    };
+
+    identityService.updateIdentity(myIdentity)
+      .subscribe();
+
+    const req = httpMock.expectOne(getIdentitiesURL);
+    expect(req.request.method).toEqual('PUT');
+    req.flush(identities);
+    httpMock.verify();
+  }));
 });
