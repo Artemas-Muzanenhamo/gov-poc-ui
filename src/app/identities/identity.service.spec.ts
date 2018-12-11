@@ -3,23 +3,25 @@ import {async, TestBed} from '@angular/core/testing';
 import * as moment from 'moment';
 import {Identity} from './identity/identity';
 import { of} from 'rxjs';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 describe('IdentityServiceComponent', () => {
   let identityService: IdentityService;
   let identities: Identity[];
-  let getIdentitiesStub;
-  let getIdentityStub;
+  let httpMock: HttpTestingController;
+  const getIdentitiesURL = 'http://localhost:9999/identity-service/identities';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [
+        HttpClientTestingModule
+      ],
       providers: [
         IdentityService
-      ] });
+      ]
+    });
     identityService = TestBed.get(IdentityService);
-    getIdentitiesStub = spyOn(identityService, 'getIdentities').and.returnValue(of(identities));
-    getIdentityStub = spyOn(identityService, 'getIdentity').and.returnValue(of(identities[0]));
+    httpMock = TestBed.get(HttpTestingController);
   });
 
   identities = [
@@ -68,13 +70,23 @@ describe('IdentityServiceComponent', () => {
 
   it('should return 4 identities in total', async( () => {
     // expect(identityService.getIdentities()).toBe(4);
-    expect(identityService.getIdentities()
+    identityService.getIdentities()
       .subscribe(
         data => expect(data).toBe(identities)
-      ));
+      );
+
+    const req = httpMock.expectOne(getIdentitiesURL);
+    expect(req.request.method).toEqual('GET');
+    req.flush(identities);
+    httpMock.verify();
   }));
   it('should return a single License', async ( () => {
     identityService.getIdentity(1)
       .subscribe(id => expect(id.name).toBe('Artemas'));
+
+    const req = httpMock.expectOne(getIdentitiesURL + '/reference');
+    expect(req.request.method).toEqual('POST');
+    req.flush(identities[0]);
+    httpMock.verify();
   }));
 });
