@@ -8,7 +8,7 @@ import * as moment from 'moment';
 import {Identity} from '../identity/identity';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-fdescribe('AddIdentityComponent', () => {
+describe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
@@ -78,11 +78,7 @@ fdescribe('AddIdentityComponent', () => {
   it('should render a VIEW IDENTITIES button', async( () => {
     expect(compiled.querySelector('#view-identities').nodeName).toContain('BUTTON');
   }));
-  // TODO - Needs to use RouterTestingModule in order to work
-  // TODO - Set up Router to work first
-  // TODO - Navigate to Add Identity location
-  // TODO - Then perform and assert
-  fit('should return a response 200 when adding an identity', () => {
+  it('should return a response 200 when adding an identity', () => {
     identityService.addIdentity(identity)
       .subscribe(
         response => expect(response).toBe(200)
