@@ -78,11 +78,7 @@ describe('AddIdentityComponent', () => {
   it('should render a VIEW IDENTITIES button', async( () => {
     expect(compiled.querySelector('#view-identities').nodeName).toContain('BUTTON');
   }));
-  // TODO - Needs to use RouterTestingModule in order to work
-  // TODO - Set up Router to work first
-  // TODO - Navigate to Add Identity location
-  // TODO - Then perform and assert
-  xit('should return a response 200 when adding an identity', () => {
+  it('should return a response 200 when adding an identity', () => {
     identityService.addIdentity(identity)
       .subscribe(
         response => expect(response).toBe(200)
@@ -90,8 +86,18 @@ describe('AddIdentityComponent', () => {
   });
   xit('should format ISO date to LocaleDate', async(() => {
     // identity.birthDate = '2000-06-12';
-    component.identity = identity;
+    const identity2: Identity = {
+      id: 'GIANn09876',
+      identityRef: '1178900',
+      name: 'Giannis',
+      surname: 'Marks',
+      birthDate: '2018-06-12',
+      villageOfOrigin: 'Mashayamombe',
+      placeOfBirth: 'Zimbabwe',
+      dateOfIssue: '2018-06-12'
+    };
+    component.identity = identity2;
     component.onSubmit();
-    expect(identity.birthDate).toBe('12/06/2000');
+    expect(identity2.birthDate).toBe('12/06/2018');
   }));
 });
