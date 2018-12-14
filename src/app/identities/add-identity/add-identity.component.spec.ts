@@ -8,7 +8,7 @@ import * as moment from 'moment';
 import {Identity} from '../identity/identity';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-describe('AddIdentityComponent', () => {
+fdescribe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
@@ -82,7 +82,7 @@ describe('AddIdentityComponent', () => {
   // TODO - Set up Router to work first
   // TODO - Navigate to Add Identity location
   // TODO - Then perform and assert
-  xit('should return a response 200 when adding an identity', () => {
+  fit('should return a response 200 when adding an identity', () => {
     identityService.addIdentity(identity)
       .subscribe(
         response => expect(response).toBe(200)
