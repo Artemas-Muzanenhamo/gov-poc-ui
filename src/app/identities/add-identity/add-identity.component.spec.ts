@@ -8,7 +8,7 @@ import * as moment from 'moment';
 import {Identity} from '../identity/identity';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-describe('AddIdentityComponent', () => {
+fdescribe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
@@ -84,7 +84,7 @@ describe('AddIdentityComponent', () => {
         response => expect(response).toBe(200)
       );
   });
-  xit('should format ISO date to LocaleDate', async(() => {
+  fit('should format ISO date to LocaleDate', async(() => {
     // identity.birthDate = '2000-06-12';
     component.identity = identity;
     component.onSubmit();
