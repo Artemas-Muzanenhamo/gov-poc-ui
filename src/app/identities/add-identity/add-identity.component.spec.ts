@@ -86,8 +86,18 @@ fdescribe('AddIdentityComponent', () => {
   });
   fit('should format ISO date to LocaleDate', async(() => {
     // identity.birthDate = '2000-06-12';
-    component.identity = identity;
+    const identity2: Identity = {
+      id: 'GIANn09876',
+      identityRef: '1178900',
+      name: 'Giannis',
+      surname: 'Marks',
+      birthDate: '2018-06-12',
+      villageOfOrigin: 'Mashayamombe',
+      placeOfBirth: 'Zimbabwe',
+      dateOfIssue: '2018-06-12'
+    };
+    component.identity = identity2;
     component.onSubmit();
-    expect(identity.birthDate).toBe('12/06/2000');
+    expect(identity2.birthDate).toBe('12/06/2018');
   }));
 });
