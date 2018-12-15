@@ -17,8 +17,7 @@ export class LicensesComponent implements OnInit {
   public getLicenses () {
     return this.licenseService.getLicenses()
       .subscribe(
-        licenses => this.licenses = licenses,
-        error => console.log(error)
+        licenses => this.licenses = licenses
       );
   }
 
