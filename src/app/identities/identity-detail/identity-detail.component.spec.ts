@@ -36,24 +36,6 @@ describe('IdentityDetailComponent', () => {
                 identity: ID,
               }),
             },
-            // params: {
-            //   subscribe: (fn: (value: Params) => void) => fn({
-            //     tab: 0,
-            //   }),
-            // },
-            snapshot: {
-              url: [
-                {
-                  path: 'foo',
-                },
-                {
-                  path: 'bar',
-                },
-                {
-                  path: 'baz',
-                },
-              ],
-            },
           }
         }
       ]
