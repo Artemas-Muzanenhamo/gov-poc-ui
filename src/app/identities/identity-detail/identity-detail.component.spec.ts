@@ -61,7 +61,6 @@ describe('IdentityDetailComponent', () => {
   });
   it('should return identity data details', async() => {
     activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
-    // component.ngOnInit();
     expect(component.identity).toEqual(ID);
   });
 });
