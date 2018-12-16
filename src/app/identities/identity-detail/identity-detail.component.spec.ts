@@ -10,7 +10,7 @@ describe('IdentityDetailComponent', () => {
   let component: IdentityDetailComponent;
   let fixture: ComponentFixture<IdentityDetailComponent>;
   let activatedRoute;
-  const ID = {
+  const IDENTITY = {
     id: 'MUZAn09876',
     identityRef: '6678944',
     name: 'Artemas',
@@ -33,7 +33,7 @@ describe('IdentityDetailComponent', () => {
           useValue: {
             data: {
               subscribe: (fn: (value: Data) => void) => fn({
-                identity: ID,
+                identity: IDENTITY,
               }),
             },
           }
@@ -61,7 +61,6 @@ describe('IdentityDetailComponent', () => {
   });
   it('should return identity data details', async() => {
     activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
-    // component.ngOnInit();
-    expect(component.identity).toEqual(ID);
+    expect(component.identity).toEqual(IDENTITY);
   });
 });

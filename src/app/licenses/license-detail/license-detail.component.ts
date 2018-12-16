@@ -20,10 +20,7 @@ export class LicenseDetailComponent implements OnInit {
   ngOnInit() {
     this.route.data
       .subscribe(
-        license => {
-          console.log(license);
-          this.license = license['license'];
-        }
+        license => this.license = license['license']
       );
   }
 
