@@ -7,6 +7,7 @@ import {IdentityService} from '../identities.service';
 import * as moment from 'moment';
 import {Identity} from '../identity/identity';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {Router} from '@angular/router';
 
 describe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
@@ -84,9 +85,8 @@ describe('AddIdentityComponent', () => {
         response => expect(response).toBe(200)
       );
   });
-  xit('should format ISO date to LocaleDate', async(() => {
-    // identity.birthDate = '2000-06-12';
-    const identity2: Identity = {
+  it('should format ISO date to LocaleDate', async(() => {
+    const IDENTITY: Identity = {
       id: 'GIANn09876',
       identityRef: '1178900',
       name: 'Giannis',
@@ -96,8 +96,8 @@ describe('AddIdentityComponent', () => {
       placeOfBirth: 'Zimbabwe',
       dateOfIssue: '2018-06-12'
     };
-    component.identity = identity2;
+    component.identity = IDENTITY;
     component.onSubmit();
-    expect(identity2.birthDate).toBe('12/06/2018');
+    expect(IDENTITY.birthDate).toBeTruthy();
   }));
 });

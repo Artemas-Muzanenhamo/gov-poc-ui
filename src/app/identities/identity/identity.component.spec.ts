@@ -76,6 +76,7 @@ describe('IdentitiesComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(IdentitiesComponent);
     component = fixture.componentInstance;
+    component.ngOnInit();
     compiled = fixture.debugElement.nativeElement;
   });
   it('should render a table of Identities', async( () => {
