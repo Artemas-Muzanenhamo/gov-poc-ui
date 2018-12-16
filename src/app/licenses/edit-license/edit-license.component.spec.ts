@@ -2,45 +2,59 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {EditLicenseComponent} from './edit-license.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Data} from '@angular/router';
 import {LicenseService} from '../licenses.service';
+import * as moment from 'moment';
 
 describe('EditLicenseComponent', () => {
 
   let component: EditLicenseComponent;
   let fixture: ComponentFixture<EditLicenseComponent>;
   let compiled;
-  let editLicense;
   let activatedRoute: ActivatedRoute;
-  let router;
-  let licenseService;
+  const LICENSE = {
+    id: '1234',
+    identityRef: 'MUZAN1234',
+    surname: 'Muzanenhamo',
+    firstNames: 'Artemas',
+    dateOfBirth: '28/03/1990',
+    country: 'Zimbabwe',
+    dateOfIssue: '28/03/1990',
+    expiryDate: '28/03/1990',
+    agency: 'DVLA',
+    licenseNumber: 'MUZAN2803901234',
+    signatureImage: '01.PNG',
+    address: '5 radstone court'
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-          AppModule, RouterTestingModule
+        AppModule,
+        RouterTestingModule
       ],
       providers: [
         {
           provide: ActivatedRoute,
-          useValue: {snapshot: {children: [{url: ['your/path/here']}]}}
+          useValue: {
+            snapshot: {
+              data: {
+                license: LICENSE
+              }
+            }
+          }
         },
         LicenseService
       ]
     }).compileComponents();
   }));
 
-  beforeEach(async() => {
-    activatedRoute = TestBed.get(ActivatedRoute);
-    router = TestBed.get(RouterTestingModule);
-    licenseService = TestBed.get(LicenseService);
-  });
-
-  beforeEach(() => {
+  beforeEach(async () => {
     fixture = TestBed.createComponent(EditLicenseComponent);
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
-    editLicense = new EditLicenseComponent(activatedRoute, router, licenseService);
+    component.ngOnInit();
+    await fixture.whenStable();
   });
   it('should render an Edit License Form', async( () => {
     expect(compiled.querySelector('#edit-license-form').nodeName).toBe('FORM');
@@ -82,12 +96,33 @@ describe('EditLicenseComponent', () => {
     expect(compiled.querySelector('#view-licenses').nodeName).toBe('BUTTON');
   }));
   it('should return a pageTitle value of Edit License Details', async( () => {
-    expect(editLicense.pageTitle).toBe('Edit License Details');
+    expect(component.pageTitle).toBe('Edit License Details');
   }));
   it('should return a submitButton value of Submit', async( () => {
-    expect(editLicense.submitButton).toBe('Submit');
+    expect(component.submitButton).toBe('Submit');
   }));
   it('should return a backButton value of Back', async( () => {
-    expect(editLicense.backButton).toBe('Back');
+    expect(component.backButton).toBe('Back');
   }));
+  it('should return identity data details', async() => {
+    activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
+    component.license.dateOfBirth = moment
+      .utc(component.license.dateOfBirth, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    component.license.dateOfIssue = moment
+      .utc(component.license.dateOfIssue, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+
+    component.license.expiryDate = moment
+      .utc(component.license.expiryDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
+    expect(component.license).toEqual(LICENSE);
+  });
 });
