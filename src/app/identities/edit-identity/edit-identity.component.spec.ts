@@ -3,21 +3,53 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { EditIdentityComponent } from './edit-identity.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
+import {ActivatedRoute, Data, Router} from '@angular/router';
+import * as moment from 'moment';
 
-describe('EditIdentityComponent', () => {
+fdescribe('EditIdentityComponent', () => {
   let component: EditIdentityComponent;
   let fixture: ComponentFixture<EditIdentityComponent>;
   let compiled;
+  const router = {
+    navigate: jasmine.createSpy('navigate'),    // to spy on the url that has been routed
+  };
+  const IDENTITY = {
+    id: 'MUZAn09876',
+    identityRef: '6678944',
+    name: 'Artemas',
+    surname: 'Muzanenhamo',
+    birthDate: '28/03/1990',
+    villageOfOrigin: 'Mashayamombe',
+    placeOfBirth: 'Zimbabwe',
+    dateOfIssue: '28/03/1990'
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+        AppModule,
+        RouterTestingModule
+      ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              data: {
+                identity: IDENTITY
+              }
+            },
+          }
+        },
+        {provide: Router, useValue: router}
+      ]
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EditIdentityComponent);
     component = fixture.componentInstance;
+    component.ngOnInit();
     compiled = fixture.debugElement.nativeElement;
   });
   it('should render Add Identity form', async( () => {
@@ -53,4 +85,8 @@ describe('EditIdentityComponent', () => {
   it('should render a VIEW IDENTITIES button', async( () => {
     expect(compiled.querySelector('#view-identities').nodeName).toContain('BUTTON');
   }));
+  it('should submit a valid identity', async () => {
+    component.onSubmit();
+    // expect(router.navigate).toHaveBeenCalledWith(['/identities']);
+  });
 });

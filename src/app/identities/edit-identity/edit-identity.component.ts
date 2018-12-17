@@ -43,7 +43,7 @@ export class EditIdentityComponent implements OnInit {
     this.identity = identity;
   }
 
-  public onSubmit() {
+  public onSubmit(): void {
     this.submitted = true;
 
     this.identity.birthDate = moment
