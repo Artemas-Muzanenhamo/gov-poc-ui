@@ -4,9 +4,8 @@ import { EditIdentityComponent } from './edit-identity.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import {ActivatedRoute, Data, Router} from '@angular/router';
-import * as moment from 'moment';
 
-fdescribe('EditIdentityComponent', () => {
+describe('EditIdentityComponent', () => {
   let component: EditIdentityComponent;
   let fixture: ComponentFixture<EditIdentityComponent>;
   let compiled;
