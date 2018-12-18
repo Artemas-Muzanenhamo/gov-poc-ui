@@ -5,6 +5,7 @@ import {AppModule} from '../../app.module';
 import {ActivatedRoute, Data} from '@angular/router';
 import {LicenseService} from '../licenses.service';
 import * as moment from 'moment';
+import {of} from 'rxjs';
 
 describe('EditLicenseComponent', () => {
 
@@ -12,6 +13,8 @@ describe('EditLicenseComponent', () => {
   let fixture: ComponentFixture<EditLicenseComponent>;
   let compiled;
   let activatedRoute: ActivatedRoute;
+  let licenseService: LicenseService;
+  let licenseServiceStub;
   const LICENSE = {
     id: '1234',
     identityRef: 'MUZAN1234',
@@ -51,6 +54,8 @@ describe('EditLicenseComponent', () => {
 
   beforeEach(async () => {
     fixture = TestBed.createComponent(EditLicenseComponent);
+    licenseService = TestBed.get(LicenseService);
+    licenseServiceStub = spyOn(licenseService, 'updateLicense').and.returnValue(of(200));
     component = fixture.componentInstance;
     component.ngOnInit();
     compiled = fixture.debugElement.nativeElement;
@@ -124,5 +129,9 @@ describe('EditLicenseComponent', () => {
       .toLocaleDateString()
       .split('T')[0];
     expect(component.license).toBeTruthy();
+  });
+  it('should update a valid license', async() => {
+    component.onSubmit();
+    expect(licenseService.updateLicense).toHaveBeenCalled();
   });
 });
