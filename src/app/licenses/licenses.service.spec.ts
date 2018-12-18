@@ -1,14 +1,12 @@
 import {LicenseService} from './licenses.service';
-import {async, TestBed} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import moment = require('moment');
-import {of} from 'rxjs';
+import {License} from './license/license';
 
 describe('LicenseServiceComponent', () => {
   let licenseService: LicenseService;
-  let getLicenseSpy;
-  let getLicensesSpy;
-  let licenses;
+  let licenses: License[];
   let httpMock: HttpTestingController;
   const getLicensesURL = 'http://localhost:9999/license-service/licenses';
 
@@ -79,25 +77,9 @@ describe('LicenseServiceComponent', () => {
     });
     licenseService = TestBed.get(LicenseService);
     httpMock = TestBed.get(HttpTestingController);
-    getLicenseSpy = spyOn(licenseService, 'getLicense').and.returnValue(of(licenses[0]));
-    getLicensesSpy = spyOn(licenseService, 'getLicenses').and.returnValue(of(licenses));
   });
-  it('should return a spy on the service method getLicense(id)',  async( () => {
-    licenseService.getLicense(1);
-    expect(getLicenseSpy).toHaveBeenCalledTimes(1);
-  }));
-  it('should return the first license when getLicense(1) method is called', async( () => {
-    licenseService.getLicense(1).subscribe(result => expect(result.firstNames).toBe('Artemas'));
-  }));
-  it('should return a spy on the service method getLicenses()', async( () => {
-    licenseService.getLicenses();
-    expect(getLicensesSpy).toHaveBeenCalledTimes(1);
-  }));
-  it('should return 4 licenses when the getLicenses() method is called', async( () => {
-    licenseService.getLicenses().subscribe(result => expect(result.length).toBe(4));
-  }));
   it('should add a valid license', async() => {
-    const LICENSE = {
+    const LICENSE: License = {
       id: '9054',
       identityRef: 'WOODS9054',
       surname: 'Woods',
@@ -121,7 +103,7 @@ describe('LicenseServiceComponent', () => {
     httpMock.verify();
   });
   it('should update a valid license', async() => {
-    const LICENSE = {
+    const LICENSE: License = {
       id: '9054',
       identityRef: 'WOODS9054',
       surname: 'Woods',
@@ -144,9 +126,7 @@ describe('LicenseServiceComponent', () => {
     req.flush(LICENSE);
     httpMock.verify();
   });
-
-  // TODO: Make this pass
-  xit('should return a list of licenses', async () => {
+  it('should return a list of licenses', async () => {
     licenseService.getLicenses()
       .subscribe(
         data => expect(data).toBe(licenses)
@@ -155,6 +135,17 @@ describe('LicenseServiceComponent', () => {
     const req = httpMock.expectOne(getLicensesURL);
     expect(req.request.method).toEqual('GET');
     req.flush(licenses);
+    httpMock.verify();
+  });
+  it('should return a single license', async () => {
+    licenseService.getLicense(123)
+      .subscribe(
+        data => expect(data).toBe(licenses[0])
+      );
+
+    const req = httpMock.expectOne(getLicensesURL + '/ref');
+    expect(req.request.method).toEqual('POST');
+    req.flush(licenses[0]);
     httpMock.verify();
   });
 });
