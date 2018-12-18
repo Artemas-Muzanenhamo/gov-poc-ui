@@ -3,12 +3,16 @@ import {AddLicenseComponent} from './add-license.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import moment = require('moment');
+import {LicenseService} from '../licenses.service';
+import {of} from 'rxjs';
 
 describe('AddLicenseComponent', () => {
 
   let component: AddLicenseComponent;
   let fixture: ComponentFixture<AddLicenseComponent>;
   let compiled;
+  let licenseService: LicenseService;
+  let licenseServiceStub;
   const LICENSE = {
     id: '1234',
     identityRef: 'MUZAN1234',
@@ -26,11 +30,19 @@ describe('AddLicenseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+        AppModule,
+        RouterTestingModule
+      ],
+      providers: [
+        LicenseService
+      ]
     }).compileComponents();
   }));
   beforeEach(() => {
     fixture = TestBed.createComponent(AddLicenseComponent);
+    licenseService = TestBed.get(LicenseService);
+    licenseServiceStub = spyOn(licenseService, 'addLicense').and.returnValue(of(200));
     component = fixture.componentInstance;
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
@@ -75,8 +87,8 @@ describe('AddLicenseComponent', () => {
     expect(compiled.querySelector('button#view-licenses').textContent).toContain('Back');
   }));
   it('should add a valid license', async()  => {
-    // component.license = LICENSE;
-    // component.onSubmit();
-    // expect(component.license.expiryDate).toBeTruthy();
+    component.license = LICENSE;
+    component.onSubmit();
+    expect(component.license.expiryDate).toBeTruthy();
   });
 });
