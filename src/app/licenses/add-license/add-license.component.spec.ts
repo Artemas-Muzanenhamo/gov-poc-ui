@@ -2,12 +2,27 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {AddLicenseComponent} from './add-license.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
+import moment = require('moment');
 
-describe('AddLicenseComponent', () => {
+fdescribe('AddLicenseComponent', () => {
 
   let component: AddLicenseComponent;
   let fixture: ComponentFixture<AddLicenseComponent>;
   let compiled;
+  const LICENSE = {
+    id: '1234',
+    identityRef: 'MUZAN1234',
+    surname: 'Muzanenhamo',
+    firstNames: 'Artemas',
+    dateOfBirth: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+    country: 'Zimbabwe',
+    dateOfIssue: moment.utc('01/01/2018', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+    expiryDate: moment.utc('01/01/2050', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+    agency: 'DVLA',
+    licenseNumber: 'MUZAN2803901234',
+    signatureImage: '01.PNG',
+    address: '5 radstone court'
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -59,4 +74,9 @@ describe('AddLicenseComponent', () => {
   it('should render a BACK button', async( () => {
     expect(compiled.querySelector('button#view-licenses').textContent).toContain('Back');
   }));
+  fit('should add a valid license', async()  => {
+    component.license = LICENSE;
+    component.onSubmit();
+    expect(component.license.expiryDate).toBeTruthy();
+  });
 });

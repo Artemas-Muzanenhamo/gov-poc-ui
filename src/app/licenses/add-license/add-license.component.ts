@@ -20,9 +20,9 @@ export class AddLicenseComponent {
     private licenseService: LicenseService,
     private router: Router) { }
 
-  protected license: License = new License();
+  public license: License = new License();
 
-  protected onSubmit() {
+  public onSubmit() {
     this.submitted = true;
 
     this.license.dateOfBirth = moment
