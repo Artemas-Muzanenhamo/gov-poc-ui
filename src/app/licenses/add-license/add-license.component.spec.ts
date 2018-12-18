@@ -4,7 +4,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import moment = require('moment');
 
-fdescribe('AddLicenseComponent', () => {
+describe('AddLicenseComponent', () => {
 
   let component: AddLicenseComponent;
   let fixture: ComponentFixture<AddLicenseComponent>;
@@ -74,7 +74,7 @@ fdescribe('AddLicenseComponent', () => {
   it('should render a BACK button', async( () => {
     expect(compiled.querySelector('button#view-licenses').textContent).toContain('Back');
   }));
-  fit('should add a valid license', async()  => {
+  it('should add a valid license', async()  => {
     component.license = LICENSE;
     component.onSubmit();
     expect(component.license.expiryDate).toBeTruthy();
