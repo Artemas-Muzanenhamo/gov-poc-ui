@@ -52,8 +52,8 @@ describe('EditLicenseComponent', () => {
   beforeEach(async () => {
     fixture = TestBed.createComponent(EditLicenseComponent);
     component = fixture.componentInstance;
-    compiled = fixture.debugElement.nativeElement;
     component.ngOnInit();
+    compiled = fixture.debugElement.nativeElement;
     await fixture.whenStable();
   });
   it('should render an Edit License Form', async( () => {

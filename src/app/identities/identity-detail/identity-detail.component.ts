@@ -21,7 +21,6 @@ export class IdentityDetailComponent implements OnInit {
     this.route.data
       .subscribe(
         identity => {
-          console.log(identity);
           this.identity = identity['identity'];
         }
       );
