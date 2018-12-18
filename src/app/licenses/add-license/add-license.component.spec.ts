@@ -2,20 +2,47 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {AddLicenseComponent} from './add-license.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
+import moment = require('moment');
+import {LicenseService} from '../licenses.service';
+import {of} from 'rxjs';
 
 describe('AddLicenseComponent', () => {
 
   let component: AddLicenseComponent;
   let fixture: ComponentFixture<AddLicenseComponent>;
   let compiled;
+  let licenseService: LicenseService;
+  let licenseServiceStub;
+  const LICENSE = {
+    id: '1234',
+    identityRef: 'MUZAN1234',
+    surname: 'Muzanenhamo',
+    firstNames: 'Artemas',
+    dateOfBirth: moment.utc('28/03/1990', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+    country: 'Zimbabwe',
+    dateOfIssue: moment.utc('01/01/2018', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+    expiryDate: moment.utc('01/01/2050', 'DD/MM/YYYY', true).toDate().toISOString().split('T')[0],
+    agency: 'DVLA',
+    licenseNumber: 'MUZAN2803901234',
+    signatureImage: '01.PNG',
+    address: '5 radstone court'
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ AppModule, RouterTestingModule ]
+      imports: [
+        AppModule,
+        RouterTestingModule
+      ],
+      providers: [
+        LicenseService
+      ]
     }).compileComponents();
   }));
   beforeEach(() => {
     fixture = TestBed.createComponent(AddLicenseComponent);
+    licenseService = TestBed.get(LicenseService);
+    licenseServiceStub = spyOn(licenseService, 'addLicense').and.returnValue(of(200));
     component = fixture.componentInstance;
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
@@ -59,4 +86,9 @@ describe('AddLicenseComponent', () => {
   it('should render a BACK button', async( () => {
     expect(compiled.querySelector('button#view-licenses').textContent).toContain('Back');
   }));
+  it('should add a valid license', async()  => {
+    component.license = LICENSE;
+    component.onSubmit();
+    expect(component.license.expiryDate).toBeTruthy();
+  });
 });

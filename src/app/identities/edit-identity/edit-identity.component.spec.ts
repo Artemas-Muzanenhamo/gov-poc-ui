@@ -4,11 +4,14 @@ import { EditIdentityComponent } from './edit-identity.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import {ActivatedRoute, Data, Router} from '@angular/router';
+import {IdentityService} from '../identities.service';
+import {of} from 'rxjs';
 
 describe('EditIdentityComponent', () => {
   let component: EditIdentityComponent;
   let fixture: ComponentFixture<EditIdentityComponent>;
   let compiled;
+  let identityService, identityServiceStub;
   const router = {
     navigate: jasmine.createSpy('navigate'),    // to spy on the url that has been routed
   };
@@ -30,6 +33,7 @@ describe('EditIdentityComponent', () => {
         RouterTestingModule
       ],
       providers: [
+        IdentityService,
         {
           provide: ActivatedRoute,
           useValue: {
@@ -47,6 +51,8 @@ describe('EditIdentityComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EditIdentityComponent);
+    identityService = TestBed.get(IdentityService);
+    identityServiceStub = spyOn(identityService, 'updateIdentity').and.returnValue(of(200));
     component = fixture.componentInstance;
     component.ngOnInit();
     compiled = fixture.debugElement.nativeElement;
