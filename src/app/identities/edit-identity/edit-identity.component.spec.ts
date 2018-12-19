@@ -92,6 +92,6 @@ describe('EditIdentityComponent', () => {
   }));
   it('should submit a valid identity', async () => {
     component.onSubmit();
-    // expect(router.navigate).toHaveBeenCalledWith(['/identities']);
+    expect(router.navigate).toHaveBeenCalledWith(['/identities']);
   });
 });
