@@ -92,6 +92,7 @@ describe('LicensesComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LicensesComponent);
     component = fixture.componentInstance;
+    component.ngOnInit();
     compiled = fixture.debugElement.nativeElement;
   });
   it('should render a table to display license details', async( () => {
@@ -130,7 +131,9 @@ describe('LicensesComponent', () => {
       .subscribe(results => expect(results[0].country).toBe('Zimbabwe'));
   }));
   it('should return the total number of Licenses', async( () => {
-    expect(component.getLicenses()).toBeTruthy();
-    expect(getLicenseSpy).toHaveBeenCalledTimes(1);
+    licenseService.getLicenses()
+      .subscribe(
+        results => expect(results.length).toBe(4)
+      );
   }));
 });
