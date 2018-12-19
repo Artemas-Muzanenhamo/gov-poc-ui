@@ -7,13 +7,14 @@ import {IdentityService} from '../identities.service';
 import * as moment from 'moment';
 import {Identity} from '../identity/identity';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {Router} from '@angular/router';
+import {of} from 'rxjs';
 
 describe('AddIdentityComponent', () => {
   let component: AddIdentityComponent;
   let fixture: ComponentFixture<AddIdentityComponent>;
   let compiled;
-  let identityService;
+  let identityService: IdentityService;
+  let identityServiceStub;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,16 +27,17 @@ describe('AddIdentityComponent', () => {
         IdentityService
       ]
     }).compileComponents();
-    identityService = TestBed.get(IdentityService);
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddIdentityComponent);
+    identityService = TestBed.get(IdentityService);
+    identityServiceStub = spyOn(identityService, 'addIdentity').and.returnValue(of(200));
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
   });
 
-  const identity: Identity = {
+  const IDENTITY: Identity = {
     id: 'GIANn09876',
       identityRef: '1178900',
     name: 'Giannis',
@@ -79,25 +81,9 @@ describe('AddIdentityComponent', () => {
   it('should render a VIEW IDENTITIES button', async( () => {
     expect(compiled.querySelector('#view-identities').nodeName).toContain('BUTTON');
   }));
-  it('should return a response 200 when adding an identity', () => {
-    identityService.addIdentity(identity)
-      .subscribe(
-        response => expect(response).toBe(200)
-      );
-  });
   it('should format ISO date to LocaleDate', async(() => {
-    const IDENTITY: Identity = {
-      id: 'GIANn09876',
-      identityRef: '1178900',
-      name: 'Giannis',
-      surname: 'Marks',
-      birthDate: '2018-06-12',
-      villageOfOrigin: 'Mashayamombe',
-      placeOfBirth: 'Zimbabwe',
-      dateOfIssue: '2018-06-12'
-    };
     component.identity = IDENTITY;
     component.onSubmit();
-    expect(IDENTITY.birthDate).toBeTruthy();
+    expect(component.identity.birthDate).toBeTruthy();
   }));
 });

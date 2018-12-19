@@ -14,7 +14,6 @@ export class AddIdentityComponent implements OnInit {
   pageTitle: String = 'Add Identity Details';
   submitButton: String = 'Submit';
   backButton: String = 'Back';
-
   submitted: Boolean = false;
 
   constructor(
