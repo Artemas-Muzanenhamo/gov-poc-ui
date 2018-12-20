@@ -6,10 +6,9 @@ import * as moment from 'moment';
 
 @Component({
   templateUrl: './add-identity.component.html',
-  providers: [IdentityService],
   styleUrls: ['./add-identity.component.css']
 })
-export class AddIdentityComponent implements OnInit {
+export class AddIdentityComponent {
 
   pageTitle: String = 'Add Identity Details';
   submitButton: String = 'Submit';
@@ -49,7 +48,5 @@ export class AddIdentityComponent implements OnInit {
         }
       );
   }
-
-  ngOnInit() { }
 
 }

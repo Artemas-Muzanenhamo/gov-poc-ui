@@ -86,9 +86,9 @@ describe('AddLicenseComponent', () => {
   it('should render a BACK button', async( () => {
     expect(compiled.querySelector('button#view-licenses').textContent).toContain('Back');
   }));
-  it('should add a valid license', async()  => {
+  it('should add a valid license', async(()  => {
     component.license = LICENSE;
     component.onSubmit();
     expect(component.license.expiryDate).toBeTruthy();
-  });
+  }));
 });
