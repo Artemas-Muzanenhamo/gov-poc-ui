@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Identity} from './identity/identity';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {RequestOptions} from '@angular/http';
 
 @Injectable()
 export class IdentityService {
@@ -43,6 +44,14 @@ export class IdentityService {
   }
 
   deleteIdentity(identity: Identity): Observable<Identity> {
-    return this.http.delete<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
+
+    const httpOptions2 = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      body: identity
+    };
+
+    return this.http.delete<Identity>(this.getIdentitiesURL, httpOptions2);
   }
 }

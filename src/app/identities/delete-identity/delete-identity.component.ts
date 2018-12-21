@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Identity} from '../identity/identity';
 import {IdentityService} from '../identities.service';
 
@@ -11,14 +11,19 @@ import {IdentityService} from '../identities.service';
 export class DeleteIdentityComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
+    private router: Router,
     private identityService: IdentityService
   ) { }
 
   ngOnInit(): void {}
 
   public removeIdentity (identity: Identity): void {
-    this.identityService.deleteIdentity(identity);
+    this.identityService.deleteIdentity(identity)
+      .subscribe(
+        data => {
+          return this.router.navigate(['/identities']);
+        }
+      );
   }
 
 }
