@@ -13,6 +13,7 @@ import {LicenseDetailComponent} from './licenses/license-detail/license-detail.c
 import {LicenseResolver} from './licenses/license-resolver.service';
 import {IdentityResolver} from './identities/identity-resolver.service';
 import {IdentityDetailComponent} from './identities/identity-detail/identity-detail.component';
+import {DeleteIdentityComponent} from './identities/delete-identity/delete-identity.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
@@ -42,6 +43,10 @@ const routes: Routes = [
       },
       {
         path: ':id/edit', component: EditIdentityComponent,
+        resolve: {identity: IdentityResolver}
+      },
+      {
+        path: 'id/delete', component: DeleteIdentityComponent,
         resolve: {identity: IdentityResolver}
       }
     ]

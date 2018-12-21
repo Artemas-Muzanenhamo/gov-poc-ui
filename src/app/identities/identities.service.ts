@@ -41,4 +41,8 @@ export class IdentityService {
   public updateIdentity(identity: Identity): Observable<Identity> {
     return this.http.put<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
   }
+
+  deleteIdentity(identity: Identity): Observable<Identity> {
+    return this.http.delete<Identity>(this.getIdentitiesURL, identity, this.httpOptions);
+  }
 }
