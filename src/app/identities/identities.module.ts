@@ -11,6 +11,7 @@ import {IdentityResolver} from './identity-resolver.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { IdentityDetailComponent } from './identity-detail/identity-detail.component';
+import { DeleteIdentityComponent } from './delete-identity/delete-identity.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { IdentityDetailComponent } from './identity-detail/identity-detail.compo
     EditIdentityComponent,
     IdentityComponent,
     IdentityDetailComponent,
+    DeleteIdentityComponent,
   ],
   imports: [
     RouterModule.forChild([
