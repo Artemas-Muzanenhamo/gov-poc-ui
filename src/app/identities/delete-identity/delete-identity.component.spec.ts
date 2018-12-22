@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeleteIdentityComponent } from './delete-identity.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import {AppModule} from '../../app.module';
 
 describe('DeleteIdentityComponent', () => {
   let component: DeleteIdentityComponent;
@@ -8,7 +10,10 @@ describe('DeleteIdentityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeleteIdentityComponent ]
+      imports: [
+        AppModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
