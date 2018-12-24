@@ -46,8 +46,7 @@ const routes: Routes = [
         resolve: {identity: IdentityResolver}
       },
       {
-        path: 'id/delete', component: DeleteIdentityComponent,
-        resolve: {identity: IdentityResolver}
+        path: ':id/delete', component: DeleteIdentityComponent
       }
     ]
   }
