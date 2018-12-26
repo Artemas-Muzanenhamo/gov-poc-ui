@@ -5,7 +5,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import {MatDialogModule, MatDialogRef} from '@angular/material';
 
-fdescribe('DeleteIdentityComponent', () => {
+describe('DeleteIdentityComponent', () => {
   let component: DeleteIdentityComponent;
   let fixture: ComponentFixture<DeleteIdentityComponent>;
 
