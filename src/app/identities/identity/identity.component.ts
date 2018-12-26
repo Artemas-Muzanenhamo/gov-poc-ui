@@ -8,6 +8,8 @@ import {IdentityService} from '../identities.service';
 })
 export class IdentitiesComponent implements OnInit {
 
+  editButton: String = 'Edit';
+  deleteButton: String = 'Delete';
   identities: Identity[];
 
   constructor(private identityService: IdentityService) {}

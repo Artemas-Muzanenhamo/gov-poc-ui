@@ -12,6 +12,7 @@ export class IdentityDetailComponent implements OnInit {
   identity: Identity;
   backButton: String = 'Back';
   editButton: String = 'Edit';
+  deleteButton: String = 'Delete';
 
   constructor(
     private route: ActivatedRoute
