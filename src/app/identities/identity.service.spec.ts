@@ -2,7 +2,6 @@ import {IdentityService} from './identities.service';
 import {async, TestBed} from '@angular/core/testing';
 import * as moment from 'moment';
 import {Identity} from './identity/identity';
-import { of} from 'rxjs';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 describe('IdentityServiceComponent', () => {
