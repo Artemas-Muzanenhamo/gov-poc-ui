@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Identity} from '../identity/identity';
+import {MatDialog, MatDialogConfig} from '@angular/material';
+import {DeleteIdentityComponent} from '../delete-identity/delete-identity.component';
 
 @Component({
   selector: 'app-identity-detail',
@@ -15,8 +17,19 @@ export class IdentityDetailComponent implements OnInit {
   deleteButton: String = 'Delete';
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) { }
+
+  openDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(DeleteIdentityComponent, dialogConfig);
+  }
 
   ngOnInit() {
     this.route.data
