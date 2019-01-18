@@ -27,6 +27,12 @@ export class IdentityDetailComponent implements OnInit {
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.position = {
+      top: '0',
+      left: '0'
+    };
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.closeOnNavigation = true;
 
     this.dialog.open(DeleteIdentityComponent, dialogConfig);
   }

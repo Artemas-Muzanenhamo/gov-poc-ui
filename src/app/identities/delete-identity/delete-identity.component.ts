@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Identity} from '../identity/identity';
 import {IdentityService} from '../identities.service';
 import {MatDialogRef} from '@angular/material';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-delete-identity',
@@ -10,6 +11,9 @@ import {MatDialogRef} from '@angular/material';
   styleUrls: ['./delete-identity.component.css']
 })
 export class DeleteIdentityComponent implements OnInit {
+
+  form: FormGroup;
+  description: string;
 
   constructor(
     private router: Router,
@@ -29,6 +33,14 @@ export class DeleteIdentityComponent implements OnInit {
           return this.router.navigate(['/identities']);
         }
       );
+  }
+
+  save() {
+    this.dialogRef.close(this.form.value);
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
 }
