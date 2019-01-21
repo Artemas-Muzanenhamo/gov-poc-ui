@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Identity} from '../identity/identity';
 import {MatDialog, MatDialogConfig} from '@angular/material';
-import {DeleteIdentityComponent} from '../delete-identity/delete-identity.component';
 
 @Component({
   selector: 'app-identity-detail',
@@ -20,22 +19,6 @@ export class IdentityDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private dialog: MatDialog
   ) { }
-
-  openDialog() {
-
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.position = {
-      top: '0',
-      left: '0'
-    };
-    dialogConfig.hasBackdrop = true;
-    dialogConfig.closeOnNavigation = true;
-
-    this.dialog.open(DeleteIdentityComponent, dialogConfig);
-  }
 
   ngOnInit() {
     this.route.data
