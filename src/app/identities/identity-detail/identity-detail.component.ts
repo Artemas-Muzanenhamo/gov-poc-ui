@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Identity} from '../identity/identity';
-import {MatDialog, MatDialogConfig} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {DeleteIdentityDialogComponent} from '../delete-identity-dialog/delete-identity-dialog.component';
 
 @Component({
