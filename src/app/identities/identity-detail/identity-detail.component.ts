@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Identity} from '../identity/identity';
-import {MatDialog} from '@angular/material';
+import {MatDialog, MatDialogConfig} from '@angular/material';
 import {DeleteIdentityDialogComponent} from '../delete-identity-dialog/delete-identity-dialog.component';
 
 @Component({
@@ -30,12 +30,22 @@ export class IdentityDetailComponent implements OnInit {
       );
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DeleteIdentityDialogComponent, {});
+  openDialog() {
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    const dialogConfig = new MatDialogConfig();
+
+    // dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(DeleteIdentityDialogComponent, dialogConfig);
   }
+
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(DeleteIdentityDialogComponent, {});
+  //
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //   });
+  // }
 
 }

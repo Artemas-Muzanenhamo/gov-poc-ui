@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteIdentityDialogComponent implements OnInit {
 
+  description: String = 'Identity Deletion works!';
+
   constructor() { }
 
   ngOnInit() {
