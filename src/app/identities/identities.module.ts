@@ -11,6 +11,9 @@ import {IdentityResolver} from './identity-resolver.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { IdentityDetailComponent } from './identity-detail/identity-detail.component';
+import {MatDialogContent, MatDialogModule, MatFormField, MatFormFieldModule} from '@angular/material';
+import { DeleteIdentityDialogComponent } from './delete-identity-dialog/delete-identity-dialog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,21 +21,25 @@ import { IdentityDetailComponent } from './identity-detail/identity-detail.compo
     AddIdentityComponent,
     EditIdentityComponent,
     IdentityComponent,
-    IdentityDetailComponent
+    IdentityDetailComponent,
+    DeleteIdentityDialogComponent
   ],
   imports: [
     RouterModule.forChild([
       {path: 'identity', component: IdentityComponent}
     ]),
     CommonModule,
+    BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatFormFieldModule
   ],
   providers: [
     Identity,
     IdentityService,
-    IdentityResolver
+    IdentityResolver,
   ],
-  entryComponents: []
+  entryComponents: [DeleteIdentityDialogComponent]
 })
 export class IdentityModule { }
