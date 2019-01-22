@@ -30,14 +30,12 @@ export class IdentityDetailComponent implements OnInit {
       );
   }
 
-  openDialog() {
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DeleteIdentityDialogComponent, {});
 
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(DeleteIdentityDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }
