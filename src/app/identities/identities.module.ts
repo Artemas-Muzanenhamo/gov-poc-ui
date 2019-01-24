@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { IdentityDetailComponent } from './identity-detail/identity-detail.component';
 import {MatDialogModule, MatSelectModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DeleteIdentityDialogComponent} from './delete-identity-dialog/delete-identity-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AddIdentityComponent,
     EditIdentityComponent,
     IdentityComponent,
-    IdentityDetailComponent
+    IdentityDetailComponent,
+    DeleteIdentityDialogComponent
   ],
   imports: [
     RouterModule.forChild([
@@ -38,6 +40,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     IdentityService,
     IdentityResolver,
   ],
-  entryComponents: []
+  entryComponents: [DeleteIdentityDialogComponent]
 })
 export class IdentityModule { }
