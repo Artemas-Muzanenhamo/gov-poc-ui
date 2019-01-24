@@ -11,7 +11,7 @@ import {IdentityResolver} from './identity-resolver.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { IdentityDetailComponent } from './identity-detail/identity-detail.component';
-import {MatDialogContent, MatDialogModule, MatFormField, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatDialogModule, MatSelectModule} from '@angular/material';
 import { DeleteIdentityDialogComponent } from './delete-identity-dialog/delete-identity-dialog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -33,7 +33,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatSelectModule
   ],
   providers: [
     Identity,
