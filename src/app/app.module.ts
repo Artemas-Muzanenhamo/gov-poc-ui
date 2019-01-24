@@ -8,7 +8,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {LicenseModule} from './licenses/licenses.module';
 import {IdentityModule} from './identities/identities.module';
 import {FormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
 
 
 @NgModule({
@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material';
     FormsModule,
     LicenseModule,
     IdentityModule,
+    MatFormFieldModule,
     MatInputModule,
     AppRoutingModule
   ],
