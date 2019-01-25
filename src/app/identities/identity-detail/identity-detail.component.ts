@@ -30,6 +30,7 @@ export class IdentityDetailComponent implements OnInit {
       );
   }
 
+  // TODO: Get the YES to send identity data.
   openDialog(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
