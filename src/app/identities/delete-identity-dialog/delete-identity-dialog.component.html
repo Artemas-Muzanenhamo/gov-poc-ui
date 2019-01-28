@@ -2,7 +2,17 @@
 <div mat-dialog-content>
   <p>DO YOU WANT TO DELETE THIS IDENTITY?</p>
   <div class="uk-text-center">
-    <button id="yes-delete-identity-button" class="uk-button uk-button-success button-font uk-modal-close uk-margin-right uk-animation-slide-right" type="button" >{{YES}}</button>
-    <button id="no-delete-identity-button" class="uk-button uk-button-success button-font uk-modal-close uk-margin-left uk-animation-slide-left" type="button" >{{NO}}</button>
+    <button id="yes-delete-identity-button"
+            class="uk-button uk-button-success button-font uk-modal-close uk-margin-right uk-animation-slide-right"
+            type="button"
+            [mat-dialog-close]="data.identity" >
+      {{YES}}
+    </button>
+    <button id="no-delete-identity-button"
+            class="uk-button uk-button-success button-font uk-modal-close uk-margin-left uk-animation-slide-left"
+            type="button"
+            (click)="onNoClick()">
+      {{NO}}
+    </button>
   </div>
 </div>
