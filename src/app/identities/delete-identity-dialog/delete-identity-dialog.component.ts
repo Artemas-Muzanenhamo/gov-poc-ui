@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialogRef} from '@angular/material';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {IdentityData} from '../identity-detail/identity-data';
 
 @Component({
   selector: 'app-delete-identity-dialog',
@@ -13,7 +14,8 @@ export class DeleteIdentityDialogComponent implements OnInit {
   NO: String = 'NO';
 
   constructor(
-    public dialogRef: MatDialogRef<DeleteIdentityDialogComponent>
+    public dialogRef: MatDialogRef<DeleteIdentityDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: IdentityData
   ) { }
 
   ngOnInit() { }

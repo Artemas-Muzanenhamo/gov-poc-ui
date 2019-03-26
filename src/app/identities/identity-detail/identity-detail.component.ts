@@ -15,6 +15,7 @@ export class IdentityDetailComponent implements OnInit {
   backButton: String = 'Back';
   editButton: String = 'Edit';
   deleteButton: String = 'Delete';
+  somevalue: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,7 +38,11 @@ export class IdentityDetailComponent implements OnInit {
     dialogConfig.data = {id : this.identity};
     const dialogRef = this.dialog.open(DeleteIdentityDialogComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(result => console.log(result));
+    dialogRef.afterClosed()
+      .subscribe(result => {
+        this.somevalue = result;
+        console.log(this.somevalue);
+      });
   }
 
 }
