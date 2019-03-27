@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Identity} from '../identity/identity';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {DeleteIdentityDialogComponent} from '../delete-identity-dialog/delete-identity-dialog.component';
+import {identity} from 'rxjs';
 
 @Component({
   selector: 'app-identity-detail',
@@ -15,7 +16,7 @@ export class IdentityDetailComponent implements OnInit {
   backButton: String = 'Back';
   editButton: String = 'Edit';
   deleteButton: String = 'Delete';
-  somevalue: String;
+  identityToBeDeleted: Identity;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,8 +26,8 @@ export class IdentityDetailComponent implements OnInit {
   ngOnInit() {
     this.route.data
       .subscribe(
-        identity => {
-          this.identity = identity['identity'];
+        id => {
+          this.identity = id['identity'];
         }
       );
   }
@@ -34,14 +35,14 @@ export class IdentityDetailComponent implements OnInit {
   openDialog(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.data = {id : this.identity};
+    dialogConfig.data = this.identity;
     const dialogRef = this.dialog.open(DeleteIdentityDialogComponent, dialogConfig);
 
     dialogRef.afterClosed()
       .subscribe(result => {
         if (result) {
-          this.somevalue = result;
-          console.log(this.somevalue);
+          this.identityToBeDeleted = result;
+          console.log(this.identityToBeDeleted);
         }
       });
   }
