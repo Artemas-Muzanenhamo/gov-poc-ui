@@ -1,11 +1,13 @@
 <h1 class="" mat-dialog-title>{{description}}</h1>
 <div mat-dialog-content>
-  <p>DO YOU WANT TO DELETE THIS IDENTITY?</p>
+  <div class="uk-text-middle">
+    <p>DO YOU WANT TO DELETE THIS IDENTITY?</p>
+  </div>
   <div class="uk-text-center">
     <button id="yes-delete-identity-button"
             class="uk-button uk-button-success button-font uk-modal-close uk-margin-right uk-animation-slide-right"
             type="button"
-            [mat-dialog-close]="data.identity" >{{YES}}
+            [mat-dialog-close]="data" >{{YES}}
     </button>
     <button id="no-delete-identity-button"
             class="uk-button uk-button-success button-font uk-modal-close uk-margin-left uk-animation-slide-left"

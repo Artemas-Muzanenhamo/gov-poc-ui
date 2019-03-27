@@ -18,7 +18,8 @@ export class DeleteIdentityDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: IdentityData
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
