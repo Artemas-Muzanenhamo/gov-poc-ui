@@ -39,8 +39,10 @@ export class IdentityDetailComponent implements OnInit {
 
     dialogRef.afterClosed()
       .subscribe(result => {
-        this.somevalue = result;
-        console.log(this.somevalue);
+        if (result) {
+          this.somevalue = result;
+          console.log(this.somevalue);
+        }
       });
   }
 
