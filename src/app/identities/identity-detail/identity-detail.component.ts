@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Identity} from '../identity/identity';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {DeleteIdentityDialogComponent} from '../delete-identity-dialog/delete-identity-dialog.component';
-import {identity} from 'rxjs';
+import {IdentityService} from '../identities.service';
 
 @Component({
   selector: 'app-identity-detail',
@@ -20,7 +20,9 @@ export class IdentityDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private identityService: IdentityService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -42,7 +44,12 @@ export class IdentityDetailComponent implements OnInit {
       .subscribe(result => {
         if (result) {
           this.identityToBeDeleted = result;
-          console.log(this.identityToBeDeleted);
+          this.identityService.deleteIdentity(this.identityToBeDeleted)
+            .subscribe(
+              data => {
+                return this.router.navigate(['/identities']);
+              }
+            );
         }
       });
   }
