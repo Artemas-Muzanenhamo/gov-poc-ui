@@ -35,6 +35,7 @@ fdescribe('DeleteIdentityComponent', () => {
     compiled = fixture.debugElement.nativeElement;
   });
 
+  // TODO: StaticInjectorError(DynamicTestModule)[MatDialogClose -> MatDialogRef]
   it('should display modal with YES button', async(() => {
   }));
 });
