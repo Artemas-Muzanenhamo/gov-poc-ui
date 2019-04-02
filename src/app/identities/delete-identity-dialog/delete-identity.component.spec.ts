@@ -5,6 +5,7 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {IdentityService} from '../identities.service';
 import {DeleteIdentityDialogComponent} from './delete-identity-dialog.component';
 import {of} from 'rxjs';
+import {MAT_DIALOG_DATA, MatDialogClose, MatDialogModule, MatDialogRef} from '@angular/material';
 
 fdescribe('DeleteIdentityComponent', () => {
   let fixture;
@@ -18,10 +19,13 @@ fdescribe('DeleteIdentityComponent', () => {
       imports: [
         AppModule,
         RouterTestingModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        MatDialogModule
       ],
       providers: [
-        IdentityService
+        IdentityService,
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: [] },
       ]
     }).compileComponents();
   }));
@@ -29,13 +33,12 @@ fdescribe('DeleteIdentityComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DeleteIdentityDialogComponent);
     identityService = TestBed.get(IdentityService);
-    // deleteIdentity
     identityServiceStub = spyOn(identityService, 'deleteIdentity').and.returnValue(of(200));
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
   });
 
+  // TODO: StaticInjectorError(DynamicTestModule)[MatDialogClose -> MatDialogRef]
   it('should display modal with YES button', async(() => {
-
   }));
 });
