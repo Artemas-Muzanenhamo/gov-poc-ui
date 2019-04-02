@@ -36,6 +36,5 @@ fdescribe('DeleteIdentityComponent', () => {
   });
 
   it('should display modal with YES button', async(() => {
-
   }));
 });
