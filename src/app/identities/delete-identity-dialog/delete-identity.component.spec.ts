@@ -6,7 +6,7 @@ import {IdentityService} from '../identities.service';
 import {DeleteIdentityDialogComponent} from './delete-identity-dialog.component';
 import {of} from 'rxjs';
 
-describe('DeleteIdentityComponent', () => {
+fdescribe('DeleteIdentityComponent', () => {
   let fixture;
   let identityService;
   let component;
@@ -36,5 +36,6 @@ describe('DeleteIdentityComponent', () => {
   });
 
   it('should display modal with YES button', async(() => {
+
   }));
 });
