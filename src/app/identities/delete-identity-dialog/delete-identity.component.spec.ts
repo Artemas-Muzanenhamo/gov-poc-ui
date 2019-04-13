@@ -7,7 +7,7 @@ import {DeleteIdentityDialogComponent} from './delete-identity-dialog.component'
 import {of} from 'rxjs';
 import {MAT_DIALOG_DATA, MatDialogClose, MatDialogModule, MatDialogRef} from '@angular/material';
 
-fdescribe('DeleteIdentityComponent', () => {
+describe('DeleteIdentityComponent', () => {
   let fixture;
   let identityService;
   let component;
