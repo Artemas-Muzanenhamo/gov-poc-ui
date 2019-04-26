@@ -25,7 +25,7 @@ export class LicenseService {
 
   public getLicense(id: number): Observable<License> {
     const idRef = {
-      ref: id
+      idRef: id
     };
 
     if (id) {
