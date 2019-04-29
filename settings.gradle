@@ -8,3 +8,4 @@
  */
 
 rootProject.name = 'gov-poc-ui'
+include 'gov-poc-ng'
