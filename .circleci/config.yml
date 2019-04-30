@@ -3,7 +3,7 @@ version: 2
 jobs:
   # The build job
   build:
-    working_directory: ~/project/gov-poc-ng
+    working_directory: ~/gov-poc-ui/gov-poc-ng
     docker:
     - image: circleci/node:10-browsers
     steps:
