@@ -9,7 +9,7 @@ jobs:
     steps:
     # Checkout the code from the branch into the working_directory
     - checkout:
-        path: ~/gov-poc-ui/gov-poc-ng
+        path: ~/gov-poc-ui
     # Log the current branch
     - run:
         name: Show current branch
