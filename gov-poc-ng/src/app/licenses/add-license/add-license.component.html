@@ -51,8 +51,9 @@
         <button class="uk-button uk-button-default" type="button" tabindex="-1">{{uploadButton}}</button>
       </div>
       <div class="uk-margin">
-        <button type="submit" (click)="addLicense(license)" id="submit-license" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
-        <button type="button" id="view-licenses" class="uk-button uk-button-default" [routerLink]="'/licenses'">{{backButton}}</button>
+        <!-- TODO: FIX LICENSE SUBMIT BUTTON TO BE DISABLED WHEN FORM IS NOT COMPLETED -->
+        <button type="submit" (click)="addLicense(license)" [disabled]="!licenseForm.form.valid" id="submit-license" value="submit" class="uk-button uk-button-danger uk-margin-right">{{submitButton}}</button>
+        <button type="button" id="view-licenses" class="uk-button uk-button-danger" [routerLink]="'/licenses'">{{backButton}}</button>
       </div>
     </fieldset>
   </form>

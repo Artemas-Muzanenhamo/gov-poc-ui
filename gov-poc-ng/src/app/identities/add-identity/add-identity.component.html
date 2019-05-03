@@ -42,8 +42,8 @@
       </div>
 
       <div class="uk-margin">
-        <button type="submit" (click)="addIdentity(identity)" [disabled]="!identityForm.form.valid" id="submit-identity" value="submit" class="uk-button uk-button-default">{{submitButton}}</button>
-        <button type="button" id="view-identities" class="uk-button uk-button-default" [routerLink]="'/identities'">{{backButton}}</button>
+        <button type="submit" (click)="addIdentity(identity)" [disabled]="!identityForm.form.valid" id="submit-identity" value="submit" class="uk-button uk-button-danger uk-margin-right">{{submitButton}}</button>
+        <button type="button" id="view-identities" class="uk-button uk-button-danger" [routerLink]="'/identities'">{{backButton}}</button>
       </div>
     </fieldset>
   </form>
