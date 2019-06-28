@@ -1,5 +1,5 @@
 ## STAGE 1: Build Angular App ##
-FROM node:8 as builder
+FROM node:8 as gov-poc-ui
 
 COPY gov-poc-ng /gov-poc-ng
 
@@ -12,6 +12,6 @@ RUN ng build
 ## STAGE 2: Run nginx to serve application ##
 FROM nginx
 
-COPY --from=builder /gov-poc-ng/dist/* /usr/share/nginx/html/
+COPY --from=gov-poc-ui /gov-poc-ng/dist/* /usr/share/nginx/html/
 
-EXPOSE 80
+EXPOSE 3000

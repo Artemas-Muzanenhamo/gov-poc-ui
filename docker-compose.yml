@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  gov-poc-ui:
+    build: ./gov-poc-ng
+    container_name: gov-poc-ui
+    ports:
+      - "3000:3000"
