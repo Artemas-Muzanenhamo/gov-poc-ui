@@ -26,3 +26,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Execute linting
 
 Run `ng lint` to execute linting and check code quality
+
+## Running application via Docker
