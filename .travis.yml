@@ -19,3 +19,4 @@ script:
 after_script:
   - codecov
   - cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
+git aclercc
