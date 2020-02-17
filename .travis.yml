@@ -19,3 +19,4 @@ script:
 after_script:
   - codecov
   - cat ./gov-poc-ng/node_modules/coveralls/bin/coveralls.js
+  - cat /home/travis/build/Artemas-Muzanenhamo/gov-poc-ui/gov-poc-ng/coverage/coverage.lcov
