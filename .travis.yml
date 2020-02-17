@@ -18,4 +18,4 @@ script:
   - npm run ci
 after_script:
   - codecov
-  - cat /home/travis/build/Artemas-Muzanenhamo/gov-poc-ui/gov-poc-ng/coverage/coverage.lcov
+  - cat ./coverage/coverage.lcov
