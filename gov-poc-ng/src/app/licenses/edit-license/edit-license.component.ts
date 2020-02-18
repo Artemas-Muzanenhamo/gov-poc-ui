@@ -28,34 +28,17 @@ export class EditLicenseComponent implements OnInit {
   }
 
   private onLicenseRetrieved(license: License): void {
-    license.dateOfBirth = moment
-      .utc(license.dateOfBirth, 'DD/MM/YYYY', true)
-      .toDate()
-      .toISOString()
-      .split('T')[0];
-
-    license.dateOfIssue = moment
-      .utc(license.dateOfIssue, 'DD/MM/YYYY', true)
-      .toDate()
-      .toISOString()
-      .split('T')[0];
-
-    license.expiryDate = moment
-      .utc(license.expiryDate, 'DD/MM/YYYY', true)
-      .toDate()
-      .toISOString()
-      .split('T')[0];
-
+    license.dateOfBirth = EditLicenseComponent.utcToIsoDateString(license.dateOfBirth);
+    license.dateOfIssue = EditLicenseComponent.utcToIsoDateString(license.dateOfIssue);
+    license.expiryDate = EditLicenseComponent.utcToIsoDateString(license.expiryDate);
     this.license = license;
   }
 
   public onSubmit() {
     this.submitted = true;
-
     this.license.dateOfBirth = EditLicenseComponent.utcDateToLocalDateString(this.license.dateOfBirth);
     this.license.dateOfIssue = EditLicenseComponent.utcDateToLocalDateString(this.license.dateOfIssue);
     this.license.expiryDate = EditLicenseComponent.utcDateToLocalDateString(this.license.expiryDate);
-
     this.updateLicense(this.license);
   }
 
@@ -64,6 +47,14 @@ export class EditLicenseComponent implements OnInit {
       .utc(utcDate, 'YYYY-MM-DD', true)
       .toDate()
       .toLocaleDateString()
+      .split('T')[0];
+  }
+
+  private static utcToIsoDateString(utcDate: string): string {
+    return moment
+      .utc(utcDate, 'DD/MM/YYYY', true)
+      .toDate()
+      .toISOString()
       .split('T')[0];
   }
 
