@@ -24,27 +24,18 @@ export class AddLicenseComponent {
 
   public onSubmit() {
     this.submitted = true;
-
-    this.license.dateOfBirth = moment
-      .utc(this.license.dateOfBirth, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
-
-    this.license.dateOfIssue = moment
-      .utc(this.license.dateOfIssue, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
-
-    this.license.expiryDate = moment
-      .utc(this.license.expiryDate, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
-
-
+    this.license.dateOfBirth = AddLicenseComponent.utoToLocalDateString(this.license.dateOfBirth);
+    this.license.dateOfIssue = AddLicenseComponent.utoToLocalDateString(this.license.dateOfIssue);
+    this.license.expiryDate = AddLicenseComponent.utoToLocalDateString(this.license.expiryDate);
     this.addLicense(this.license);
+  }
+
+  private static utoToLocalDateString(utcDate: string): string {
+    return moment
+      .utc(utcDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
   }
 
   private addLicense(license: License): void {
