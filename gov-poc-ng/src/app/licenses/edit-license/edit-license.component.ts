@@ -52,25 +52,19 @@ export class EditLicenseComponent implements OnInit {
   public onSubmit() {
     this.submitted = true;
 
-    this.license.dateOfBirth = moment
-      .utc(this.license.dateOfBirth, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
-
-    this.license.dateOfIssue = moment
-      .utc(this.license.dateOfIssue, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
-
-    this.license.expiryDate = moment
-      .utc(this.license.expiryDate, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
+    this.license.dateOfBirth = EditLicenseComponent.utcDateToLocalDateString(this.license.dateOfBirth);
+    this.license.dateOfIssue = EditLicenseComponent.utcDateToLocalDateString(this.license.dateOfIssue);
+    this.license.expiryDate = EditLicenseComponent.utcDateToLocalDateString(this.license.expiryDate);
 
     this.updateLicense(this.license);
+  }
+
+  private static utcDateToLocalDateString(utcDate: string): string {
+    return moment
+      .utc(utcDate, 'YYYY-MM-DD', true)
+      .toDate()
+      .toLocaleDateString()
+      .split('T')[0];
   }
 
   private updateLicense(license: License): void {
