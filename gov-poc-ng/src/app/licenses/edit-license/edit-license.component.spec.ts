@@ -109,26 +109,27 @@ describe('EditLicenseComponent', () => {
   it('should return a backButton value of Back', async( () => {
     expect(component.backButton).toBe('Back');
   }));
-  it('should return identity data details', async() => {
+  it('should convert UTC dates to Locale dates', async() => {
     activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
-    component.license.dateOfBirth = moment
-      .utc(component.license.dateOfBirth, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
+    component.license.dateOfBirth = component.utcDateToLocalDateString(component.license.dateOfBirth);
+    component.license.dateOfIssue = component.utcDateToLocalDateString(component.license.dateOfIssue);
+    component.license.expiryDate = component.utcDateToLocalDateString(component.license.expiryDate);
 
-    component.license.dateOfIssue = moment
-      .utc(component.license.dateOfIssue, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
-
-    component.license.expiryDate = moment
-      .utc(component.license.expiryDate, 'YYYY-MM-DD', true)
-      .toDate()
-      .toLocaleDateString()
-      .split('T')[0];
     expect(component.license).toBeTruthy();
+    expect(LICENSE.dateOfBirth).toEqual(component.license.dateOfBirth);
+    expect(LICENSE.dateOfIssue).toEqual(component.license.dateOfIssue);
+    expect(LICENSE.expiryDate).toEqual(component.license.expiryDate);
+  });
+
+  it('should convert UTC dates to ISO dates', async() => {
+    component.license.dateOfBirth = component.utcDateToLocalDateString(component.license.dateOfBirth);
+    component.license.dateOfIssue = component.utcDateToLocalDateString(component.license.dateOfIssue);
+    component.license.expiryDate = component.utcDateToLocalDateString(component.license.expiryDate);
+
+
+    expect(LICENSE.dateOfBirth).toEqual(component.license.dateOfBirth);
+    expect(LICENSE.dateOfIssue).toEqual(component.license.dateOfIssue);
+    expect(LICENSE.expiryDate).toEqual(component.license.expiryDate);
   });
   it('should update a valid license', async() => {
     component.onSubmit();
