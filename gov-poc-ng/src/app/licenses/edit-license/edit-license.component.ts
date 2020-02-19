@@ -36,13 +36,13 @@ export class EditLicenseComponent implements OnInit {
 
   public onSubmit() {
     this.submitted = true;
-    this.license.dateOfBirth = EditLicenseComponent.utcDateToLocalDateString(this.license.dateOfBirth);
-    this.license.dateOfIssue = EditLicenseComponent.utcDateToLocalDateString(this.license.dateOfIssue);
-    this.license.expiryDate = EditLicenseComponent.utcDateToLocalDateString(this.license.expiryDate);
+    this.license.dateOfBirth = this.utcDateToLocalDateString(this.license.dateOfBirth);
+    this.license.dateOfIssue = this.utcDateToLocalDateString(this.license.dateOfIssue);
+    this.license.expiryDate = this.utcDateToLocalDateString(this.license.expiryDate);
     this.updateLicense(this.license);
   }
 
-  private static utcDateToLocalDateString(utcDate: string): string {
+  private utcDateToLocalDateString(utcDate: string): string {
     return moment
       .utc(utcDate, 'YYYY-MM-DD', true)
       .toDate()

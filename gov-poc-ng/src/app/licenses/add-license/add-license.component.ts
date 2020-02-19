@@ -24,13 +24,13 @@ export class AddLicenseComponent {
 
   public onSubmit() {
     this.submitted = true;
-    this.license.dateOfBirth = AddLicenseComponent.utoToLocalDateString(this.license.dateOfBirth);
-    this.license.dateOfIssue = AddLicenseComponent.utoToLocalDateString(this.license.dateOfIssue);
-    this.license.expiryDate = AddLicenseComponent.utoToLocalDateString(this.license.expiryDate);
+    this.license.dateOfBirth = this.utoToLocalDateString(this.license.dateOfBirth);
+    this.license.dateOfIssue = this.utoToLocalDateString(this.license.dateOfIssue);
+    this.license.expiryDate = this.utoToLocalDateString(this.license.expiryDate);
     this.addLicense(this.license);
   }
 
-  private static utoToLocalDateString(utcDate: string): string {
+  private utoToLocalDateString(utcDate: string): string {
     return moment
       .utc(utcDate, 'YYYY-MM-DD', true)
       .toDate()
