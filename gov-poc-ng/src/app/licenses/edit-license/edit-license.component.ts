@@ -28,9 +28,9 @@ export class EditLicenseComponent implements OnInit {
   }
 
   private onLicenseRetrieved(license: License): void {
-    license.dateOfBirth = EditLicenseComponent.utcToIsoDateString(license.dateOfBirth);
-    license.dateOfIssue = EditLicenseComponent.utcToIsoDateString(license.dateOfIssue);
-    license.expiryDate = EditLicenseComponent.utcToIsoDateString(license.expiryDate);
+    license.dateOfBirth = this.utcToIsoDateString(license.dateOfBirth);
+    license.dateOfIssue = this.utcToIsoDateString(license.dateOfIssue);
+    license.expiryDate = this.utcToIsoDateString(license.expiryDate);
     this.license = license;
   }
 
@@ -50,7 +50,7 @@ export class EditLicenseComponent implements OnInit {
       .split('T')[0];
   }
 
-  private static utcToIsoDateString(utcDate: string): string {
+  private utcToIsoDateString(utcDate: string): string {
     return moment
       .utc(utcDate, 'DD/MM/YYYY', true)
       .toDate()
