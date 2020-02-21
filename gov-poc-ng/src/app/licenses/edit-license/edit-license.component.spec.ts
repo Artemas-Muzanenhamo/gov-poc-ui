@@ -125,9 +125,9 @@ describe('EditLicenseComponent', () => {
 
     const OLD_DATE_FORMAT = 'YYYY-MM-DD';
     const NEW_DATE_FORMAT = 'DD/MM/YYYY';
-    let dateOfBirth = moment(component.license.dateOfBirth, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
-    let dateOfIssue = moment(component.license.dateOfIssue, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
-    let expiryDate = moment(component.license.expiryDate, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
+    const dateOfBirth = moment(component.license.dateOfBirth, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
+    const dateOfIssue = moment(component.license.dateOfIssue, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
+    const expiryDate = moment(component.license.expiryDate, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
 
     component.license.dateOfBirth = component.utcToIsoDateString(dateOfBirth);
     component.license.dateOfIssue = component.utcToIsoDateString(dateOfIssue);

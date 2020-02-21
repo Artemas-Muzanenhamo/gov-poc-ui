@@ -30,7 +30,7 @@ export class AddLicenseComponent {
     this.addLicense(this.license);
   }
 
-  private utoToLocalDateString(utcDate: string): string {
+  utoToLocalDateString(utcDate: string): string {
     return moment
       .utc(utcDate, 'YYYY-MM-DD', true)
       .toDate()

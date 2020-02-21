@@ -91,4 +91,10 @@ describe('AddLicenseComponent', () => {
     component.onSubmit();
     expect(component.license.expiryDate).toBeTruthy();
   }));
+  it('should convert UTC dates with format YYYY-MM-DD to LOCALE dates', function () {
+    component.license = LICENSE;
+    const dateOfBirth = component.utoToLocalDateString(component.license.dateOfBirth);
+
+    expect(dateOfBirth).toEqual(component.license.dateOfBirth);
+  });
 });
