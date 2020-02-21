@@ -4,8 +4,8 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {AppModule} from '../../app.module';
 import {ActivatedRoute, Data} from '@angular/router';
 import {LicenseService} from '../licenses.service';
-import * as moment from 'moment';
 import {of} from 'rxjs';
+import * as moment from "moment";
 
 describe('EditLicenseComponent', () => {
 
@@ -109,27 +109,33 @@ describe('EditLicenseComponent', () => {
   it('should return a backButton value of Back', async( () => {
     expect(component.backButton).toBe('Back');
   }));
-  it('should convert UTC dates to Locale dates', async() => {
-    activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
+  it('should convert UTC dates in format YYYY-MM-DD to Locale dates', async() => {
     component.license.dateOfBirth = component.utcDateToLocalDateString(component.license.dateOfBirth);
     component.license.dateOfIssue = component.utcDateToLocalDateString(component.license.dateOfIssue);
     component.license.expiryDate = component.utcDateToLocalDateString(component.license.expiryDate);
 
-    expect(component.license).toBeTruthy();
     expect(LICENSE.dateOfBirth).toEqual(component.license.dateOfBirth);
     expect(LICENSE.dateOfIssue).toEqual(component.license.dateOfIssue);
     expect(LICENSE.expiryDate).toEqual(component.license.expiryDate);
   });
 
-  it('should convert UTC dates to ISO dates', async() => {
-    component.license.dateOfBirth = component.utcDateToLocalDateString(component.license.dateOfBirth);
-    component.license.dateOfIssue = component.utcDateToLocalDateString(component.license.dateOfIssue);
-    component.license.expiryDate = component.utcDateToLocalDateString(component.license.expiryDate);
+  it('should convert UTC dates with format DD/MM/YYYY to ISO dates', async() => {
+    // activatedRoute = fixture.debugElement.injector.get(ActivatedRoute) as any;
+    // let licenseSnapShot = activatedRoute.snapshot.data.license;
 
+    const OLD_DATE_FORMAT = 'YYYY-MM-DD';
+    const NEW_DATE_FORMAT = 'DD/MM/YYYY';
+    let dateOfBirth = moment(component.license.dateOfBirth, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
+    let dateOfIssue = moment(component.license.dateOfIssue, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
+    let expiryDate = moment(component.license.expiryDate, OLD_DATE_FORMAT, true).format(NEW_DATE_FORMAT).toString();
 
-    expect(LICENSE.dateOfBirth).toEqual(component.license.dateOfBirth);
-    expect(LICENSE.dateOfIssue).toEqual(component.license.dateOfIssue);
-    expect(LICENSE.expiryDate).toEqual(component.license.expiryDate);
+    component.license.dateOfBirth = component.utcToIsoDateString(dateOfBirth);
+    component.license.dateOfIssue = component.utcToIsoDateString(dateOfIssue);
+    component.license.expiryDate = component.utcToIsoDateString(expiryDate);
+
+    expect(LICENSE.dateOfBirth).toEqual(dateOfBirth);
+    expect(LICENSE.dateOfIssue).toEqual(dateOfIssue);
+    expect(LICENSE.expiryDate).toEqual(expiryDate);
   });
   it('should update a valid license', async() => {
     component.onSubmit();
