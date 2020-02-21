@@ -5,14 +5,14 @@ import {AppModule} from '../../app.module';
 import {ActivatedRoute, Data} from '@angular/router';
 import {LicenseService} from '../licenses.service';
 import {of} from 'rxjs';
-import * as moment from "moment";
+import * as moment from 'moment';
 
 describe('EditLicenseComponent', () => {
 
   let component: EditLicenseComponent;
   let fixture: ComponentFixture<EditLicenseComponent>;
   let compiled;
-  let activatedRoute: ActivatedRoute;
+  // const activatedRoute: ActivatedRoute;
   let licenseService: LicenseService;
   let licenseServiceStub;
   const LICENSE = {
