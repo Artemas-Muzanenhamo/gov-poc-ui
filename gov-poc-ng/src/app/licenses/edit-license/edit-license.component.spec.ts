@@ -133,10 +133,6 @@ describe('EditLicenseComponent', () => {
     component.license.dateOfIssue = component.utcToIsoDateString(dateOfIssue);
     component.license.expiryDate = component.utcToIsoDateString(expiryDate);
 
-    //expect(LICENSE.dateOfBirth).toEqual(dateOfBirth);
-    //expect(LICENSE.dateOfIssue).toEqual(dateOfIssue);
-    //expect(LICENSE.expiryDate).toEqual(expiryDate);
-
     expect(LICENSE.dateOfBirth).toBeTruthy();
     expect(LICENSE.dateOfIssue).toBeTruthy();
     expect(LICENSE.expiryDate).toBeTruthy();
