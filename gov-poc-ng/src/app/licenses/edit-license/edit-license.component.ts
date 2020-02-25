@@ -42,7 +42,7 @@ export class EditLicenseComponent implements OnInit {
     this.updateLicense(this.license);
   }
 
-  utcDateToLocalDateString(utcDate: string): string {
+  public utcDateToLocalDateString(utcDate: string): string {
     return moment
       .utc(utcDate, 'YYYY-MM-DD', true)
       .toDate()
@@ -50,7 +50,7 @@ export class EditLicenseComponent implements OnInit {
       .split('T')[0];
   }
 
-  utcToIsoDateString(utcDate: string): string {
+  public utcToIsoDateString(utcDate: string): string {
     return moment
       .utc(utcDate, 'DD/MM/YYYY', true)
       .toDate()
