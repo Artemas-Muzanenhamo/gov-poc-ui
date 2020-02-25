@@ -129,11 +129,14 @@ describe('LicensesComponent', () => {
     licenseService.getLicenses()
       .subscribe(results => expect(results[0].country).toBe('Zimbabwe'));
   }));
-  it('should return the total number of Licenses', async( () => {
+  it('should return the total number of Licenses', async(() => {
     component.ngOnInit();
     licenseService.getLicenses()
       .subscribe(
-        results => expect(results.length).toBe(4)
+        listOfLicenses => {
+          expect(listOfLicenses.length).toBe(4);
+          expect(listOfLicenses).toEqual(licenses);
+        }
       );
   }));
 });
