@@ -20,7 +20,7 @@ describe('EditLicenseComponent', () => {
     identityRef: 'MUZAN1234',
     surname: 'Muzanenhamo',
     firstNames: 'Artemas',
-    dateOfBirth:'28/03/1990',
+    dateOfBirth: '28/03/1990',
     country: 'Zimbabwe',
     dateOfIssue: '28/03/1990',
     expiryDate: '28/03/1990',
