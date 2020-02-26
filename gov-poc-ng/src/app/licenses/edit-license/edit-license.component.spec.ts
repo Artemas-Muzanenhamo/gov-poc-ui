@@ -20,10 +20,10 @@ describe('EditLicenseComponent', () => {
     identityRef: 'MUZAN1234',
     surname: 'Muzanenhamo',
     firstNames: 'Artemas',
-    dateOfBirth: moment('28/03/1990').format('DD/MM/YYYY'),
+    dateOfBirth:'28/03/1990',
     country: 'Zimbabwe',
-    dateOfIssue: moment('28/03/1990').format('DD/MM/YYYY'),
-    expiryDate: moment('28/03/1990').format('DD/MM/YYYY'),
+    dateOfIssue: '28/03/1990',
+    expiryDate: '28/03/1990',
     agency: 'DVLA',
     licenseNumber: 'MUZAN2803901234',
     signatureImage: '01.PNG',
@@ -117,6 +117,10 @@ describe('EditLicenseComponent', () => {
     expect(LICENSE.dateOfBirth).toEqual(component.license.dateOfBirth);
     expect(LICENSE.dateOfIssue).toEqual(component.license.dateOfIssue);
     expect(LICENSE.expiryDate).toEqual(component.license.expiryDate);
+
+    expect(LICENSE.dateOfBirth).toBeTruthy();
+    expect(LICENSE.dateOfIssue).toBeTruthy();
+    expect(LICENSE.expiryDate).toBeTruthy();
   });
 
   it('should convert UTC dates with format DD/MM/YYYY to ISO dates', async() => {
