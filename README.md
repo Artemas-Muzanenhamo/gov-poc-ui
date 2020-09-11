@@ -16,7 +16,7 @@ This application is a front-end Angular view for the [GOV-POC](https://github.co
 ## Running the application
 
 ### Backend:
-- Navigate to the GOV-POC project located (here)[https://github.com/Artemas-Muzanenhamo/gov-poc].
+- Navigate to the GOV-POC project located [here](https://github.com/Artemas-Muzanenhamo/gov-poc).
 - First build the application by running `./gradlew bootRun`.
 - Execute `docker-compose up --build -d` so that Docker sets up and starts up all the services for you.
 - Navigate to `localhost:8761` and you should see all the services instances (`Gateway`, `Identity-Service` and `License-Service`), loaded. 
