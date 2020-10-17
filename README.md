@@ -3,6 +3,7 @@
 [![CircleCI](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ui.svg?style=svg)](https://circleci.com/gh/Artemas-Muzanenhamo/gov-poc-ui)
 [![codecov](https://codecov.io/gh/Artemas-Muzanenhamo/gov-poc-ui/branch/develop/graph/badge.svg)](https://codecov.io/gh/Artemas-Muzanenhamo/gov-poc-ui)
 [![Build Status](https://travis-ci.org/Artemas-Muzanenhamo/gov-poc-ui.svg?branch=develop)](https://travis-ci.org/Artemas-Muzanenhamo/gov-poc-ui)
+![CodeQL](https://github.com/Artemas-Muzanenhamo/gov-poc-ui/workflows/CodeQL/badge.svg?branch=develop)
 
 
 This application is a front-end Angular view for the [GOV-POC](https://github.com/Artemas-Muzanenhamo/gov-poc) application.
