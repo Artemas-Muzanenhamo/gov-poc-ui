@@ -30,7 +30,7 @@
     "coveralls": "^3.0.9",
     "jquery": "^3.5.0",
     "karma-coverage": "^1.1.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "npm": "^6.14.6",
     "rxjs": "^6.5.4",
     "uikit": "^2.27.4",
